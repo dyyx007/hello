@@ -1,0 +1,55 @@
+如何将APP部署在阿里云服务器上
+
+
+如果将APP部署在阿里云服务器，可能会有一些操作需要我们来完成，下面的介绍里的说明大家可以参考下。
+如何将APP部署在阿里云服务器上
+随着移动通信设备终端的逐步流行，移动互联网在互联网交流中起着越来越大的作用，而移动互联网采用纯网站应用的部分相当之少，曲而代之的APP应用软件正以雨后春笋般的速度生发出来，例如说苹果IOS市场里的很多APP、谷歌安卓尔市场里的APP等。很多APP会布局在有些手机市场里运营、但也有非常多的APP会采取自己租用服务器且自己配置环境的方式来运营，这样拥有更多的自主权、减少很多在综合APP市场里的限制，很多大型的APP都是采用自主运营的操作。
+如果将APP部署在阿里云服务器，可能会有以下一些操作值得您参考：
+1，APP应用需要什么样的云服务器？
+为了帮助大家了解如何使用阿里云云服务器及相关应用，阿里云的移动云团队开发了一个简单的APP应用：移动云相册，其中使用了ECS主要用作部署云相册的API服务（图片信息调用、图片列表调用）和图片缩略图处理，因为这个应用服务端使用了JAVA语言开发，因此在上面安装tomcat来部署应用。
+具体部署
+1）远程登录：
+第一次购买ECS后，会把该ECS服务器的root账号、密码发送购买者的邮箱，然后购买者可以通过远程登录到ECS服务器，具体远程登录可以参考如下：
+Windows：http://help.aliyun.com/manual?spm=5176.383518.5.16.4lLZzn&helpId=59
+Linux:http://help.aliyun.com/manual?spm=5176.383518.5.16.4lLZzn&helpId=59
+2）安装web环境
+根据自己应用特点选择安装相关web服务器tomcat或者jetty，阿里云提供了一条龙安装部署脚本，为开发者提供了更多的方便，请参考如下链接：http://help.aliyun.com/manual?spm=0.0.0.0.RGeYy4&helpId=129
+3）打包应用
+将web源码下载到本地，使用命令mvnpackage打成war包。如果不是maven工程，可以用类似ant打成war包。
+4）上传war包
+Linux下面可以使用sftp上传war包，上传war包到指定目录后进行解压，具体使用方式参考：http://help.aliyun.com/manual?spm=0.0.0.0.PnfpSL&helpId=1848
+5）启动web服务
+将tomcat或jetty服务启动
+6）配置反向代理、绑定域名
+具体配置信息参考：http://help.aliyun.com/manual?spm=0.0.0.0.Ti7iuA&helpId=532, http://help.aliyun.com/manual?spm=0.0.0.0.MKbFj1&helpId=65
+2，APP应用如何把图片存到云存储服务器中？
+图片类APP应用的架构核心在于大量小文件的存储与访问，在文件数量较多的情况下将文件直接存储在硬盘上将极大影响应用的访问效率。阿里云存储服务OSS对海量小文件的存储及管理具有很大优势，图片不从服务端下载，减少了服务端压力。阿里云的OSS的备份机制也保证了文件的存储安全，其存储容量可以无限扩展，每秒请求数超过50000次，多线BGP网络确保全国各地访问流畅。
+使用阿里云OSS步骤：
+1）登录阿里云官网（aliyun.com）开通OSS
+2）获取KEY及密钥
+3）下载SDK
+（JAVA版下载地址为：http://bbs.aliyun.com/job.php?action=download&aid=38817
+帮助手册： http://aliyun_portal_storage.oss.aliyuncs.com/oss_api/oss_javahtml/index.html ）
+4）开始APP开发
+很简单吧，下面是一个使用阿里云的OSS上传图片的代码样例：
+StringupLoadURI = OSSClient.generateUploadUrl(Constants.SERVER_URL.GENERATE_URL,fileName, null);
+int status =OSSClient.uploadFile(upLoadURI, path);
+3，APP上云后如何使用云数据库？
+为了帮助大家了解如何使用阿里云云服务器及相关应用，阿里云的移动云团队开发了一个简单的APP应用：移动云相册，其中使用了RDS中提供的MYSQL服务，数据库中主要存储了用户上传的图片信息，包括原图、缩略图的信息及存储地址，通过WEB端API向客户端提供数据调用。
+使用阿里云RDS和使用本地数据库基本上没有区别，使用样例如下：
+1）创建数据库实例
+使用阿里云账号购买RDS后，可以创建数据库实例。
+2）创建数据库以及管理账号
+创建数据库名称以及管理账号，用于应用程序调用数据库连接。
+3）访问数据库：
+创建完数据库（test）后，在数据库test里添加账户：test、密码：test，可以在RDS控制台查看到数据库相关信息，从中能够得到数据库的外网地址如：xxxx.mysql.rds.aliyuncs.com，可以使用应用程序连接数据库，javajdbc连接数据库示例代码如下：
+String url = “jdbc:mysql://xxxx.mysql.rds.aliyun:3306/test”;
+String username = “test” ;
+String password = “test” ;
+try{
+Connection con = DriverManager.getConnection(url ,username , password ) ;
+}catch(SQLException e){
+e.printStackTrace() ; //需要对异常做处理
+}
+具体数据库访问步骤可以参考：http://help.aliyun.com/manual?spm=0.0.0.0.dAfLT5&helpId=227
+小AD一下：阿里云服务器购买可点击：http://buy.aliyun.com
