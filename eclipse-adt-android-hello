@@ -1,6 +1,6 @@
 使用eclipse adt 开发android应用
 
-
+环境变量设置  java_home android_home
 
 
 file /  new  / android application project
