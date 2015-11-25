@@ -1,0 +1,48 @@
+使用eclipse adt 开发android应用
+
+
+
+
+file /  new  / android application project
+创建项目 会依赖appcompat_v7
+去掉依赖
+xml文件 有红叉的删掉 这样无法生成 R文件
+去掉appcompat_v7 依赖后 生成的apk大小会从 1.1M 减小到 440K
+
+project.properties 里去除依赖
+android.library.reference.1=../appcompat_v7
+
+MainActivity   run as 配置 选择 Android Application
+name  project    设置
+
+project.properties   target=android-22
+
+ <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="22" />
+
+
+./libs/android-support-v4.jar  这个依赖会自动加上
+跟 minSdkVersion targetSdkVersion 设置有关 ？
+
+为何要使用 Android Support Library
+在老版本的系统里如何跑运用了新特性的app呢？那就是引入Support Library这个jar包。
+The Android Support Library provides a JAR file with an API library
+ that allow you to use some of the more recent Android APIs in your app while running on earlier versions of Android.
+ For instance, the Support Library provides a version of the Fragment APIs that you can use on Android 1.6 (API level 4) and higher.
+
+http://blog.sina.com.cn/s/blog_8191005601019rmi.html
+
+
+.project文件
+
+
+buildSpec
+buildCommand
+
+com.android.ide.eclipse.adt.ResourceManagerBuilder
+com.android.ide.eclipse.adt.PreCompilerBuilder
+org.eclipse.jdt.core.javabuilder
+com.android.ide.eclipse.adt.ApkBuilder
+
+
