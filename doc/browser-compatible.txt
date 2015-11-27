@@ -1,6 +1,10 @@
-﻿目录
+﻿
+浏览器兼容性问题汇总
+
+   javascript+css
 
 
+目录
 
 	JAVASCRIPT	
 
