@@ -1,0 +1,48 @@
+<pre>
+
+<h1>  Javascript RegEx replace and simple template </h1>
+
+Template:
+<textarea id='template' cols='100' rows='7'>hello,${name} ${name} ${name1}</textArea>
+
+data:
+<textarea id='data' cols='100' rows='7'>{"name":"cat","name1":"xxx"}</textArea>
+
+<input type='button' value='go' onclick='go()'> 
+
+</pre>
+
+
+<script>
+           var tmplobj = document.getElementById('template');
+            var dataobj = document.getElementById('data');
+
+			function go(){
+				var s1 = tmplobj.value;
+                var s2 = dataobj.value;
+			    var s = s1+","+s2;
+				//alert(s);
+				console.log(s);
+				// must use  {"name":"cat","name1":"xxx"}
+				// not     {'name':'cat','name1':'xxx'}
+				var data = JSON.parse(s2);
+                	console.log(data);
+				for(var key in data){
+				    console.log(key+"="+data[key]);
+				}
+
+                var s3 = s1.replace(/\${(\w\w*)}/g,function(){
+					console.log(arguments);
+				    var args = arguments;
+					var name = args[1];
+					var v = data[name];
+					if(!v){
+					    v = "";
+					}
+					return v;
+				});
+				console.log(s3);
+				alert(s3);
+			}
+</script>
+
