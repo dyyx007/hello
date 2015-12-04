@@ -1,0 +1,37 @@
+
+各类面试测试题知识点技术点收集
+
+面试大全英文版 https://github.com/MaximAbramchuck/awesome-interviews
+
+
+
+
+前端
+
+   前端开发面试题 http://segmentfault.com/a/1190000000465431
+   Web前端开发测试题 http://www.w3cplus.com/css/front-end-web-development-quiz.html
+   有关于CSS的面试题和练习 http://www.w3cplus.com/css/interview-question-css.html
+   前端知识体系 https://github.com/JacksonTian/fks/blob/master/README.md
+   史上最全前端开发面试问题及答案整理 https://github.com/AutumnsWind/Front-end-questions-to-the-interview-stage
+   前端面试题和答案 https://github.com/qiu-deqing/FE-interview
+   前端开发规范 http://front-end-standards.com/
+
+客户端android
+
+  安卓面试71题 https://github.com/dyyx007/hello/blob/master/android-qa
+
+
+
+服务端 java
+
+  Java线程面试题Top50 http://www.importnew.com/12773.html
+  20个最佳的Java集合框架面试题目 http://xxwenda.com/article/586
+  
+
+数据库
+
+
+架构
+     http://www.diguage.com/archives/41.html
+   
+
