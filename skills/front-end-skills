@@ -1,0 +1,131 @@
+
+
+1 ul li 表格布局  横排 竖排 前面的圆点
+  list-style:none 去掉ul前面的符号
+
+ 
+
+2 ul li 横向导航 
+
+   div.menu ul
+{
+    list-style:none; 
+	
+    margin: 0px; 
+    padding: 0px; 
+    width: auto; 
+	
+	border:1px solid red;
+overflow:auto;
+	
+}
+
+div.menu ul li
+{
+    float:left;
+	 /*display: block;*/
+	 width:200px;
+	 text-align:center;
+	 border:2px solid blue;
+     /*overflow:hidden;*/
+}
+
+ <div class="menu">
+        <ul>
+            <li><a href="javascript:void(0);">主页2</a></li>
+            <li><a href="javascript:void(0);">工作日志2</a></li>
+            <li><a href="javascript:void(0);">设备运行记录2</a></li>
+            <li><a href="javascript:void(0);">其他2</a></li>
+        </ul>
+    </div>
+
+margin 需要设置为0 默认比较大
+
+
+
+3 img 和 div之间有空隙
+ img设置 display:block
+
+
+4 子元素用了float浮动之后，如何撑开父元素
+   overflow:hidden
+   还可以清除浮动
+overflow:auto; 貌似也有同样效果
+
+
+
+
+5 如何自动出现滚动条 
+
+6  图片自适应
+
+
+
+7  box-sizing 属性
+
+ box-sizing:border-box
+
+box-sizing：content-box | border-box
+默认值：content-box
+
+content-box：
+padding和border不被包含在定义的width和height之内。
+对象的实际宽度等于设置的width值和border、padding之和，即 ( Element width = width + border + padding)
+
+
+8 清除浮动的几种方式
+
+  子元素使用浮动后的些影响
+   a 背景不能显示 b 高度不能撑开  c margin值不能正确显示
+
+  清除浮动的几种方式
+   a     添加新的元素  应用 clear:both 
+         <div class="outer">
+             <div class="div1">1</div>
+             <div class="div2">2</div>
+             <div class="div3">3</div>
+             <div class="clear"></div>
+         </div>
+
+         .clear{clear:both; height: 0; line-height: 0; font-size: 0}
+
+   b    父级div定义 overflow:auto
+        .clear{
+            overflow: auto; 
+	    zoom: 1; //zoom: 1; 是在处理兼容性问题
+        }
+	overflow属性有三个值：hidden,auto,visible 可以使用hiddent和auto值来清除浮动 但不能使用visible值
+
+        zoom:1;属性是IE浏览器的专有属性，Firefox等其它浏览器不支持。
+	它可以设置或检索对象的缩放比例。除此之外，它还有其他一些小作用，比如触发ie的hasLayout属性，
+	清除浮动、清除margin的重叠等。但很遗憾的是，它通不过W3C验证．
+
+   c    :after 方法  这个没试过
+
+9  DIV CSS网站布局八个小技巧
+   http://developer.51cto.com/art/201009/225152.htm
+
+
+10  四种 定位方式
+
+
+11 垂直居中
+
+12  display属性
+
+
+13  正则匹配替换
+
+14  简单的模板实现
+
+15 滚动条控制
+
+
+
+
+
+
+
+
+
+
