@@ -1,3 +1,8 @@
+0
+
+  任意浏览器的默认字体高都是 16px !!!
+  彻底弄懂css中单位px和em,rem的区别 http://www.cnblogs.com/leejersey/p/3662612.html
+
 
 
 1 ul li 表格布局  横排 竖排 前面的圆点
@@ -118,7 +123,99 @@ padding和border不被包含在定义的width和height之内。
 
 14  简单的模板实现
 
+    
+
 15 滚动条控制
+
+   垂直滚动条 设置scrollTop 
+   水平滚动条 设置 scrollLeft
+
+
+16 html中锚点的使用
+
+ id定位 name定位 js定位
+
+   <a href="#div01">跳到div01</a>
+   <div id='div01'>
+   x.html#obj001
+document.getElementById('xxx').scrollIntoView()
+
+
+17 瀑布流与图片延迟加载
+
+   body 高度 
+   滚动高度
+  img src 设置为默认图片
+   随着滚动条滚动  图片进入可是区域把src设置为真实的url
+
+
+
+   判断是否在可是区域 
+   var scrollTop = document.body.scrollTop;
+   var screenHeight = window.screen.height;
+   var min = scrollTop;
+   var max = scrollTop + screenHeight;
+   可视区域 位置 min ~ max
+
+    function isInCurrentView(obj,min,max){
+			   var objmin = obj.offsetTop;
+			   var objmax = objmin + obj.offsetHeight;
+			   if(objmin>max || objmax<min){
+			        return false;
+			   }
+			   return true;
+		   }
+
+
+18 window.location 对象
+
+   href
+   search 修改search页面会刷新页面
+
+   hash   用于锚定位
+   x.html#xxx
+
+
+19 localStorage 使用
+
+     //  local storage
+           function getLocalStoreItem(key){
+			   if(!key){
+			       return null;
+			   }
+			   try{
+			       return window.localStorage.getItem(key);
+			   }catch(e){
+				   return null;
+			   }
+		   }
+
+		   function setLocalStoreItem(key,val){
+			   if(!key){
+			       return;
+			   }
+			   if(!val){
+			       val='0';
+			   }
+			   try{
+			       return window.localStorage.setItem(key,val);
+			   }catch(e){
+				   return null;	   
+			   }
+		   }
+
+  20  相对定位 
+      图片左上上角打一个icon 使用绝对定位  父级元素 ul li设置为 相对定位
+
+     position:relative;
+.div-xxx-icon{
+    position:absolute;
+	top:0px;
+	left:0px;
+	z-index:1;
+}
+z-index设置
+
 
 
 
