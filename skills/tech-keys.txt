@@ -33,5 +33,14 @@
 
 架构
      http://www.diguage.com/archives/41.html
+
+
+算法
+
+     10大算法概念汇总 http://blog.jobbole.com/52144/
+
+
+
+
    
 
