@@ -1,0 +1,80 @@
+
+
+
+第一行代码读书笔记思维导图
+https://pic3.zhimg.com/f580d9169d8292417d0c72935fcc983a_r.jpg
+
+
+
+第一章 安卓简介
+
+系统架构 
+linux内核 系统运行层  应用框架曾  用用层
+
+四大组件 activity  service broadcat ContentProvider
+
+控件 SqlLite LBS 多媒体 传感器
+
+开发环境 
+Android SDK
+eclipse ADT
+Android Studio
+
+AndroidManifest.xml
+LogCat工具 
+
+
+第二章 activity
+
+Intent 显示 隐式
+activity生命周期
+不可见 可见 获取焦点
+4中启动模式   standard singleTop SingleTask singleInstance
+使用task来管理活动 一个task是一个活动栈
+出栈入栈
+如何查看task     adb shell dumpsys activity
+
+ Running activities (most recent first):
+   TaskRecord{b3ac20a8 #10 A com.dyyx.androidhello.MainActivity U 0}
+     Run #2: ActivityRecord{b3aca2d8 com.dyyx.androidhello/.ListViewActivity}
+     Run #1: ActivityRecord{b3899b48 com.dyyx.androidhello/.MainActivity}
+
+第三章  UI控件
+
+基本布局 
+常用控件
+
+
+第4章 fragment
+
+第6章  数据持久化
+
+第7章  内容提供者
+
+第8章  多媒体
+
+
+第9章  服务
+
+第10章  网络技术
+
+第11章  位置服务 LBS
+
+
+第12章  传感器
+
+
+第13章  高级技巧
+
+
+第14章  实战 天气app
+
+
+第15章  将应用发布到google play
+
+
+
+
+
+
+
