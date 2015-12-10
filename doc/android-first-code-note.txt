@@ -40,9 +40,142 @@ activity生命周期
      Run #1: ActivityRecord{b3899b48 com.dyyx.androidhello/.MainActivity}
 
 第三章  UI控件
+ P87 
+
+xmlns:android="http://schemas.android.com/apk/res/android"
 
 基本布局  TextView EditText Button  
 常用控件
+match_parent fill_parent wrap_content
+match_parent fill_parent 效果相同 推荐用 match_parent
+TextView android:gravity="center"  文字居中
+android:textSize="24sp"
+android:textColor="#00ff00"
+
+EditText 
+android:hint="input something here"
+android:maxLines="2"
+
+click事件监听接口 OnClickListener
+
+String inputText = editText.getText().toString();
+Toast.makeText(MainActivity.this, inputText, Toast.LENGTH_SHORT).show();
+
+ImageView
+android:src="@drawable/ic_launcher"
+
+imageView.setImageResource(R.drawable.jelly_bean);
+
+ProgressBar
+android:visibility
+
+visible invisible gone
+
+invisible 不可见，但仍然占据着原来的位置和大小，可以理解成变透明了
+gone 不可见且不占用空间
+
+setVisibility()方法 View.VISIBLE View.INVISIBLE View.GONE
+
+通过 android:max属性给进度条设置一个最大值，然后在代码中动态地设置进度
+
+int progress = progressBar.getProgress();
+progress = progress + 10;
+progressBar.setProgress(progress);
+
+ProgressBar 样式 圆形进度条 水平进度条 style
+
+      style="@android:style/Widget.ProgressBar.Horizontal"
+  android:max="100"
+ android:progress="50"
+
+AlertDialog
+
+AlertDialog.Builder
+
+setPositiveButton()设置确定按钮点击事件
+setNegativeButton()设置取消按钮点击事件
+
+ProgressDialog
+
+ProgressDialog progressDialog = new ProgressDialog (MainActivity.this);
+progressDialog.setTitle("This is ProgressDialog");
+progressDialog.setMessage("Loading...");
+progressDialog.setCancelable(true);
+progressDialog.show();
+
+setCancelable()设置 false，表示不能通过Back键取消
+
+dismiss()关闭对话框
+
+
+layout
+
+android:orientation   vertical  horizontal
+
+
+android:layout_gravity  VS android:gravity
+
+android:layout_gravity 用于指定控件在布局中的对齐方式
+
+当LinearLayout的排列方向是horizontal时，只有垂直方向上的对齐方式才会生效
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal" >
+
+<Button
+android:id="@+id/button1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="top"
+android:text="Button 1" />
+<Button
+android:id="@+id/button2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center_vertical"
+android:text="Button 2" />
+<Button
+android:id="@+id/button3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="bottom"
+android:text="Button 3" />
+</LinearLayout>
+
+android:layout_weigh
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal" >
+<EditText
+android:id="@+id/input_message"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:hint="Type something"
+/>
+<Button
+android:id="@+id/send"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Send"
+/>
+</LinearLayout>
+
+Button 宽度按照wrap_content计算 EditText会占满屏幕所有的剩余空间
+
+
+RelativeLayout p117
+
+
+
+
+
 
 
 第4章 fragment
