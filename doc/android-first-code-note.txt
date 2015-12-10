@@ -1,54 +1,54 @@
 
 
 
-µÚÒ»ĞĞ´úÂë¶ÁÊé±Ê¼ÇË¼Î¬µ¼Í¼
+ç¬¬ä¸€è¡Œä»£ç è¯»ä¹¦ç¬”è®°æ€ç»´å¯¼å›¾
 https://pic3.zhimg.com/f580d9169d8292417d0c72935fcc983a_r.jpg
 
 
 
-µÚÒ»ÕÂ °²×¿¼ò½é
+ç¬¬ä¸€ç«  å®‰å“ç®€ä»‹
 
-ÏµÍ³¼Ü¹¹ 
-linuxÄÚºË ÏµÍ³ÔËĞĞ²ã  Ó¦ÓÃ¿ò¼ÜÔø  ÓÃÓÃ²ã
+ç³»ç»Ÿæ¶æ„ 
+linuxå†…æ ¸ ç³»ç»Ÿè¿è¡Œå±‚  åº”ç”¨æ¡†æ¶æ›¾  ç”¨ç”¨å±‚
 
-ËÄ´ó×é¼ş activity  service broadcat ContentProvider
+å››å¤§ç»„ä»¶ activity  service broadcat ContentProvider
 
-¿Ø¼ş SqlLite LBS ¶àÃ½Ìå ´«¸ĞÆ÷
+æ§ä»¶ SqlLite LBS å¤šåª’ä½“ ä¼ æ„Ÿå™¨
 
-¿ª·¢»·¾³ 
+å¼€å‘ç¯å¢ƒ 
 Android SDK
 eclipse ADT
 Android Studio
 
 AndroidManifest.xml
-LogCat¹¤¾ß 
+LogCatå·¥å…· 
 
 
-µÚ¶şÕÂ activity
+ç¬¬äºŒç«  activity
 
-Intent ÏÔÊ¾ ÒşÊ½
-activityÉúÃüÖÜÆÚ
-²»¿É¼û ¿É¼û »ñÈ¡½¹µã
-4ÖĞÆô¶¯Ä£Ê½   standard singleTop SingleTask singleInstance
-Ê¹ÓÃtaskÀ´¹ÜÀí»î¶¯ Ò»¸ötaskÊÇÒ»¸ö»î¶¯Õ»
-³öÕ»ÈëÕ»
-ÈçºÎ²é¿´task     adb shell dumpsys activity
+Intent æ˜¾ç¤º éšå¼
+activityç”Ÿå‘½å‘¨æœŸ
+ä¸å¯è§ å¯è§ è·å–ç„¦ç‚¹
+4ä¸­å¯åŠ¨æ¨¡å¼   standard singleTop SingleTask singleInstance
+ä½¿ç”¨taskæ¥ç®¡ç†æ´»åŠ¨ ä¸€ä¸ªtaskæ˜¯ä¸€ä¸ªæ´»åŠ¨æ ˆ
+å‡ºæ ˆå…¥æ ˆ
+å¦‚ä½•æŸ¥çœ‹task     adb shell dumpsys activity
 
  Running activities (most recent first):
    TaskRecord{b3ac20a8 #10 A com.dyyx.androidhello.MainActivity U 0}
      Run #2: ActivityRecord{b3aca2d8 com.dyyx.androidhello/.ListViewActivity}
      Run #1: ActivityRecord{b3899b48 com.dyyx.androidhello/.MainActivity}
 
-µÚÈıÕÂ  UI¿Ø¼ş
+ç¬¬ä¸‰ç«   UIæ§ä»¶
  P87 
 
 xmlns:android="http://schemas.android.com/apk/res/android"
 
-»ù±¾²¼¾Ö  TextView EditText Button  
-³£ÓÃ¿Ø¼ş
+åŸºæœ¬å¸ƒå±€  TextView EditText Button  
+å¸¸ç”¨æ§ä»¶
 match_parent fill_parent wrap_content
-match_parent fill_parent Ğ§¹ûÏàÍ¬ ÍÆ¼öÓÃ match_parent
-TextView android:gravity="center"  ÎÄ×Ö¾ÓÖĞ
+match_parent fill_parent æ•ˆæœç›¸åŒ æ¨èç”¨ match_parent
+TextView android:gravity="center"  æ–‡å­—å±…ä¸­
 android:textSize="24sp"
 android:textColor="#00ff00"
 
@@ -56,7 +56,7 @@ EditText
 android:hint="input something here"
 android:maxLines="2"
 
-clickÊÂ¼ş¼àÌı½Ó¿Ú OnClickListener
+clickäº‹ä»¶ç›‘å¬æ¥å£ OnClickListener
 
 String inputText = editText.getText().toString();
 Toast.makeText(MainActivity.this, inputText, Toast.LENGTH_SHORT).show();
@@ -71,18 +71,18 @@ android:visibility
 
 visible invisible gone
 
-invisible ²»¿É¼û£¬µ«ÈÔÈ»Õ¼¾İ×ÅÔ­À´µÄÎ»ÖÃºÍ´óĞ¡£¬¿ÉÒÔÀí½â³É±äÍ¸Ã÷ÁË
-gone ²»¿É¼ûÇÒ²»Õ¼ÓÃ¿Õ¼ä
+invisible ä¸å¯è§ï¼Œä½†ä»ç„¶å æ®ç€åŸæ¥çš„ä½ç½®å’Œå¤§å°ï¼Œå¯ä»¥ç†è§£æˆå˜é€æ˜äº†
+gone ä¸å¯è§ä¸”ä¸å ç”¨ç©ºé—´
 
-setVisibility()·½·¨ View.VISIBLE View.INVISIBLE View.GONE
+setVisibility()æ–¹æ³• View.VISIBLE View.INVISIBLE View.GONE
 
-Í¨¹ı android:maxÊôĞÔ¸ø½ø¶ÈÌõÉèÖÃÒ»¸ö×î´óÖµ£¬È»ºóÔÚ´úÂëÖĞ¶¯Ì¬µØÉèÖÃ½ø¶È
+é€šè¿‡ android:maxå±æ€§ç»™è¿›åº¦æ¡è®¾ç½®ä¸€ä¸ªæœ€å¤§å€¼ï¼Œç„¶ååœ¨ä»£ç ä¸­åŠ¨æ€åœ°è®¾ç½®è¿›åº¦
 
 int progress = progressBar.getProgress();
 progress = progress + 10;
 progressBar.setProgress(progress);
 
-ProgressBar ÑùÊ½ Ô²ĞÎ½ø¶ÈÌõ Ë®Æ½½ø¶ÈÌõ style
+ProgressBar æ ·å¼ åœ†å½¢è¿›åº¦æ¡ æ°´å¹³è¿›åº¦æ¡ style
 
       style="@android:style/Widget.ProgressBar.Horizontal"
   android:max="100"
@@ -92,8 +92,8 @@ AlertDialog
 
 AlertDialog.Builder
 
-setPositiveButton()ÉèÖÃÈ·¶¨°´Å¥µã»÷ÊÂ¼ş
-setNegativeButton()ÉèÖÃÈ¡Ïû°´Å¥µã»÷ÊÂ¼ş
+setPositiveButton()è®¾ç½®ç¡®å®šæŒ‰é’®ç‚¹å‡»äº‹ä»¶
+setNegativeButton()è®¾ç½®å–æ¶ˆæŒ‰é’®ç‚¹å‡»äº‹ä»¶
 
 ProgressDialog
 
@@ -103,9 +103,9 @@ progressDialog.setMessage("Loading...");
 progressDialog.setCancelable(true);
 progressDialog.show();
 
-setCancelable()ÉèÖÃ false£¬±íÊ¾²»ÄÜÍ¨¹ıBack¼üÈ¡Ïû
+setCancelable()è®¾ç½® falseï¼Œè¡¨ç¤ºä¸èƒ½é€šè¿‡Backé”®å–æ¶ˆ
 
-dismiss()¹Ø±Õ¶Ô»°¿ò
+dismiss()å…³é—­å¯¹è¯æ¡†
 
 
 layout
@@ -115,9 +115,9 @@ android:orientation   vertical  horizontal
 
 android:layout_gravity  VS android:gravity
 
-android:layout_gravity ÓÃÓÚÖ¸¶¨¿Ø¼şÔÚ²¼¾ÖÖĞµÄ¶ÔÆë·½Ê½
+android:layout_gravity ç”¨äºæŒ‡å®šæ§ä»¶åœ¨å¸ƒå±€ä¸­çš„å¯¹é½æ–¹å¼
 
-µ±LinearLayoutµÄÅÅÁĞ·½ÏòÊÇhorizontalÊ±£¬Ö»ÓĞ´¹Ö±·½ÏòÉÏµÄ¶ÔÆë·½Ê½²Å»áÉúĞ§
+å½“LinearLayoutçš„æ’åˆ—æ–¹å‘æ˜¯horizontalæ—¶ï¼Œåªæœ‰å‚ç›´æ–¹å‘ä¸Šçš„å¯¹é½æ–¹å¼æ‰ä¼šç”Ÿæ•ˆ
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -167,7 +167,7 @@ android:text="Send"
 />
 </LinearLayout>
 
-Button ¿í¶È°´ÕÕwrap_content¼ÆËã EditText»áÕ¼ÂúÆÁÄ»ËùÓĞµÄÊ£Óà¿Õ¼ä
+Button å®½åº¦æŒ‰ç…§wrap_contentè®¡ç®— EditTextä¼šå æ»¡å±å¹•æ‰€æœ‰çš„å‰©ä½™ç©ºé—´
 
 
 RelativeLayout p117
@@ -178,32 +178,32 @@ RelativeLayout p117
 
 
 
-µÚ4ÕÂ fragment
+ç¬¬4ç«  fragment
 
-µÚ6ÕÂ  Êı¾İ³Ö¾Ã»¯
+ç¬¬6ç«   æ•°æ®æŒä¹…åŒ–
 
-µÚ7ÕÂ  ÄÚÈİÌá¹©Õß
+ç¬¬7ç«   å†…å®¹æä¾›è€…
 
-µÚ8ÕÂ  ¶àÃ½Ìå
-
-
-µÚ9ÕÂ  ·şÎñ
-
-µÚ10ÕÂ  ÍøÂç¼¼Êõ
-
-µÚ11ÕÂ  Î»ÖÃ·şÎñ LBS
+ç¬¬8ç«   å¤šåª’ä½“
 
 
-µÚ12ÕÂ  ´«¸ĞÆ÷
+ç¬¬9ç«   æœåŠ¡
+
+ç¬¬10ç«   ç½‘ç»œæŠ€æœ¯
+
+ç¬¬11ç«   ä½ç½®æœåŠ¡ LBS
 
 
-µÚ13ÕÂ  ¸ß¼¶¼¼ÇÉ
+ç¬¬12ç«   ä¼ æ„Ÿå™¨
 
 
-µÚ14ÕÂ  ÊµÕ½ ÌìÆøapp
+ç¬¬13ç«   é«˜çº§æŠ€å·§
 
 
-µÚ15ÕÂ  ½«Ó¦ÓÃ·¢²¼µ½google play
+ç¬¬14ç«   å®æˆ˜ å¤©æ°”app
+
+
+ç¬¬15ç«   å°†åº”ç”¨å‘å¸ƒåˆ°google play
 
 
 
