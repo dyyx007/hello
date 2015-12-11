@@ -1,0 +1,15 @@
+
+1 《Objective-C程序设计》
+2  《精通iOS开发》
+
+  sdk  xcode开发环境
+ MVC 委托 
+
+3 
+ Matt Neubury  《iOS程序设计》 iOS最系统的教程，对iOS框架的底层有比较详细的介绍 
+
+4 Bear Cahill  《iOS in Practice》
+
+5  David Mark的另一本畅销书《iOS6开发进阶与实战》
+ 
+主要深入讲解了Core data，map Kit，Game Kit，iCloud，iOS安全等
