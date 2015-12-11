@@ -332,6 +332,79 @@ Button 宽度按照wrap_content计算 EditText会占满屏幕所有的剩余空�
 RelativeLayout p117
 
 
+RelativeLayout
+相对于父布局
+android:layout_alignParentLeft="true"
+android:layout_alignParentTop="true"
+
+android:layout_alignParentRight="true"
+android:layout_alignParentTop="true"
+
+android:layout_centerInParent="true"
+
+android:layout_alignParentBottom="true"
+android:layout_alignParentLeft="true"
+
+android:layout_alignParentBottom="true"
+android:layout_alignParentRight="true"
+
+
+相对于指定控件
+
+
+android:layout_above="@id/button3"
+android:layout_toRightOf="@id/button3"
+
+FrameLayout
+
+TableLayout
+
+TableRow
+
+android:layout_span="2"
+android:stretchColumns="1"  第二列拉伸
+
+
+
+
+自定义控件
+
+View ViewGroup
+
+
+android:background="@drawable/title_bg"
+自定义标题栏
+back按钮 标题 编辑按钮
+android:layout_margin="5dip"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+<include layout="@layout/title" />
+</LinearLayout>
+
+include
+
+
+public class TitleLayout extends LinearLayout {
+public TitleLayout(Context context, AttributeSet attrs) {
+super(context, attrs);
+LayoutInflater.from(context).inflate(R.layout.title, this);
+}
+}
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+<com.example.uicustomviews.TitleLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+></com.example.uicustomviews.TitleLayout>
+</LinearLayout>
+
+增加事件处理函数
+
+
 
 
 
