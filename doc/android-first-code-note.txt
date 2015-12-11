@@ -8,12 +8,26 @@ https://pic3.zhimg.com/f580d9169d8292417d0c72935fcc983a_r.jpg
 
 第一章 安卓简介
 
+
+2003.10 andy Rubin  android公司
+2005.08 谷歌收购
+2008.09 1.0
+2011.02 3.0
+2011.10 4.0
+
+
+
+
+
 系统架构 
 linux内核 系统运行层  应用框架曾  用用层
 
 四大组件 activity  service broadcat ContentProvider
 
 控件 SqlLite LBS 多媒体 传感器
+
+Dalvik虚拟机
+
 
 开发环境 
 Android SDK
@@ -22,6 +36,32 @@ Android Studio
 
 AndroidManifest.xml
 LogCat工具 
+
+assets  程序动态读取的文件  webview 加载本地网页
+
+
+<activity
+android:name="com.test.helloworld.HelloWorldActivity"
+android:label="@string/app_name" >
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+</activity>
+
+setContentView(R.layout.hello_world_layout);
+
+getMenuInflater().inflate(R.menu.hello_world, menu);
+
+
+菜单 option menu  context menu
+
+onCreateOptionsMenu
+android:text="@string/hello_world"
+
+字符串定义 res/values/strings.xml
+
+
 
 
 第二章 activity
@@ -38,6 +78,125 @@ activity生命周期
    TaskRecord{b3ac20a8 #10 A com.dyyx.androidhello.MainActivity U 0}
      Run #2: ActivityRecord{b3aca2d8 com.dyyx.androidhello/.ListViewActivity}
      Run #1: ActivityRecord{b3899b48 com.dyyx.androidhello/.MainActivity}
+
+ 隐藏标题栏
+
+requestWindowFeature(Window.FEATURE_NO_TITLE);
+setContentView(R.layout.first_layout);
+
+
+requestWindowFeature 需要在 setContentView 之前
+
+Toast.makeText(FirstActivity.this, "You clicked Button 1",Toast.LENGTH_SHORT).show();
+
+findViewById 
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<item
+android:id="@+id/add_item"
+android:title="Add"/>
+<item
+android:id="@+id/remove_item"
+android:title="Remove"/>
+</menu>
+
+public boolean onCreateOptionsMenu(Menu menu) {
+getMenuInflater().inflate(R.menu.main, menu);
+return true;
+}
+
+public boolean onOptionsItemSelected(MenuItem item) {
+switch (item.getItemId()) {
+case R.id.add_item:
+Toast.makeText(this, "You clicked Add", Toast.LENGTH_SHORT).show();
+break;
+case R.id.remove_item:
+Toast.makeText(this, "You clicked Remove", Toast.LENGTH_SHORT).show();
+break;
+default:
+}
+return true;
+}
+
+销毁当前活动 finish()
+
+Intent  
+显式 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+隐式 Intent intent = new Intent("com.example.activitytest.ACTION_START");
+
+
+
+<activity android:name=".SecondActivity" >
+<intent-filter>
+<action android:name="com.example.activitytest.ACTION_START" />
+<category android:name="android.intent.category.DEFAULT" />
+</intent-filter>
+</activity>
+
+打开浏览器 
+
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("http://www.baidu.com"));
+startActivity(intent);
+
+setData
+
+schema host port  path mimeType
+
+拨打电话界面 
+
+Intent intent = new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:10086"));
+startActivity(intent);
+
+传递参数
+
+String data = "Hello SecondActivity";
+Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+intent.putExtra("extra_data", data);
+startActivity(intent);
+
+获取参数
+
+Intent intent = getIntent();
+String data = intent.getStringExtra("extra_data");
+
+返回数据给上一个活动
+startActivityForResult()
+
+Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+startActivityForResult(intent, 1);
+
+
+
+
+Intent intent = new Intent();
+intent.putExtra("data_return", "Hello FirstActivity");
+setResult(RESULT_OK, intent);
+finish();
+
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+switch (requestCode) {
+case 1:
+if (resultCode == RESULT_OK) {
+String returnedData = data.getStringExtra("data_return");
+Log.d("FirstActivity", returnedData);
+}
+break;
+default:
+}
+}
+
+返回键 onBackPressed
+
+
+
+
+DialogActivity
+<activity android:name=".DialogActivity" android:theme="@android:style/ Theme.Dialog" >
+
+
 
 第三章  UI控件
  P87 
