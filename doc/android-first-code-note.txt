@@ -404,13 +404,191 @@ android:layout_height="wrap_content"
 
 增加事件处理函数
 
+ListView
+
+<ListView
+android:id="@+id/list_view"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+</ListView>
+
+private String[] data = { "Apple", "Banana", "Orange", "Watermelon",
+"Pear", "Grape", "Pineapple", "Strawberry", "Cherry", "Mango" };
+
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+MainActivity.this, android.R.layout.simple_list_item_1, data);
+ListView listView = (ListView) findViewById(R.id.list_view);
+listView.setAdapter(adapter);
+
+ /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param resource The resource ID for a layout file containing a TextView to use when
+     *                 instantiating views.
+     * @param objects The objects to represent in the ListView.
+     */
+    public ArrayAdapter(Context context, int resource, T[] objects) {
+        init(context, resource, 0, Arrays.asList(objects));
+    }
+
+android.R.layout.simple_list_item_1 作为ListView子项布局的id，
+这是一个Android内置的布局文件，里面只有一个TextView，可用于简单地显示一段文本
 
 
+
+public class Fruit {
+private String name;
+private int imageId;
+
+
+fruit_item.xml
+  ImageView TextView
+
+public class FruitAdapter extends ArrayAdapter<Fruit> {
+private int resourceId;
+public FruitAdapter(Context context, int textViewResourceId,
+List<Fruit> objects) {
+super(context, textViewResourceId, objects);
+resourceId = textViewResourceId;
+}
+@Override
+public View getView(int position, View convertView, ViewGroup parent) {
+Fruit fruit = getItem(position); // 获取当前项的Fruit实例
+View view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+ImageView fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
+TextView fruitName = (TextView) view.findViewById(R.id.fruit_name);
+fruitImage.setImageResource(fruit.getImageId());
+fruitName.setText(fruit.getName());
+return view;
+}
+}
+
+
+private List<Fruit> fruitList = new ArrayList<Fruit>();
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+initFruits(); // 初始化水果数据
+FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);
+ListView listView = (ListView) findViewById(R.id.list_view);
+listView.setAdapter(adapter);
+
+
+private void initFruits() {
+Fruit apple = new Fruit("Apple", R.drawable.apple_pic);
+fruitList.add(apple);
+Fruit banana = new Fruit("Banana", R.drawable.banana_pic);
+fruitList.add(banana);
+...
+
+
+性能优化
+
+View view;
+if (convertView == null) {
+view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+} else {
+view = convertView;
+}
+
+convertView 重用
+
+ViewHolder 避免频繁 findViewById
+
+
+class ViewHolder {
+ImageView fruitImage;
+TextView fruitName;
+}
+
+view.setTag(viewHolder);
+
+
+listview 点击事件
+
+listView.setOnItemClickListener(new OnItemClickListener() {
+@Override
+public void onItemClick(AdapterView<?> parent, View view,
+int position, long id) {
+Fruit fruit = fruitList.get(position);
+Toast.makeText(MainActivity.this, fruit.getName(),
+Toast.LENGTH_SHORT).show();
+}
+});
+
+
+单位 px pt dp sp
+
+px 像素 屏幕中可以显示的最小元素单元
+pt 磅数 1磅等于1/72英寸 一般作为字体的单位
+dp 密度无关像素 也被称作dip
+sp 可伸缩像素  采用和dp同样的设计理念，解决了文字大小的适配问题
+
+DPI 屏幕密度 屏幕每英寸所包含的像素数 
+
+float xdpi = getResources().getDisplayMetrics().xdpi;
+float ydpi = getResources().getDisplayMetrics().ydpi;
+Log.d("MainActivity", "xdpi is " + xdpi);
+Log.d("MainActivity", "ydpi is " + ydpi);
+
+120(低密度) 160(基准) 240 320  ...
+0.75 1.0 1.5 2.0  ...
+
+在160dpi的屏幕上，1dp等于1px，而在320dpi的屏幕上，1dp就等于2px
+
+android:layout_width="200px"
+android:layout_width="200dp"
+
+
+Nine-Patch
+sdk/tools/draw9patch.bat
+
+android:background="@drawable/message_left"
+message_left.png
+message_left.9.png
+
+聊天界面
+
+public class Msg {
+public static final int TYPE_RECEIVED = 0;
+public static final int TYPE_SENT = 1;
+private String content;
+private int type;
+
+class ViewHolder {
+LinearLayout leftLayout;
+LinearLayout rightLayout;
+TextView leftMsg;
+TextView rightMsg;
+}
+// 如果是收到的消息，则显示左边的消息布局，将右边的消息布局隐藏
+viewHolder.leftLayout.setVisibility(View.VISIBLE);
+viewHolder.rightLayout.setVisibility(View.GONE);
+viewHolder.leftMsg.setText(msg.getContent());
+
+发送消息处理
+
+public void onClick(View v) {
+String content = inputText.getText().toString();
+if (!"".equals(content)) {
+Msg msg = new Msg(content, Msg.TYPE_SENT);
+msgList.add(msg);
+adapter.notifyDataSetChanged(); // 当有新消息时，刷新ListView中的显示
+msgListView.setSelection(msgList.size()); // 将ListView定位到最后一行
+inputText.setText(""); // 清空输入框中的内容
+}
+}
 
 
 
 
 第4章 fragment
+
+p160
+
+
 
 第6章  数据持久化
 
