@@ -581,12 +581,24 @@ inputText.setText(""); // 清空输入框中的内容
 }
 }
 
+EditText 字体颜色设置 RGB  0000ff 蓝色
+android:textColor="#0000ff"
+水平线性布局   EditText android:layout_weight="1"  Button 不设置layout_weight
+EditText会占用剩下的所有空间
 
 
 
 第4章 fragment
 
 p160 
+碎片  新闻列表 新闻详情（标题+具体内容）
+
+android.app.Fragment
+android.support.v4.app.Fragment 兼容包 用于兼容低版本的系统
+
+
+
+
 
 
 

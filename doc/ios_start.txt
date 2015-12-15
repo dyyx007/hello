@@ -13,3 +13,40 @@
 5  David Mark的另一本畅销书《iOS6开发进阶与实战》
  
 主要深入讲解了Core data，map Kit，Game Kit，iCloud，iOS安全等
+
+
+学习路线   
+
+
+1 c语言
+    基本数据类型 基本运算
+    函数 数组 字符串 指针
+    预处理指令
+    结构体 枚举
+    文件操作 内存管理
+
+2  objective-c
+   面向对象 内存管理 
+   category protocal block
+   copy KVC/KVO
+   foundation框架
+
+3  ios基础 
+     UIKit  
+     基础视图
+
+     高级视图
+
+     自定义视图
+
+     多控制器管理
+
+     触摸事件 手势处理 键盘输入
+
+     MVC 代理
+     通知机制
+
+
+
+
+

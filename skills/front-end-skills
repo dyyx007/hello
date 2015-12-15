@@ -217,8 +217,35 @@ document.getElementById('xxx').scrollIntoView()
 z-index设置
 
 
+21  事件绑定传递参数
+
+  $("#test").bind("click",{id:100,name:'Hello'},function(event){
+alert(event.data.id);
+alert(event.data.name);
+});
+
+ 或 在html节点上 设置属性 然后在事件处理函数里 读取相应属性
 
 
+22 让图片高度等于 宽度
+
+   让图片自动适应DIV容器大小  设置div容器大小 img 宽高 100%
+
+23 如何设置DIV宽度为百分比的正方型
+
+  CSS百分比自适应正方形  
+
+padding 的百分比数值是根据当前元素的宽度来计算的，可以利用这个特性来做一些特殊布局
+
+http://www.tuicool.com/articles/UbIzuau
+
+
+24 event的target和currentTarget的区别
+
+  
+target：触发事件的元素。
+
+currentTarget：事件绑定的元素。
 
 
 
