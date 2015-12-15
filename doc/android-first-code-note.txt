@@ -735,12 +735,142 @@ layout-sw600dp
 ImageView 显示 一张很窄的图片  android:scaleType属性设置为fitXY
 
 
-第5章 全局大喇叭，详解广播机制
+第5章  广播 
+
+
+
+Broadcast Receiver
+标准广播 和有序广播
+Normal broadcasts  异步执行 所有接收者接收广播消息 没有先后顺序 无法截断
+有序广播 Ordered broadcasts） 同步执行 优先级高的先接收消息 然后向后传递或截断
+
+系统级别的广播 开机 电池电量变化 网络状态变化 
+
+注册方式  静态注册 动态注册
+
+
+BroadcastReceiver onReceive()方法
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    intentFilter = new IntentFilter();
+    intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+    networkChangeReceiver = new NetworkChangeReceiver();
+    registerReceiver(networkChangeReceiver, intentFilter);
+}
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    unregisterReceiver(networkChangeReceiver);
+}
 
 
 
 
-第6章  数据持久化
+NetworkChangeReceiver extends BroadcastReceiver
+
+
+@Override
+public void onReceive(Context context, Intent intent) {
+Toast.makeText(context, "network changes", Toast.LENGTH_SHORT).show();
+}
+
+
+android.net.conn.CONNECTIVITY_ CHANGE
+
+
+动态注册与反注册    registerReceiver    unregisterReceiver
+
+
+ConnectivityManager connectionManager = (ConnectivityManager)
+getSystemService(Context.CONNECTIVITY_SERVICE);
+NetworkInfo networkInfo = connectionManager.getActiveNetworkInfo();
+
+if (networkInfo != null && networkInfo.isAvailable()) {
+   Toast.makeText(context, "network is available",
+   Toast.LENGTH_SHORT).show();
+} else {
+   Toast.makeText(context, "network is unavailable",
+   Toast.LENGTH_SHORT).show();
+}
+
+查询系统网络状态 权限 
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+所有的权限列表
+
+http://developer.android.com/reference/android/Manifest.permission.html
+
+静态注册实现开机启动
+
+
+
+public class BootCompleteReceiver extends BroadcastReceiver {
+   @Override
+   public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context, "Boot Complete", Toast.LENGTH_LONG).show();
+   }
+}
+
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+<receiver android:name=".BootCompleteReceiver" >
+    <intent-filter>
+       <action android:name="android.intent.action.BOOT_COMPLETED" />
+    </intent-filter>
+</receiver>
+
+不要在onReceive()方法中添加过多的逻辑或者进行任何的耗时操作，因为在广播接收器中是不允许开启线程的，
+当onReceive()方法运行了较长时间而没有结束时，程序就会报错。
+
+
+发送自定义广播
+    Intent intent = new Intent("com.example.broadcasttest. MY_BROADCAST");
+    sendBroadcast(intent);
+
+发送有序广播 
+
+   Intent intent = new Intent("com.example.broadcasttest. MY_BROADCAST");
+   sendOrderedBroadcast(intent, null);
+
+    接收端 优先级设置
+    <receiver android:name=".MyBroadcastReceiver">
+       <intent-filter android:priority="100" >
+           <action android:name="com.example.broadcasttest.MY_BROADCAST"/>
+       </intent-filter>
+    </receiver>
+
+
+    截断 广播 abortBroadcast();
+
+
+
+
+本地广播
+
+LocalBroadcastManager
+
+本地广播无法通过静态注册的方式来接收！！！
+
+广播的最佳实践  实现强制下线功能
+
+
+ 在别处登录后， 弹出对话框告知用户，登出后跳转到登录界面
+
+
+git
+
+
+
+
+
+第6章  数据持久化 p231
+
+
 
 第7章  内容提供者
 
@@ -771,9 +901,15 @@ ImageView 显示 一张很窄的图片  android:scaleType属性设置为fitXY
 	
 第20章 TODO
 
+0. 自定义控件 layout
+
 1. 手机 横屏时  宽度 高度分别是多少？
 
 2. 简易新闻实例 横屏 双页模式 竖屏 单页模式
+
+3. 强制下线例子
+
+
 
 
 
