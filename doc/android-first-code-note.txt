@@ -596,8 +596,146 @@ p160
 android.app.Fragment
 android.support.v4.app.Fragment 兼容包 用于兼容低版本的系统
 
+android.support.v4.app.Fragment 与 android.support.v4.app.FragmentActivity 一起使用
 
 
+FragmentAddActivity extends  FragmentActivity 
+
+android.support.v4.app.FragmentActivity;
+android.support.v4.app.FragmentManager;
+android.support.v4.app.FragmentTransaction;
+
+注意要配对使用
+
+
+
+
+
+使用 fragment 标签在布局中添加碎片 
+android:name 碎片类全名 
+
+
+<fragment
+android:id="@+id/fragmentLeft"
+android:name="com.dyyx.androidhello.fragment.LeftFragment"
+android:layout_width="0dp"
+android:layout_height="match_parent"
+android:layout_weight="1" />
+
+android:layout_width="0dp" 与 layout_weight 一起使用
+
+动态添加碎片
+
+getFragmentManager
+cannot convert from android.app.FragmentManager to android.support.v4.app.FragmentManager
+
+XxxActivity extends android.support.v4.app.FragmentActivity 
+ getSupportFragmentManager()
+
+
+
+动态添加 fragment  
+
+RightFragment2 fragment = new RightFragment2();
+FragmentManager fragmentManager = getSupportFragmentManager();
+
+FragmentTransaction transaction = fragmentManager.beginTransaction();
+transaction.replace(R.id.layoutRight, fragment);		
+// 添加到返回栈		
+transaction.addToBackStack(null);
+transaction.commit();
+
+
+碎片和活动之间通讯
+
+RightFragment rightFragment = (RightFragment) getFragmentManager().findFragmentById(R.id.right_fragment);
+MainActivity activity = (MainActivity) getActivity();
+
+fragment.getActivity() 
+
+
+
+ 碎片之间 通信
+
+先在一个碎片中得到与它相关联的活动，然后再通过这个活动去获取另外一个碎片
+
+
+碎片的生命周期
+
+运行 暂停 停止 销毁
+
+FragmentTransaction remove replace  
+addToBackStack
+
+
+1. onAttach()
+当碎片和活动建立关联的时候调用。
+2. onCreateView()
+为碎片创建视图（加载布局）时调用。
+3. onActivityCreated()
+确保与碎片相关联的活动一定已经创建完毕的时候调用。
+4. onDestroyView()
+当与碎片关联的视图被移除的时候调用。
+5. onDetach()
+当碎片和活动解除关联的时候调用。
+
+动态加载布
+Qualifiers 限定符
+
+
+layout-large
+
+  常见的限定符
+
+  屏幕 大小 分辨率 方向
+
+
+small 提供给小屏幕设备的资源
+normal 提供给中等屏幕设备的资源
+large 提供给大屏幕设备的资源
+xlarge 提供给超大屏幕设备的资源
+
+ldpi 提供给低分辨率设备的资源（120dpi以下）
+mdpi 提供给中等分辨率设备的资源（120dpi到160dpi）
+hdpi 提供给高分辨率设备的资源（160dpi到240dpi）
+xhdpi 提供给超高分辨率设备的资源（240dpi到320dpi）
+
+land 提供给横屏设备的资源
+port 提供给竖屏设备的资源
+
+
+最小宽度限定符  Smallest-width Qualifier
+
+以dp为单位
+
+layout-sw600dp
+
+最小宽度限定符是在Android 3.2版本引入
+
+横屏时  宽度 高度分别是多少？
+
+
+
+
+
+
+简易新闻实例
+
+手机版和Pad版 
+
+横屏 双页模式
+竖屏 单页模式
+
+ android:padding
+ android:singleLine 单行显示
+
+ android:ellipsize 当文本内容超出控件宽度时，文本的缩略方式， end表示在尾部进行缩略
+
+细线 分割线 
+ImageView 显示 一张很窄的图片  android:scaleType属性设置为fitXY
+
+
+第5章 全局大喇叭，详解广播机制
 
 
 
@@ -626,6 +764,19 @@ android.support.v4.app.Fragment 兼容包 用于兼容低版本的系统
 
 
 第15章  将应用发布到google play
+
+
+
+
+	
+第20章 TODO
+
+1. 手机 横屏时  宽度 高度分别是多少？
+
+2. 简易新闻实例 横屏 双页模式 竖屏 单页模式
+
+
+
 
 
 
