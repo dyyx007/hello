@@ -43,4 +43,12 @@ web应用安全防御100技
 http://danqingdani.blog.163.com/blog/static/186094195201411204383402/
 
 
+构建现代Web应用的安全指南
+http://www.jointforce.com/jfperiodical/article/933
+
+Web安全知识点
+http://segmentfault.com/a/1190000003852910
+
+
+
 

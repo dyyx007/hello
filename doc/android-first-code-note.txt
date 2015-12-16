@@ -870,9 +870,253 @@ git
 
 第6章  数据持久化 p231
 
+ 数据存储
+ 文件  SharedPreference 数据库SqlLite sd卡  
+
+Context openFileOutput() 
+文件名  默认存储到/data/data/<package name>/files/目录下
+操作模式 MODE_PRIVATE  MODE_APPEND （追加 ）
+MODE_PRIVATE 默认 覆盖   
+Android 4.2版本中被废弃的 2种模式  MODE_WORLD_READABLE MODE_WORLD_WRITEABLE  其他应用可读 可写
+
+FileOutputStream
+BufferedWriter
+
+String data = "Data to save";
+FileOutputStream out = null;
+BufferedWriter writer = null;
+
+out = openFileOutput("data", Context.MODE_PRIVATE);
+writer = new BufferedWriter(new OutputStreamWriter(out));
+writer.write(data);
+writer.close();
+
+
+DDMS  File Explorer 查看文件内容
+
+读取文件  Context openFileInput()
+
+FileInputStream in = null;
+BufferedReader reader = null;
+StringBuilder content = new StringBuilder();
+
+in = openFileInput("data");
+reader = new BufferedReader(new InputStreamReader(in));
+String line = "";
+
+while ((line = reader.readLine()) != null) {
+content.append(line);
+}
+
+reader.close():
+
+EditText edit;
+edit.setSelection(inputText.length());
+设置光标位置
+
+
+SharedPreferences
+
+获取 SharedPreferences 对象的三种方式
+
+ Context getSharedPreferences() 
+  文件名  存储目录  /data/data/<package name>/shared_prefs/ 
+ 两种操作模式   MODE_PRIVATE  MODE_MULTI_PROCESS
+
+ MODE_WORLD_READABLE和MODE_WORLD_WRITEABLE这两种模式已在Android 4.2版本中被废弃
+
+Activity类中的getPreferences()方法  不需要文件名 将当前活动的类名作为文件名
+
+PreferenceManager类中的getDefaultSharedPreferences()方法
+
+getString() getInt() getBoolean()
+
+
+<CheckBox android:id="@+id/remember_pass" android:layout_height="wrap_content" />
+ rememberPass.isChecked()   检查复选框是否被选中
+
+SharedPreferences.Editor editor; 
+clear  commit
+
+SQLiteOpenHelper
+onCreate() onUpgrade()  创建 升级数据库
+
+getReadableDatabase() getWritableDatabase()
+
+SQLiteOpenHelper 构造函数 
+
+第一个参数 Context
+第二个参数 数据库名
+第三个参数 在查询数据的时候返回一个自定义的 Cursor，一般传入null
+第四个参数 当前数据库的版本号，可用于对数据库进行升级操作
+
+数据库文件存放目录 /data/data/<package name>/databases/ 
+
+create table Book (
+id integer primary key autoincrement,
+author text,
+price real,
+pages integer,
+name text)
+
+
+private Context mContext;
+
+public MyDatabaseHelper(Context context, String name, CursorFactory factory, int version) {
+  super(context, name, factory, version);
+  mContext = context;
+}
+@Override
+public void onCreate(SQLiteDatabase db) {
+  db.execSQL(CREATE_BOOK);
+  Toast.makeText(mContext, "Create succeeded", Toast.LENGTH_SHORT).show();
+}
+
+
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+}
+
+
+dbHelper = new MyDatabaseHelper(this, "BookStore.db", null, 1);
+dbHelper.getWritableDatabase();
+
+使用 platform-tools 的 adb 查看数据库
+adb shell
+cd /data/data/com.example.databasetest/databases/
+
+BookStore.db BookStore.db-journal
+sqlite3 BookStore.db
+.table  列出表
+.schema 查看建表语句
+.exit .quit退出
+
+
+数据库不存在时执行 onCreat
+数据库版本需要升级时 通过版本号判断 执行 onUpgrade
+
+
+CRUD  Create Retrieve Update Delete
+
+
+ 调用SQLiteOpenHelper的getReadableDatabase()或getWritableDatabase()方法是可以用于创建和升级数据库的，
+ 这两个方法还都会返回一个SQLiteDatabase对象，借助这个对象就可以对数据进行操作
+
+insert  ContentValues
+
+
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+ContentValues values = new ContentValues();
+// 开始组装第一条数据
+values.put("name", "The Da Vinci Code");
+values.put("author", "Dan Brown");
+values.put("pages", 454);
+values.put("price", 16.96);
+db.insert("Book", null, values); // 插入第一条数据
+values.clear();
+// 开始组装第二条数据
+values.put("name", "The Lost Symbol");
+values.put("author", "Dan Brown");
+values.put("pages", 510);
+values.put("price", 19.95);
+db.insert("Book", null, values); // 插入第二条数据
+
+
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+ContentValues values = new ContentValues();
+values.put("price", 10.99);
+db.update("Book", values, "name = ?", new String[] { "The Da Vinci Code" });
+
+
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+db.delete("Book", "pages > ?", new String[] { "500" });
+
+query方法
+
+第一个参数 表名
+第二个参数  指定查询哪几列，如果不指定则默认查询所有列
+第三第四个参数  约束查询某一行或某几行的数据，不指定则查询所有行的数据
+第五个参数 指定group by列，不指定则不进行group by操作
+第六个参数 用于对group by之后的数据进行进一步的过滤，不指定则不进行过滤
+第七个参数 指定查询结果的排序方式 ，不指定则使用默认的排序方式
+
+
+query()方法返回一个Cursor对象，从这个对象获取数据 
+
+
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+// 查询Book表中所有的数据
+Cursor cursor = db.query("Book", null, null, null, null, null, null);
+if (cursor.moveToFirst()) {
+do {
+// 遍历Cursor对象，取出数据并打印
+String name = cursor.getString(cursor. getColumnIndex("name"));
+String author = cursor.getString(cursor. getColumnIndex("author"));
+int pages = cursor.getInt(cursor.getColumnIndex ("pages"));
+double price = cursor.getDouble(cursor. getColumnIndex("price"));
+
+} while (cursor.moveToNext());
+cursor.close();
+
+
+ boolean moveToFirst();
+ boolean moveToNext();
+
+直接使用SQL来操作数据库
+
+添加数据的方法如下：
+db.execSQL("insert into Book (name, author, pages, price) values(?, ?, ?, ?)",
+new String[] { "The Da Vinci Code", "Dan Brown", "454", "16.96" });
+db.execSQL("insert into Book (name, author, pages, price) values(?, ?, ?, ?)",
+new String[] { "The Lost Symbol", "Dan Brown", "510", "19.95" });
+更新数据的方法如下：
+db.execSQL("update Book set price = ? where name = ?", new String[] { "10.99", "The Da Vinci Code" });
+删除数据的方法如下：
+db.execSQL("delete from Book where pages > ?", new String[] { "500" });
+
+查询数据的方法如下：
+db.rawQuery("select * from Book", null);
+
+除了查询数据的时候调用的是SQLiteDatabase的rawQuery()方法，其他的操作都是调用的execSQL()方法
+
+
+使用事务
+
+
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+try{
+     db.beginTransaction(); // 开启事务
+     ...
+     db.setTransactionSuccessful(); // 事务已经执行成功  提交事务
+}finally{
+   db.endTransaction(); // 结束事务
+}
+
+数据库升级最佳实践
+
+增量更新 版本判断
+
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+      switch (oldVersion) {
+         case 1:
+             db.execSQL(CREATE_CATEGORY);
+         case 2:
+             db.execSQL("alter table Book add column category_id integer");
+         default:
+}
+}
+
 
 
 第7章  内容提供者
+
+ 跨应用共享数据 p279
+
+
+
+
 
 第8章  多媒体
 
@@ -908,6 +1152,9 @@ git
 2. 简易新闻实例 横屏 双页模式 竖屏 单页模式
 
 3. 强制下线例子
+
+4. 登陆记住密码功能
+
 
 
 
