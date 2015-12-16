@@ -1,0 +1,27 @@
+
+安全 
+
+对称 非对称 加密 
+MD5 RSA DES
+
+Message-Digest Algorithm 5
+RSA算法的名字以发明者的名字命名：Ron Rivest, Adi Shamir 和Leonard Adleman
+DES  Data Encryption Standard
+
+
+https  中间人攻击
+
+
+RSA in JavaScript http://www.ohdave.com/rsa/
+
+
+private key
+publick key
+token
+
+salt  
+拖库 撞库 暴力破解
+
+
+
+
