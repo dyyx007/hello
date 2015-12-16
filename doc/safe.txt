@@ -23,5 +23,24 @@ salt
 拖库 撞库 暴力破解
 
 
+用RSA加密实现Web登录密码加密传输 
+http://www.cnblogs.com/AloneSword/archive/2013/09/18/3329359.html
+
+开发安全的Android应用 
+http://www.devtf.cn/?p=1158
+
+Web前端慢加密
+http://drops.wooyun.org/tips/10665
+
+RSA数学原理摘要
+http://blog.csdn.net/lonelyrains/article/details/22069337
+
+
+构建安全的Mobile API
+http://stackbox.org/2015-06-build-safe-mobile-apis/
+
+web应用安全防御100技
+http://danqingdani.blog.163.com/blog/static/186094195201411204383402/
+
 
 
