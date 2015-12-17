@@ -1114,11 +1114,166 @@ public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
  跨应用共享数据 p279
 
+跨程序跨应用数据共享
+Content Provider 
+
+
+电话簿 短信 媒体库
+
+数据访问 ContentResolve  Context getContentResolver()
+
+注意与 SQLiteDatabase  对比
+Uri参数
+ 权限（authority） 路径（path）
+权限用于对不同的应用做区分的，为了避免冲突，一般采用程序包名的方式来命名。
+比如某个程序的包名是com.example.app，那么该程序对应的权限为com.example.app.provider
+
+路径则用于对同一应用中不同的表做区分
+
+比如某个程序的数据库里存在两张表，table1和table2
+URI   com.example.app.provider/table1 com.example.app.provider/table2
+在前面加上协议
+
+content://com.example.app.provider/table1
+content://com.example.app.provider/table2
+
+Uri uri = Uri.parse("content://com.example.app.provider/table1")
+Cursor cursor = getContentResolver().query(uri,projection,selection,selectionArgs,sortOrder);
+
+if (cursor != null) {
+    while (cursor.moveToNext()) {
+       String column1 = cursor.getString(cursor.getColumnIndex("column1"));
+       int column2 = cursor.getInt(cursor.getColumnIndex("column2"));
+    }
+    cursor.close();
+}
+
+ContentValues values = new ContentValues();
+values.put("column1", "text");
+values.put("column2", 1);
+getContentResolver().insert(uri, values);
+
+
+ContentValues values = new ContentValues();
+values.put("column1", "");
+getContentResolver().update(uri, values, "column1 = ? and column2 = ?", new String[] {"text", "1"});
+getContentResolver().delete(uri, "column2 = ?", new String[] { "1" });
+
+读取联系人
+
+Cursor cursor = null;
+ 
+// 查询联系人数据
+cursor = getContentResolver().query(
+ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+null, null, null, null);
+while (cursor.moveToNext()) {
+// 获取联系人姓名
+String displayName = cursor.getString(cursor.getColumnIndex(
+ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+// 获取联系人手机号
+String number = cursor.getString(cursor.getColumnIndex(
+ContactsContract.CommonDataKinds.Phone.NUMBER));
+contactsList.add(displayName + "\n" + number);
+}
+cursor.close();
+
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+
+
+
+创建自己的内容提供者
+
+
+ContentProvider类六个抽象方法
+
+
+public class MyProvider extends ContentProvider {
+    @Override
+    public boolean onCreate() {
+        return false;
+    }
+    @Override
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+       return null;
+    }
+    @Override
+    public Uri insert(Uri uri, ContentValues values) {
+        return null;
+    }
+    @Override
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+       return 0;
+    }
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+       return 0;
+    }
+    @Override
+    public String getType(Uri uri) {
+       return null;
+    }
+ }
+
+
+getType 根据传入的内容URI来返回相应的MIME类型
+
+
+content://com.example.app.provider/table1
+content://com.example.app.provider/table1/1
+
+* 表示匹配任意长度的任意字符
+# 表示匹配任意长度的数字
+
+content://com.example.app.provider/*
+content://com.example.app.provider/table1/#
+
+
+UriMatcher addURI()
+
+
+URI对应的MIME字符串主要由三部分组分
+
+1. 必须以vnd开头。
+2. 如果URI以路径结尾，则后接android.cursor.dir/ 如果内容URI以id结尾，则后接android.cursor.item/ 
+3. 最后接上vnd.<authority>.<path> 
+
+content://com.example.app.provider/table1 对应 
+
+vnd.android.cursor.dir/vnd.com.example.app.provider.table1
+
+content://com.example.app.provider/table1/1 对应
+
+vnd.android.cursor.item/vnd.com.example.app.provider.table1
+
+<provider
+android:name="com.example.databasetest.DatabaseProvider"
+android:authorities="com.example.databasetest.provider" >
+</provider>
+
+
+git p303
 
 
 
 
-第8章  多媒体
+
+
+
+
+
+
+
+
+第8章  多媒体  p311
+
+Notification
+
+活动 广播接收器 里都可以创建
+
+NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+
+
 
 
 第9章  服务
@@ -1154,6 +1309,9 @@ public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 3. 强制下线例子
 
 4. 登陆记住密码功能
+
+5. 数据提供者实例
+
 
 
 
