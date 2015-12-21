@@ -1259,12 +1259,6 @@ git p303
 
 
 
-
-
-
-
-
-
 第8章  多媒体  p311
 
 Notification
@@ -1325,13 +1319,103 @@ sendMultipart- TextMessage()
 Eclipse DDMS视图 devices
 
 
+Environment.getExternalStorageDirectory()
+/storage/emulated/0
+
+ddms / File Expolorer
+
+window / show view /other / android
+devices 
+File Explorer
+LogCat
+Resource Explorer
+
+音频 视频播放
+
+MediaPlayer
 
 
+File file = new File(Environment.getExternalStorageDirectory(), "music.mp3");
+mediaPlayer.setDataSource(file.getPath()); // 指定音频文件的路径
+mediaPlayer.prepare(); // 让MediaPlayer进入到准备状态
 
+VideoView
 
+视频格式  播放效率
 
 
 第9章  服务  p356
+
+ Symbian Android  iOS
+
+service 
+Thread run start
+Runnable
+
+子线程中更新UI
+android.view.ViewRoot$CalledFromWrongThreadException 
+
+Handler
+public void handleMessage(Message msg)
+
+
+Message message = new Message();
+message.what = UPDATE_TEXT;
+handler.sendMessage(message); // 将Message对象发送出去
+
+android.os.Message
+
+android中的异步消息处理
+
+ Message Handler MessageQueue Looper
+
+
+
+AsyncTask
+
+doInBackground() 执行具体的耗时任务
+onProgressUpdate() UI操作
+onPostExecute()  执行一些任务的收尾工作
+
+new DownloadTask().execute();
+
+service
+
+onCreate() onStartCommand() onDestroy()
+
+binder 
+
+重复解绑
+java.lang.IllegalArgumentException: Service not registered: com.dyyx.androidhello.ServiceActivity$2@424148c0
+
+
+ onBind 方法中需返回一个IBinder实例 否则onServiceConnected方法不会调用
+onServiceDisconnected() 在连接正常关闭的情况下不会被调用的, 只在Service 被破坏了或者被杀死的时候调用
+
+BIND_AUTO_CREATE  活动和服务进行绑定后自动创建服务 
+onCreate()方法会被执行，但onStartCommand()方法不会执行
+
+
+service可以和多个activity绑定，返回同一个binder实例？ 待验证
+unbind 呢 ？
+
+对一个服务既调用了startService()方法，又调用了bindService()方法
+这种情况下要同时调用stopService()和unbindService()方法，onDestroy()方法才会执行
+
+调用startForeground()方法后就会让MyService变成一个前台服务，并在系统状态栏显示出来
+必须和通知一起使用 ？
+
+
+
+
+
+前台服务
+IntentService
+
+后台定时任务
+
+
+
 
 
 
@@ -1372,6 +1456,9 @@ Eclipse DDMS视图 devices
 5. 数据提供者实例
 
 6. 静态 动态注册都无法接收到短信广播
+
+7. 从相册选取图片没有进入裁剪并显示
+
 
 
 
