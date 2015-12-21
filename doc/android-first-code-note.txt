@@ -1274,9 +1274,68 @@ Notification
 NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
 
+状态栏通知Notification、NotificationManager详解 
+http://blog.csdn.net/feng88724/article/details/6259071
+
+添加振动
+notification.defaults |= Notification.DEFAULT_VIBRATE;  
+long[] vibrate = {0,100,200,300};  
+notification.vibrate = vibrate; 
+
+<uses-permission android:name="android.permission.VIBRATE"></uses-permission>  
 
 
-第9章  服务
+接收 发送短信 p321
+
+
+接收到短信时,系统广播 android.provider.Telephony.SMS_RECEIVED 
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
+短信拦截
+
+发送
+
+<uses-permission android:name="android.permission.SEND_SMS" />
+
+静态 动态注册都无法接收到短信广播
+
+
+ 
+
+android.telephony.SmsManager;
+android.telephony.SmsMessage;
+
+SmsManager smsManager = SmsManager.getDefault();
+String to = editTextSmsTo.getText().toString();
+to = "10086";
+String content = editTextSmsContent.getText().toString();
+smsManager.sendTextMessage(to, null,content, null, null);
+
+public void sendTextMessage(
+            String destinationAddress, String scAddress, String text,
+            PendingIntent sentIntent, PendingIntent deliveryIntent)
+
+每条短信的长度不得超过160个字符  可以把短信分割成多条短信来发送 
+sendMultipart- TextMessage()
+
+
+摄像头和相册
+
+91助手 驱动
+
+Eclipse DDMS视图 devices
+
+
+
+
+
+
+
+
+第9章  服务  p356
+
+
+
+
 
 第10章  网络技术
 
@@ -1311,6 +1370,10 @@ NotificationManager manager = (NotificationManager)getSystemService(Context.NOTI
 4. 登陆记住密码功能
 
 5. 数据提供者实例
+
+6. 静态 动态注册都无法接收到短信广播
+
+
 
 
 
