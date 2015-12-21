@@ -15,6 +15,7 @@
    史上最全前端开发面试问题及答案整理 https://github.com/AutumnsWind/Front-end-questions-to-the-interview-stage
    前端面试题和答案 https://github.com/qiu-deqing/FE-interview
    前端开发规范 http://front-end-standards.com/
+   JavaScript 资源大全中文版   https://github.com/jobbole/awesome-javascript-cn
 
 客户端android
 
@@ -24,6 +25,7 @@
 
 服务端 java
 
+  最近5年133个Java面试问题列表  http://www.importnew.com/17232.html
   Java线程面试题Top50 http://www.importnew.com/12773.html
   20个最佳的Java集合框架面试题目 http://xxwenda.com/article/586
   java知识点 https://github.com/dyyx007/hello/blob/master/skills/java.txt
@@ -41,7 +43,14 @@
      10大算法概念汇总 http://blog.jobbole.com/52144/
 
 
+安全
+ 
+     安全知识点               https://github.com/dyyx007/hello/blob/master/doc/safe.txt
+     web应用安全防御100技     https://github.com/dyyx007/hello/blob/master/doc/web-app-safe.txt
+     
 
+
+     
 
    
 
