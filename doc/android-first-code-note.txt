@@ -1516,12 +1516,88 @@ public interface HttpCallbackListener {
 
 第11章  位置服务 LBS p427
 
+Location Based Service
+
+定位  LocationManager
+
+LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+String provider = LocationManager.NETWORK_PROVIDER;
+Location location = locationManager.getLastKnownLocation(provider);
+
+Location对象中包含了经度、纬度、海拔等一系列的位置信息
+
+一般有三种位置提供器可供选择，GPS_PROVIDER、NETWORK_PROVIDER和PASSIVE_PROVIDER
+前两种使用的比较多 分别表示使用GPS定位和使用网络定位
+GPS定位的精准度比较高，但是非常耗电，而网络定位的精准度稍差，但耗电量比较少
+
+List<String> providerList = locationManager.getProviders(true);
+返回支持的位置提供器
+
+getLastKnownLocation() 获取到设备当前的位置信息
+requestLocationUpdates() 添加位置监听器
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+Geocoding API   google
+
+百度地图
+
+ java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.dyyx.androidhello/com.dyyx.androidhello.LbsActivity}:
+ java.lang.IllegalStateException: System services not available to Activities before onCreate()
+
+locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE); 
+需要在onCreate方法里调用
+
+
+红米2  打开定位
+
+设置 / 其他高级设置 / 安全和隐私 / 位置
+
+locationManager.requestLocationUpdates(defaultProvider, 5000, 1, locationListener);
+
+	location = locationManager.getLastKnownLocation(provider);
+
+LocationManager mgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);  
+Location location = mgr.getLastKnownLocation(bundle.getString("provider"));  
+while(location  == null){  
+  mgr.requestLocationUpdates("gps", 60000, 1, locationListener);  
+} 
+
+http://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.96145&sensor=false
+
+
+googleapis  geocode
+
+办公室获取的经纬度
+http://maps.googleapis.com/maps/api/geocode/json?latlng=30.282719,120.023083&sensor=false
+latlng
+latitude longitude  纬度 经度
+
+Window/Preferences/Android/Build
+C:\Users\gang.dug\.android\debug.keystore
+
+keystore创建
+
+keytool -list -v –keystore  keystoreFile
+
+百度地图sdk
+
+
+jar  so 文件
+
+armeabi 目录
 
 
 
 
 
-第12章  传感器
+
+
+第12章  传感器 p459
+
+光照传感器 加速度传感器 地磁传感器 压力传感器 温度传感器
+
+
 
 
 第13章  高级技巧
@@ -1555,6 +1631,9 @@ public interface HttpCallbackListener {
 7. 从相册选取图片没有进入裁剪并显示
 
 8. service 定时启动自己 ？
+
+9. 百度地图sdk使用
+
 
 
 
