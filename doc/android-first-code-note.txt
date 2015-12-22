@@ -1439,7 +1439,23 @@ System.currentTimeMillis() 获取  1970年1月1日0点至今所经历时间的�
 AlarmManager setExact()方法替代set()方法， 可以保证任务准时执行
 
 
+AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+long oneMinute =   60L * 1000L; 
+long triggerAtTime = SystemClock.elapsedRealtime() + oneMinute;
+Intent i = new Intent(this, AlarmRecv.class);
+PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
+manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
 
+pendingIntent深入理解 http://blog.csdn.net/yuzhiboyi/article/details/8484771
+
+要得到一个pendingIntent对象，使用方法类的静态方法
+getActivity(Context, int, Intent, int),getBroadcast(Context, int, Intent, int),getService(Context, int, Intent, int) 
+分别对应着Intent的3个行为，跳转到一个activity组件、打开一个广播组件和打开一个服务组件。
+
+
+
+
+service 定时启动自己   ？
 
 
 第10章  网络技术   p394
@@ -1480,7 +1496,7 @@ AlarmManager setExact()方法替代set()方法， 可以保证任务准时执行
 
 7. 从相册选取图片没有进入裁剪并显示
 
-
+8. service 定时启动自己 ？
 
 
 
