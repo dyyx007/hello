@@ -1414,14 +1414,35 @@ IntentService
 
 后台定时任务
 
+java Timer  
+Android的Alarm 机制
+休眠 导致Timer无法运行
+Alarm 则不会，唤醒cpu      唤醒CPU和唤醒屏幕 是梁惠事情
+AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+ 设定一个任务在10秒钟后执行 
+long triggerAtTime = SystemClock.elapsedRealtime() + 10 * 1000;
+manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pendingIntent);
+
+或者
+
+long triggerAtTime = System.currentTimeMillis() + 10 * 1000;
+manager.set(AlarmManager.RTC_WAKEUP, triggerAtTime, pendingIntent);
+
+ELAPSED_REALTIME ELAPSED_REALTIME_WAKEUP   RTC  RTC_WAKEUP
+
+SystemClock.elapsedRealtime() 获取系统开机至今所经历时间的毫秒数 
+
+System.currentTimeMillis() 获取  1970年1月1日0点至今所经历时间的毫秒数 
+
+
+AlarmManager setExact()方法替代set()方法， 可以保证任务准时执行
 
 
 
 
 
-
-
-第10章  网络技术
+第10章  网络技术   p394
 
 第11章  位置服务 LBS
 
