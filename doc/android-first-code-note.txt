@@ -1460,7 +1460,65 @@ service 定时启动自己   ？
 
 第10章  网络技术   p394
 
-第11章  位置服务 LBS
+
+webview
+
+HttpURLConnection
+HttpClient
+
+URL url = new URL("http://www.baidu.com");
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+connection.setRequestMethod("GET");
+connection.setConnectTimeout(8000);
+connection.setReadTimeout(8000);
+InputStream in = connection.getInputStream();
+connection.disconnect();
+
+
+Message message = new Message();
+message.what = SHOW_RESPONSE;
+// 将服务器返回的结果存放到Message中
+message.obj = response.toString();
+
+handler.sendMessage(message);
+
+
+connection.setRequestMethod("POST");
+DataOutputStream out = new DataOutputStream(connection.getOutputStream());
+out.writeBytes("username=admin&password=123456");
+
+xml  解析
+pull  sax
+json 解析
+
+org.json.JSONArray
+
+javax.xml.parsers.SAXParserFactory;
+org.xmlpull.v1.XmlPullParserFactory
+
+
+gson
+
+
+Gson gson = new Gson();
+Person person = gson.fromJson(jsonData, Person.class);
+
+List<Person> peoples = gson.fromJson(jsonData, new TypeToken<List<Person>>() {}.getType());
+
+
+http网络库封装 
+
+public interface HttpCallbackListener {
+    void onFinish(String response);
+    void onError(Exception e);
+}
+
+第11章  位置服务 LBS p427
+
+
+
+
 
 
 第12章  传感器
