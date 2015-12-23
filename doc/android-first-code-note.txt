@@ -5,6 +5,26 @@
 https://pic3.zhimg.com/f580d9169d8292417d0c72935fcc983a_r.jpg
 
 
+概述
+
+01 简介     
+02 Activity          p30
+03 UI控件            p87
+04 fragment          p160
+05 广播              p197
+06 数据持久化        p231
+07 ContentProvider   p279
+08 多媒体            p311
+09 service           p356
+10 network           p394
+11 LBS               p428
+12 传感器            p459
+13 高级技巧          p476
+14 天气预报实战      p497
+15 应用发布          p551
+
+
+
 
 第一章 安卓简介
 
@@ -873,6 +893,43 @@ git
  数据存储
  文件  SharedPreference 数据库SqlLite sd卡  
 
+ 读取应用目录下的文件
+ 根据绝对路径读取
+
+ 外部存储external storage和内部存储internal storage
+注意内部存储不是内存
+手机连接电脑，能被电脑识别的部分一定是外部存储
+Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+
+内置SD卡路径 /storage/emulated/0
+/storage/emulated/0/data.txt
+
+
+应用数据清理
+Clear data   Clear cache
+
+ Context context = this.getApplicationContext();
+ 
+context.getCacheDir() 
+context.getDatabasePath("temp") 
+context.getFilesDir() 
+getApplicationContext().getFilesDir().getAbsolutePath();
+
+context.getPackageCodePath() 
+context.getPackageResourcePath()
+
+
+读取 assets 目录下的文件  
+ InputStream  in = getAssets().open("test.txt"); 
+读取 res 文件
+InputStream is = getResources().openRawResource(R.raw.xx);
+
+assets与res/raw区别
+assets:用于存放需要打包到应用程序的静态文件 ,支持子目录，不生成资源id,使用相对路径访问
+res资源会被打包，生成资源id，不支持子目录
+
+
+
 Context openFileOutput() 
 文件名  默认存储到/data/data/<package name>/files/目录下
 操作模式 MODE_PRIVATE  MODE_APPEND （追加 ）
@@ -1670,6 +1727,8 @@ Debug As / Android Application
 
 
 第14章  实战 天气app  p497
+
+
 
 
 
