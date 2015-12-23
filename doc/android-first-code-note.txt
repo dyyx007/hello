@@ -1602,8 +1602,75 @@ armeabi 目录
 
 第13章  高级技巧
 
+全局获取Context
 
-第14章  实战 天气app
+android.app.Application
+
+@Override
+public void onCreate() {
+		super.onCreate();
+		context = getApplicationContext();
+
+使用Intent传递复杂对象
+
+Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+intent.putExtra("string_data", "hello");
+intent.putExtra("int_data", 100);
+startActivity(intent);
+
+
+
+getIntent().getStringExtra("string_data");
+getIntent().getIntExtra("int_data", 0);
+
+ Serializable  Parcelable
+
+Person person = new Person();
+person.setName("Tom");
+person.setAge(20);
+Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+intent.putExtra("person_data", person);
+startActivity(intent);
+
+Person person = (Person) getIntent().getSerializableExtra("person_data");
+
+
+
+
+
+Person person = (Person) getIntent().getParcelableExtra("person_data");
+
+
+日志定制工具  定义输出级别
+
+public class LogUtil {
+public static final int VERBOSE = 1;
+public static final int DEBUG = 2;
+public static final int INFO = 3;
+public static final int WARN = 4;
+public static final int ERROR = 5;
+public static final int NOTHING = 6;
+public static final int LEVEL = VERBOSE;
+
+
+public static void v(String tag, String msg) {
+   if (LEVEL <= VERBOSE) {
+     log.v(tag, msg);
+   }
+}
+
+Log.v() Log.d() Log.i() Log.w() Log.e()
+
+debug
+Debug As / Android Application
+
+单元测试
+
+
+
+
+第14章  实战 天气app  p497
+
 
 
 第15章  将应用发布到google play
@@ -1633,6 +1700,9 @@ armeabi 目录
 8. service 定时启动自己 ？
 
 9. 百度地图sdk使用
+
+10.  单元测试
+
 
 
 
