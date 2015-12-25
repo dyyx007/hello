@@ -988,6 +988,10 @@ PreferenceManager类中的getDefaultSharedPreferences()方法
 
 getString() getInt() getBoolean()
 
+tableLayout  android:stretchColumns="*"  拉升所有列 占满整个屏幕
+
+
+
 
 <CheckBox android:id="@+id/remember_pass" android:layout_height="wrap_content" />
  rememberPass.isChecked()   检查复选框是否被选中
@@ -1652,8 +1656,11 @@ armeabi 目录
 
 第12章  传感器 p459
 
-光照传感器 加速度传感器 地磁传感器 压力传感器 温度传感器
+光照传感器 加速度传感器 地磁传感器 压力传感器 温度传感器 陀螺仪传感器
 
+SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+sensorManager.registerListener(lightListener, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
 
 
 
