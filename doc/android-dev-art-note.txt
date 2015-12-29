@@ -2,6 +2,8 @@
 安卓开发艺术探索读书笔记
 http://hujiaweibujidao.github.io/blog/2015/12/05/Art-of-Android-Development-Reading-Notes/
 
+https://github.com/singwhatiwanna/android-art-res
+
 http://book.douban.com/subject/26599538/
 
 
@@ -27,36 +29,102 @@ chapter00 目录
 chapter01   Activity的生命周期和启动模式
 
 
+不可见 可见 前台（可交互）
+当activity由不见变为可见时  onRestart会被调用
+
+从Activity A进入到Activity B，回调顺序 
+onPause(A) -> onCreate(B) -> onStart(B) -> onResume(B) -> onStop(A) 
+在onPause方法中不要做耗时操作
+
+透明主题 
+
+Activity被异常终止时 ，调用 onSaveInstanceState
+
+优先级 前台Activity 可见但非前台Activity 后台Activity
+
+android:configChanges="xxx"
+
+local   一般指切换了系统语言 
+keyboardHidden 键盘的可访问性发生了变化 比如用户调出了键盘 
+orientation 屏幕方向发生了变化，比如旋转了手机屏幕
+
+配置了android:configChanges之后 ， 
+Activity就不会在对应变化发生时重新创建，而是调用Activity的onConfigurationChanged方法。
+
+启动模式 
+
+非Activity类型的Context(例如ApplicationContext、Service等)中以standard模式启动新的Activity是不行的，
+因为这类context并没有任务栈，所以需要为待启动Activity指定FLAG_ACTIVITY_NEW_TASK标志位。
+
+前台任务栈和后台任务栈
+TaskAffinity用来指定Activity所需要的任务栈，任务相关性
+默认情况下，所有Activity所的任务栈的名字为应用的包名
+
+TaskAffinity属性主要和singleTask启动模式或allowTaskReparenting属性配对使用，其他情况下没有意义。
+
+
+FLAG_ACTIVITY_CLEAR_TOP
+
+设置启动模式的方式
+android:launchMode 
+代码intent.addFlags()
+
+FLAG_ACTIVITY_NEW_TASK,FLAG_ACTIVITY_SINGLE_TOP,FLAG_ACTIVITY_CLEAR_TOP
+Intent.FLAG_ACTIVITY_NO_HISTORY
+
+FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS  Activity不会在最近启动的Activity的列表中保存 
+android:excludeFromRecents="true"
+
+
+IntentFilter
+
+
+chapter02  IPC
+
+安卓的IPC
+binder  socket
 
 
 
+给四大组件指定android:process属性就可以开启多进程模式
+
+默认进程名是包名
 
 
+进程名以:开头的进程属于当前应用的私有进程，其他应用的组件不可以和它跑在同一个进程中，
+而进程名不以:开头的进程属于全局进程，其他应用通过ShareUID方法可以和它跑在同一个进程中。
+
+android:process=":xyz" //进程名是 packageName:xyz
+android:process="aaa.bbb.ccc" //进程名是 aaa.bbb.ccc
+
+进程 jvm  application
+SharedPreferences不支持并发读写
+
+应用 UID  ShareUID 签名 PID
+ 安卓为单用户系统 
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.perseus.a"
+　　　　　 android:versionCode="1"
+　　　　　 android:versionName="1.0"
+          android:sharedUserId="com.share"
+>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.perseus.b"
+　　　　　 android:versionCode="1"
+　　　　　 android:versionName="1.0"
+          android:sharedUserId="com.share"
+>
+
+uid 和 签名一致才能共享数据
 
 
+序列化接口 Serializable Parcelable
 
+serialVersionUId
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1.静态成员变量属于类不属于对象，所以不参与序列化过程；
+2.声明为transient的成员变量不参与序列化过程。
 
 
 
