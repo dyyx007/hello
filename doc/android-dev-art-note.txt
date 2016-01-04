@@ -126,8 +126,32 @@ serialVersionUId
 1.静态成员变量属于类不属于对象，所以不参与序列化过程；
 2.声明为transient的成员变量不参与序列化过程。
 
+IPC bundle SharedPreferences
+binder
+Messenger 
+AIDL
+RemoteCallbackList
+ContentProvider
+Socket
+
+Android实战技术：IPC方式简介教程
+http://blog.csdn.net/hitlion2008/article/details/9773251
+
+Android---把内容发送给另外一个应用程序
+http://www.2cto.com/kf/201304/201183.html
+
+ Android 基于Message的进程间通信 Messenger完全解析
+http://blog.csdn.net/lmj623565791/article/details/47017485
+
+Android aidl Binder框架浅析
+http://blog.csdn.net/lmj623565791/article/details/38461079
 
 
+ android.os.Messenger
+
+chapter03  View的事件体系
+
+ViewGroup  View
 
 
 
