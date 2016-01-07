@@ -1,0 +1,181 @@
+
+spring事务管理
+
+
+Spring声明式事务配置管理方法
+http://www.cnblogs.com/rushoooooo/archive/2011/08/28/2155960.html
+
+
+org.springframework.transaction.interceptor.TransactionProxyFactoryBean
+org.springframework.aop.framework.AbstractSingletonProxyFactoryBean
+ org.springframework.aop.framework.ProxyConfig
+
+Spring实现AOP的4种方式
+http://blog.csdn.net/udbnny/article/details/5870076
+
+
+<property name="*Service">
+PROPAGATION_REQUIRED，ISOLATION_READ_COMMITTED，TIMEOUT_20，
++AbcException，+DefException，-HijException
+</property>
+
+
+
+传播行为 [，隔离级别] [，只读属性] [，超时属性] [，不影响提交的异常] [，导致回滚的异常]
+
+传播行为是唯一必须设置的属性，其他都可以忽略，Spring为我们提供了合理的默认值。
+
+传播行为的取值必须以“PROPAGATION_”开头，
+具体包括：PROPAGATION_MANDATORY、 PROPAGATION_NESTED、PROPAGATION_NEVER、
+PROPAGATION_NOT_SUPPORTED、 PROPAGATION_REQUIRED、PROPAGATION_REQUIRES_NEW、PROPAGATION_SUPPORTS，共七种取值。
+
+隔离级别的取值必须以“ISOLATION_”开头，具体包括：
+ISOLATION_DEFAULT、 ISOLATION_READ_COMMITTED、ISOLATION_READ_UNCOMMITTED、 
+ISOLATION_REPEATABLE_READ、ISOLATION_SERIALIZABLE，共五种取值。
+
+如果事务是只读的，那么我们可以指定只读属性，使用“readOnly”指定。否则我们不需要设置该属性。
+
+超时属性的取值必须以“TIMEOUT_”开头，后面跟一个int类型的值，表示超时时间，单位是秒。
+
+不影响提交的异常是指，即使事务中抛出了这些类型的异常，事务任然正常提交。
+必须在每一个异常的名字前面加上“+”。异常的名字可以是类名的一部分。比如“+RuntimeException”、“+tion”等等。
+
+导致回滚的异常是指，当事务中抛出这些类型的异常时，事务将回滚。
+必须在每一个异常的名字前面加上“-”。异常的名字可以是类名的全部或者部分，比如“-RuntimeException”、“-tion”等等。
+
+<!-- 配置事务属性 -->
+   <property name="transactionAttributes">
+    <props>
+     <prop key="delete*">PROPAGATION_REQUIRED</prop>
+     <prop key="add*">PROPAGATION_REQUIRED</prop>
+     <prop key="update*">PROPAGATION_REQUIRED</prop>
+     <prop key="save*">PROPAGATION_REQUIRED</prop>
+     <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+    </props>
+   </property>
+
+<property name="transactionAttributes">
+                <props>
+                    <prop key="insert*">
+                        PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED</prop>
+                    <prop key="tran*">
+                        PROPAGATION_REQUIRED, ISOLATION_SERIALIZABLE</prop>
+                    <prop key="deposit*">
+                        PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED</prop>
+                </props>
+            </property>
+
+<property name="transactionAttributes">  
+        <props>  
+            <prop key="insert*">PROPAGATION_REQUIRED</prop>  
+            <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>  
+            <prop key="save*">PROPAGATION_REQUIRED,-ApplicationException,+BusinessException</prop>  
+        </props>  
+
+<prop key="save*">PROPAGATION_REQUIRED,-ApplicationException,+BusinessException</prop>  
+- 表示抛出该异常时需要回滚
+
++表示即使抛出该异常事务同样要提交
+
+
+-ApplicationException ：表示抛出ApplicationException 时，事务需要回滚。但不是说只抛出ApplicationException 异常时，事务才回滚，如果程序抛出RuntimeException和Error时，事务一样会回滚，即使这里没有配置。
+因为Spring中默认对所有的RuntimeException和Error都会回滚事务。
+
+事务 传播属性 隔离级别 
+
+
+super.rollbackOn(Throwable ex) 方法代码
+很简单的一行代码，这就是为什么RuntimeException和Error也会回滚啦。
+
+public boolean rollbackOn(Throwable ex) {  
+        return (ex instanceof RuntimeException || ex instanceof Error);  
+    }  
+
+ Spring 声明事务中transactionAttributes属性 + - Exception 实现逻辑
+http://blog.csdn.net/feiyu8607/article/details/10260893
+
+
+PROPAGATION_REQUIRED  ISOLATION_READ_COMMITTED readOnly -ApplicationException
+
+<bean id="txProxyTemplate" abstract="true" lazy-init="true"  
+        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">  
+        <property name="transactionManager">  
+            <ref bean="myTransactionManager" />  
+        </property>  
+        <property name="transactionAttributes">  
+            <props>  
+                <prop key="create*">  
+                    PROPAGATION_REQUIRED,-java.lang.Exception  
+                </prop>  
+                <prop key="save*">  
+                    PROPAGATION_REQUIRED,-java.lang.Exception  
+                </prop>  
+                <prop key="remove*">  
+                    PROPAGATION_REQUIRED,-java.lang.Exception  
+                </prop>  
+                <prop key="update*">  
+                    PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED  
+                </prop>  
+                <prop key="del*">  
+                    PROPAGATION_REQUIRED,-java.lang.Exception  
+                </prop>  
+                <prop key="*">PROPAGATION_REQUIRED,ISOLATION_DEFAULT</prop>  
+            </props>  
+        </property>  
+    </bean>  
+
+
+
+<beans>
+......
+<bean id="bankServiceTarget"
+class="footmark.spring.core.tx.declare.classic.BankServiceImpl">
+<property name="bankDao" ref="bankDao"/>
+</bean>
+
+
+<bean id="bankService"
+class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+<property name="target" ref="bankServiceTarget"/>
+<property name="transactionManager" ref="transactionManager"/>
+<property name="transactionAttributes">
+<props>
+<prop key="transfer">PROPAGATION_REQUIRED</prop>
+</props>
+</property>
+</bean>
+
+
+</beans>
+
+
+Spring配置中 bean上的属性parent的作用
+http://blog.csdn.net/z69183787/article/details/8222103
+
+<bean id="basicTxProxy2" abstract="true"  
+        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">  
+        <property name="transactionManager" ref="transactionManager2" />  
+        <property name="transactionAttributes">  
+            <props>  
+                <prop key="save*">PROPAGATION_REQUIRED</prop>  
+                <prop key="add*">PROPAGATION_REQUIRED</prop>  
+                <prop key="remove*">PROPAGATION_REQUIRED</prop>  
+                <prop key="update*">PROPAGATION_REQUIRED</prop>  
+                <prop key="*">PROPAGATION_REQUIRED</prop>  
+            </props>  
+        </property>  
+    </bean>  
+
+<bean id="torganRelationService" parent="basicTxProxy">  
+        <property name="target" ref="torganRelationServiceImpl" />  
+    </bean> 
+
+由于声明时没有target属性，所以必须声明为抽象类，即abstract = true；
+
+
+
+
+
+
+
+
