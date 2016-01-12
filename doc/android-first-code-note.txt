@@ -1039,6 +1039,9 @@ public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
 }
 
+ int	getColumnIndex(String columnName) 
+          Returns the zero-based index for the given column name, or -1 if the column doesn't exist.
+
 
 dbHelper = new MyDatabaseHelper(this, "BookStore.db", null, 1);
 dbHelper.getWritableDatabase();
@@ -1121,6 +1124,11 @@ double price = cursor.getDouble(cursor. getColumnIndex("price"));
 cursor.close();
 
 
+SQLiteDatabase 是否 需要 close
+
+
+
+
  boolean moveToFirst();
  boolean moveToNext();
 
@@ -1153,6 +1161,25 @@ try{
 }finally{
    db.endTransaction(); // 结束事务
 }
+
+insert之后获取自动增长ID值 
+db.execSQL("insert into person(name,phone,amount) values(?,?,?) ",    
+ new Object[]{person.getName(),person.getPhone(),person.getAmount()});    
+ Cursor cursor = db.rawQuery("select last_insert_rowid() from person",null);            
+ int id;      
+ if(cursor.moveToFirst()) {   
+   id = cursor.getInt(0);  
+   }
+last_insert_rowid()
+
+自增id必须为int？
+　ID INTEGER PRIMARY KEY AUTOINCREMENT,
+
+
+
+
+
+
 
 数据库升级最佳实践
 

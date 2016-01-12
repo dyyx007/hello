@@ -1,0 +1,29 @@
+spring经典教程 
+http://wenku.baidu.com/view/5a6cb3869e3143323968938b.html
+
+Spring高级程序设计 
+http://book.douban.com/subject/3993595/
+
+
+
+
+项目中使用的 spring 和 mybatis版本 
+
+mybatis-spring-1.2.1.jar
+spring-beans-4.1.1.RELEASE.jar
+
+spring 4.1.1
+
+mybatis-3.3.0.jar
+
+ iBatis 2.x  >>>  MyBatis 3.0.x
+
+
+
+
+
+
+
+
+
+
