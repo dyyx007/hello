@@ -1,0 +1,130 @@
+
+
+云计算
+容器 docker  OCI CNCF
+ App Container  AppC
+Open Container Initialtive（OCI）
+
+
+云原生计算基金会
+CNCF Clound Native Computing Foundation 
+
+
+移动   React Native  Swift Apple Watch、TV  Android Wear 
+android 物联网
+
+
+NLP 自然语言处理
+语音识别、语义理解、智能交互、搜索优化
+
+运维 自动化 
+
+
+大众创业万众创新
+  合并 比如携程和去哪儿网，美团和大众点评，滴滴和快的
+
+IT行业 月薪排行
+北京 上海 深圳 杭州 广州 成都
+
+岗位薪资排名
+产品 技术 金融 涉及 市场与销售 运营 职能
+
+
+互联网+ 
+移动互联网 大数据 现代制造企业
+电子商务 互联网金融
+O2O 金融 教育 医疗
+
+北上深广
+
+年龄分布
+16-20 1.19%
+20-25 37.66%
+25-30 33.81%
+30-40 21.03%
+40+   6.31%
+
+智能硬件 个人助理式APP 
+容器 大数据
+自然语言 Docker 大数据 OpenStack 安全
+物联网
+
+运维
+运维工程师
+熟练的Linux 命令操作和维护
+良好的服务器配置技能
+良好的互联网知识和网络通信知识
+熟练地编写脚本（Shell 或者Perl）
+熟悉网络规划、实施方案、服务器及网络设备性能指标
+
+大数据工程师
+
+熟悉各种数据挖掘和机器学习的算法
+熟练掌握Hadoop 和Python 的开发
+熟练使用SAS、SPSS 等数据统计挖掘软件
+具有海量数据处理、大规模数据库、分布式计算的经验
+计算机、数学或统计学专业背景等等
+
+
+android 2015  了Android 6.0（Android M）
+指纹识别
+软件、硬件、支付、分发平台
+Android Pay
+Android Wear
+物联网通信协议WEAVE 手机、Brillo 设备和互联网三者互相连通
+物联网操作系统Brillo 支持32MB内存设备
+智能汽车
+
+Android Wear、Android TV和Android Auto
+
+技术与社区
+
+动态加载、热更新
+Facebook  React Native
+
+
+ MVP MVVM
+
+Android Studio 
+Eclipse+ADT
+
+ant  gradle
+
+Golang Google 在2012 年3 月发布的Go 1.0
+
+并发的GC
+
+Go 1.5 的GC 是一个非分代、无转移的采用标记- 清扫算法和三色标记法的并发垃圾回收器
+
+
+ios
+swift 
+watchOS  tvOS  可穿戴设备和智能家庭
+苹果在2015 年发布了iPhone 6/6s、iPad Pro 等新设备
+Objective-C
+
+
+2015 年的政企私有云市场 
+
+
+亚马逊 VDC（Virtual Data Center）
+
+
+阿里云
+
+华为、华三、品高、青云
+
+OpenStack 云计算平台
+两个主要模块:Nova 和 Swift，前者是 NASA 开发的虚拟服务器部署和业务计算模块;
+后者是 Rackspace开发的分布式云存储模块，两者可以一起用，也可以分开单独用
+
+
+
+spark
+
+
+大数据 Hadoop、Spark、Elasticsearch 和Apache Kylin
+
+
+
+
