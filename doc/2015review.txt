@@ -120,10 +120,315 @@ OpenStack 云计算平台
 
 
 
+spark p52
+  外部数据支持 算子 机器学习算法 新增的R语言API
+
+传统意义上Spark 的核心是RDD 和RDD 之上的各种transformation 和action，也就是各种算子，RDD 可以认为是分布式的Java 对象的集合。
+2013 年推出了DataFrame，可以看做分布式的Row 对象的集合
+核心概念 RDD  resilient distributed dataset 只读的，可分区的分布式数据集
+
+Spark 的机器学习项目MLlib 的ML pipeline 就是完全基于DataFrame 的，而且未来Streaming 也会以DataFrame 为核心。
+
+
+ Tungsten 做的优化
+ 由Spark 自己来管理内存而不是使用JVM，这样可以避免JVM GC 带来的性能损失；
+ 内存中的Java 对象被存储成Spark 自己的二进制格式，更加紧凑，节省内存空间，
+ 而且能更好的估计数据量大小和内存使用情况；计算直接发生在二进制格式上，省去了序列化和反序列化时间。
+
+
+
+基于JVM 的语言带来的问题：GC 问题和Java 对象的内存开销。
+例如一个字符串”abcd”理论上只有4 个bytes，但是用Java String 类型来存储却需要48 个bytes
+
+sun.misc.Unsafe  DataFrame 的每一行就是一个UnsafeRow
+
+cache-friendly  
+aggregations joins  shuffle  hash
+
+聚合函数
+
+max/min/count/sum/avg/first/corr/stddev/variance/skewness/kurtosis
+
+
+Vector  Matrix
+RPC 系统从Akka 迁移到Netty
+
+
+
+大数据  p66
+
+Hadoop、Spark、Elasticsearch 和Apache Kylin
+
+
+hadoop 
+多存储介质 Disk Memory   SSD   
+
+
+ARN  分布式数据操作系统
+
+hbase  HBase 1.0 release
+
 spark
 
+2014 年12 月，Spark 1.2 发布引入ML pipeline 作为机器学习的接口。
+2015 年3 月，Spark 1.3 发布引入了DataFrame 作为Spark 的一个核心组件。
+2015 年6 月，Spark 1.4 发布引入R 语言作为Spark 的接口。R 语言接口在问世一个多月之后的调查中就有18% 的用户使用。
+2015 年9 月，Spark 1.5 发布。Tungsten 项目第一阶段的产出合并入DataFrame 的执行后端，DataFrame 的执行效率得到大幅提升。
+2016 年1 月，Spark 1.6 发布引入Dataset 接口。
 
-大数据 Hadoop、Spark、Elasticsearch 和Apache Kylin
+
+Spark MLlib 的ALS 算法已经在很多互联网公司用于其推荐系统中
+
+深度学习方面
+
+Google 开源其第二代机器学习系统TensorFlow
+Facebook 开源Torch 和人工智能硬件服务器Big Sur  
+
+Spark 在1.5 版本中发布了一个神经网络分类器MultiplayerPerceptronClassifier 作为深度学习的雏形
+
+
+Elasticsearch 是一个可伸缩的开源全文搜索和分析引擎 基于成熟的 Apache Lucene 构建，
+
+Elasticsearch 生态圈发展状态良好，整合了众多外围辅助系统，如监控Marvel，分析Logstash，安全Shield 等
+
+
+Elasticsearch 在今年下半年发布了2.0 版本，性能提升不少
+
+  Pipeline Aggregation：流式聚合，像管道一样，对聚合的结果进行再次聚合
+  Query/Filter 合并：取消filters，所有的filter 语句自动转换为query 语句
+  
+可配置的store compression：存储的field，例如_source 字段，可以使用默认的LZ4 算法快速压缩，
+或者使用DEFLATE 算法减少indexsize。对于日志类的应用尤其有用，旧的索引库在优化前可以切换到best_compression。
+
+Hardening ：Elasticsearch 运行于 Java Security Manager 之下，在安全性上标志着一个巨大的飞跃
+
+Performance and Resilience
+Core plugins
+
+Apache Kylin 是一个开源的分布式分析引擎，提供Hadoop 之上的SQL 查询接口及多维分析（OLAP）能力以支持超大规模数据
+
+ebay  用户行为分析、点击分析、商户分析、交易分析
+
+
+ Cube MapReduce  Fast Cubing
+Streaming OLAP 
+Hive Kafka 
+
+数据科学家  数据分析师
+
+
+展望2016
+
+Hadoop。对于 HDFS，会朝着异构存储介质方向发展，尤其是对新兴存储介质的支持
+
+YARN，会朝着通用资源管理和调度方向发展，而不仅仅限于大数据处理领域，
+在加强对 MapReduce、Spark 等短类型应用支持的同时，加强对类似Web Service 等长服务的支持；
+
+HBase，将会花费更多精力在稳定性和性能方面，对于 HDFS 多存储介质的使用；减少对 ZooKeeper 的使用以及通过使用堆外内存缓解Java GC 的影响。
+
+Spark 2.0 预计三四月份发布，将会确立以DataFrame 和Dataset为核心的体系架构
+
+Apache Kylin 2.0 即将发布，在OLAP on Hadoop 上更进一步
+
+Elasticsearch 开源搜索平台，机器学习，Data graphics，数据可视化
+
+大数据的安全和隐私
+
+
+
+数据专家主要负责数据的采集、清洗、存储、挖掘等整个数据流过程，
+确保提供高可靠、高可用、高扩展、高性能系统服务，
+提供Hadoop/HBase/Storm/Spark/ElasticSearch 等离线、流式及实时分布式计算服务。
+对分布式存储和分布式计算、超大集群、大数据分析等有深刻理解及实践经验。
+
+
+容器 p78
+
+
+
+2014 年仅仅是Docker 为主的容器技术在云计算以及DevOps 圈初露锋芒的话，
+那么2015 年则是以Docker 为核心的容器生态圈迅猛扩张的一年
+
+
+伴随着容器技术快速发展的过程，国内外的技术人员有幸亲历了OCI、CNCF两大标准组织的确立，
+第一时间体验了Docker 1.8 和1.9 两大关键版本的发布，
+见识到了CoreOS 一系列关键技术革新与战略布局，也感受到了国内Docker 创业圈的如火如荼。
+
+docker  vs  CoreOS
+
+
+2015 年，Google 和RedHat 联盟以Kubernetes 1.0 为阵地宣告了大规模容器编排与管理领域的领主地位。
+号称以Borg 等Google 多年容器技术实践经验为理论指导、
+以Google 和RedHat PaaS 团队为主要工程力量的Kubernetes 项目一经宣布生产级别可用，便立刻吸引了的工业界乃至学术界的大量关注和投入。
+
+
+
+Kubernetes  前瞻性的容器技术实践思路
+
+无论是Pod 及伙伴容器、单Pod 单IP 网络模型、volume 插件机制、容器生命周期钩子这种对容器技术本身的改造，
+还是虚拟IP与负载均衡、垂直健康检查、密码数据卷管理、元数据API 等平台级别能力的实现，
+都展现出了Kubernetes 与其他编排管理项目与众不同的技术视野和团队实力。
+
+
+Mesosphere  
+Apache Mesos 项目原生的两级调度和多框架支持使得用户在自己的组织内部设施云计算平台终于变得唾手可得
+
+
+
+1. Docker Engine 的进一步模块化和解耦，最终用户一定可以选择使用其中的一部分来达成自己的目的；
+2. runC 全面取代execdriver 来执行容器；
+3. 更丰富的插件能力和以此为基础的数据卷管理能力（类似Flocker）。
+
+
+在容器编排与管理领域，Docker 已经构建出了Compose+Swarm+Machine 的技术闭环，
+这套技术栈的最大亮点是全面兼容Docker API。当然，这个优势的前提是目前Docker 而不是runC 仍然是业界公认的容器标准。
+
+
+云计算三种服务模式 SaaS PaaS IaaS  
+
+Software as a Service，软件即服务，简称SaaS，这层的作用是将应用作为服务提供给客户。
+
+Platform as a Service，平台即服务，简称PaaS，这层的作用是将一个开发平台作为服务提供给用户。
+
+Infrastructure as a Service， 基础设施即服务，简称IaaS，这层的作用是提供虚拟机或者其他资源作为服务提供给用户。
+
+
+
+
+云计算 p86
+
+Amazon Web Services (AWS)
+
+弹性计算云 Amazon EC2  Elastic Compute Cloud
+简单储存服务 Amazon S3 Simple Storage Service
+
+Amazon Elastic Block Store EBS
+
+RDS Relational Database Service 
+
+软件定义型网络(SDN)和网络功能虚拟化(NFV)
+
+
+早在2014 年，OpenStack 社区就决定开始在技术上支持容器和第三方容器（如Docker Swarm、Kubernetes、Mesos 等），
+并将其命名为“容器编制引擎（COEs，Container Orchestration Engines）”
+
+
+
+前端 p94
+
+
+• 年初React Native 的发布，引领React 正式走上历史舞台；
+• 3 月angular2.0 第一个预览版发布；
+• 5 月 http/2.0 标准正式发布，同月 iojs 与 nodejs 合并；
+• 6 月 ES6 和 WebAssembly 落地；
+• 7 月 迄今为止React 生态圈影响最大的Flux 实现redux 发布1.0 版本；
+• 8 月 Facebook 公开了在React 上应用GraphQL 的relay 框架的技术预览版；
+• 9 月 React Native for Andriod 发布；
+• 11 月伊始，ES 标准委员会宣布将历时3 年研究的Object.observe 从草案中移除，尽管它原本已经是stage2，几乎已经是ES7 的事实标准。
+   双十一刚一结束，阿里手淘团队发布了名为 无线电商动态化解决方案的 Weex，也有人给了它一个更具象的名字，vue native；
+• 12 月，赶在2015 的尾巴，aurelia 和angular2 先后发布beta 版；
+• css 方面，postcss & cssnext 先后高调走到台前。
+
+
+React Native 的发布使得js 统一三端( 前端、后端、移动端)开发成为可能
+
+
+React 的优势并不在组件化，React 的优势在于virtual dom 及一个几乎构成闭环的强大生态
+
+由于阿里在背后的技术实践及支持，Vue.js 今年也开始得到越来越多的关注。
+vue 相对于angular1.x 的优势在于轻量、易用、更优异的性能及面向组件化的设计，
+目前发展态势也非常好，是移动端开发的一个重要技术选型之一。
+
+
+Typescript可以将它理解成加入了静态类型的js 的超集
+
+
+WebAssembly
+
+WebAssembly 旨在解决js 作为解释性语言的先天性能缺陷，试图通过在浏览器底层加入编译机制从而提高js 性能。
+这个事情跟当时V8 做的类似，V8 也因此一跃成为世界上跑的最快的js 引擎。
+但是由于js 是弱类型的动态语言，V8 很快就触碰到了性能优化的天花板，因为很多场景下还是免不了 recompile 的过程。
+因此WebAssembly 索性将编译过程前移(AOT)。
+
+WebAssembly 项目目前由苹果、谷歌、微软、Mozila 四大浏览器厂商共同推进，还是非常值得期待的。
+
+
+
+Web Components
+
+
+前端架构变化
+
+组件化
+工程化
+应用架构层 MVVM & Flux
+业务数据层 Relay & Falcor
+
+
+
+新的编程范式
+
+   函数式编程(functional programming) 
+   FP 基于lambda 演算，与以图灵机为基础的指令式编程(Java、C++) 有着明显的差异。
+lambda 演算更关注输入输出，更符合自然行为场景，所以看上去更适合事件驱动的web 体系，
+
+如果你确实钟情于函数式，可以去玩玩那些更functional 的语言(Haskell、 Clojure 等)，而不是从js 入手。
+
+函数式响应型编程(FRP)
+函数式响应型编程(functional reactive programming)
+
+FRP关注的是事件及对应的数据流， 你可以把它看作是一个基于事件总线(eventbus) 的观察者模式，它主要适用于以GUI 为核心的交互软件中。
+
+
+
+工具链的变化 
+  
+去年最主流的前端构建工具还是grunt&gulp，2015 年随着react 的崛起和web标准的快速推进，一切又有了新的变化。
+
+webpack & browserify & jspm
+
+PostCSS & cssnext
+
+
+PostCSS 作为新一代的css 处理器大有取Sass/Less 而代之的趋势，Bootstrapv5 也有着基于PostCSS 去开发的计划。
+但从本质来讲它又不算一个处理器，它更像是一个插件平台，能通过配置各种插件从而实现预处理器跟后处理器的效果。
+
+cssnext 官方口号是“使用来自未来的语法开发css，就在今天！”，
+
+前端一直是一个变化很快的职能，它太年轻，年轻意味着可能性和机会，也意味着不成熟和痛苦。
+我经常担心的事情就是，很可能走到最后，我们会发现，我们做了很多，却还是一无所获。
+所幸至今回顾，每年还是总有点不同，也算给行业贡献了些经验值吧。
+
+
+
+安全  乌云
+
+
+运维
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
