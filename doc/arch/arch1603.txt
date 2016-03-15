@@ -1,0 +1,261 @@
+搜狗可以搜微信文章和公众号
+
+
+应用服务器 weblogic websphere
+web容器 EJB容器 数据源 事务管理器
+性能 扩展性 高可用 
+all in one   
+scale up
+
+
+开源 
+tomcat  mysql   spring ibatis struts
+轻量敏捷  技术平台 DIY
+LAMP  SSH
+XML X86+mysql+linux
+
+scale out 水平扩展？
+
+
+单体应用（monolithapplication），一般是分层结构
+表现层/应用层/ 领域层/ 数据层
+
+
+复杂系统 譬如电商等 根据业务划分子系统 子系统之间协作
+子系统内部实现 
+SOA
+
+对于复杂系统，首先采用SOA 垂直切分子系统，
+然后使用分层设计水平切分单个子系统，服务化把传统的分层设计往前更推进一步
+
+Web service
+服务治理
+服务进一步分层和微服务化
+
+开放平台
+
+业务在变，技术在变，架构也在变。
+变的是形式，不变的是本质，
+架构为了系统更有序，系统为了业务更快速，业务为了生活更美好。
+
+
+微服务
+
+微服务与SOA 的区别？
+
+JAX-RS：Java API for RESTful Web Services
+
+微服务架构的重点是将应用程序开发成服务并将这些服务单独部署；
+没有一个框架提供自动化部署和配置，是不可能使用JavaEE 实现真正的微服务架构的。
+
+
+如果你将一个WAR 文件部署到一个Java EE 容器，那么你很可能不是在做微服务开发。
+如果你在一个容器或EAR 文件中包含超过一个WAR文件，那么你肯定不是在做微服务开发。
+如果你将服务部署为AMI 或Docker 容器，而且你的微服务有一个main 方法，那么你可能是在编写微服务。
+
+
+微服务更小 粒度更细？
+
+
+Netflix Spinnaker：实现全局部署
+
+
+持续交付平台Spinnaker
+
+
+创建 pipeline 展现一个交付流程
+
+云部署  
+服务器集群管理 
+
+基于JVM 的服务（ 由SpringBoot 和 Groovy 所实现）， UI 使用 AngularJS
+
+
+Oracle宣布：2017年将废弃Java浏览器插件
+
+Java Web Start 作为applet 的替代品
+
+
+的架构原则和模式
+
+4 种常用的软件架构模式，分别是分层架构、事件驱动架构、微内核架构和微服务架构
+
+
+在传统的分层架构中，分层包括表现层、业务或者服务层，以及数据访问层
+
+分层架构是SOLID 原则的通用架构
+单一功能、开闭原则、 里氏替换、接口隔离以及依赖反转
+
+SRP	The Single Responsibility Principle	单一责任原则
+OCP	The Open Closed Principle	开放封闭原则
+LSP	The Liskov Substitution Principle	里氏替换原则
+ISP	The Interface Segregation Principle	接口分离原则
+DIP	The Dependency Inversion Principle	依赖倒置原则
+
+事件驱动架构（Event Driven Architecture）EDA
+分布式异步架构模
+
+两种拓扑结构
+调停者拓扑（Mediator Topology）
+代理者拓扑（Broker Topology）
+
+需要将多个步骤编排到一个事件中时使用mediator 
+在交易系统 每个请求流程必须经过特定的步骤
+
+通常，企业服务总线、队列或者集线器可以用作事件调停者
+
+代理者拓扑不使用任何集中的编排，而是在事件处理器之间使用简单的队列或者集线器，事件处理器知道处理事件的下一个事件处理器
+
+事务协调器
+
+
+事件驱动架构(Event-Driven Architecture)
+http://www.cnblogs.com/w1991/p/5031006.html
+
+微内核架构（Microkernel architecture）模式也被称为插件架构（plugin architecture）
+
+核心系统和插件模块
+核心系统通常包含最小的业务逻辑，并确保能够加载、卸载和运行应用所需的插件。许多操作系统使用这种模式，因此得名微内核。
+
+如果想将新特性和功能及时加入系统，微内核架构是一种不错的选择。
+
+微服务架构 替代 SOA
+具备高可伸缩性、易于部署和交付的独立部署单元（Separately Deployable Units）
+
+服务组件粒度 
+
+评价维度 
+ 敏捷性 可部署性 可测试性 性能 可扩展性 易开发性
+
+
+问答系统的前生今世
+
+artificial intelligence
+
+
+传统问答系统
+通常局限于一个非常狭窄专门的领域，基本上是由人工编制的知识库加上一个自然语言接口而成
+
+
+搜索引擎 信息检索（information retrieval）
+
+大规模真实语料库基础上的机器学习和统计研究
+
+老杨聊架构：每个架构师都应该研究下康威定律
+http://www.iteye.com/news/31317
+
+
+关注点 concerns
+利益相关者（stakeholder）
+
+
+架构师的首要任务是尽最大可能找出所有利益相关者，
+业务方，产品经理，客户/ 用户，开发经理，工程师，项目经理，测试人员，运维人员，产品运营人员等等都有可能是利益相关者，
+架构师要充分和利益相关者沟通，深入理解他们的关注点和痛点，并出架构解决这些关注点。
+
+利益相关者的关注点是有可能冲突的，比如管理层（可管理性）vs 技术方（性能），业务方（多快好省）vs 技术方（可靠稳定），这需要架构师去灵活平衡
+
+关于架构的第二点定义是说架构主要关注非功能性需求（non-functional requirements），即所谓的-abilities。
+
+Architecture represents the significant design decisions that shape a system, where significant is measured by cost of change.
+
+架构表示对一个系统的成型起关键作用的设计决策，架构定系统基本就成型了，这里的关键性可以由变化的成本来决定。
+
+架构的目标是用于管理复杂性、易变性和不确定性，以确保在长期的系统演化过程中，
+一部分架构的变化不会对架构的其它部分产生不必要的负面影响。这样做可以确保业务和研发效率的敏捷，
+让应用的易变部分能够频繁地变化，对应用的其它部分的影响尽可能的小。
+
+
+性能 高可用
+可理解，可维护性，可扩展性，成本
+
+最小可用产品（Minimum ViableProduct， MVP）理念   避免过度设计
+
+
+
+RUP 三个特点：
+1. 用例和风险驱动Use Case and risk driven
+2. 架构中心Architecture centric
+3. 迭代和增量Iterative and incremental
+
+推荐文章
+1. 58 同城沈剑：好的架构源于不停地衍变，而非设计
+http://www.csdn.net/article/2015-10-24/2826028
+2. 宜人贷系统架构– 高并发下的进化之路
+http://blog.dataman-inc.com/untitled-10/
+
+DevOps
+
+架构师需要有全局视角和系统思维（System Thinking），深入理解整个价值交付链，从业务需求、研发、测试、集成，到部署运维
+
+架构师要站在系统高度去优化整个价值交付链，让企业和客户之间形成快速和高效的价值传递
+
+
+1. no measurement, no improvement 没有测量，就没有改进和提升
+2. What your measure is what you get 你测量什么，就得到什么
+
+度量驱动开发的理念 MDD
+http://www.infoq.com/cn/articles/metrics-driven-development/
+
+谈谈微服务架构
+微服务主要体现的是单一职责和关注分离的思想
+
+
+康威定律
+ 设计系统的组织，其产生的设计和架构等价于组织间的沟通结构。
+
+团队是分布式的，系统架构是单块的，开发，测试，部署协调沟通成本大，严重影响效率，严重时团队之间还容易起冲突。
+将单块架构解耦成微服务，每个团队开发，测试和发布自己负责的微服务，互不干扰，系统效率得到提升。
+
+组织和系统架构之间有一个映射关系（1~ 1 mapping），两者不对齐就会出各种各样的问题，
+一方面，如果你的组织结构和文化结构不支持，你也无法成功建立高效的系统架构，
+例如集中式和严格职能（业务, Dev, QA,Deployment, Ops）的企业，很难推行微服务和DevOps,
+推行Docker/PaaS 平台也会比较困难，这样的组织职能之间都倾向于局部优化（local optimization），无法形成有效的合作和闭环。
+
+
+作为系统架构师，一定要深入领会康威定律，设计系统架构之前，先看清组织结构，
+也要看组织文化（民主合作式，集权式，丛林法则式，人才密度），再根据情况调整系统架构或者组织架构。
+
+
+架构师心态和软技能
+
+空杯， 或者说开放心态（open minded）
+stay hungry,stay foolish， 心态有多开放，视野就有多开阔
+
+
+研发协作和交付平台 （代码仓库 文档 需求 bug 发布）
+端 前端 客户端  pc
+应用服务
+技术平台 (中间件 框架)
+基础设施 网络 存储 
+
+数据分析 
+业务监控
+系统监控
+
+
+
+
+
+电商网站的初期技术选型
+
+云服务
+业务 商业模式
+
+流量 微信  公众号 社交属性 
+满足80% 的高质量用户需求
+
+业务流程，主要涵盖正向流程如：
+采购、会员管理、商品价格、上下架、购买、订单管理、发货、财务等，
+逆向的更麻烦，如退换货、退款等另一个核心就是促销规则，
+如套餐、团购、满赠、买赠、折扣、优惠券等
+
+会员注册、登录、购买支付、订单审核、发货、对帐。
+
+安全性  
+XSS  SQL 注入
+静态化 为静态化 cdn
+
+灰度发布
+
+
