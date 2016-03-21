@@ -3,6 +3,17 @@
 http://my.oschina.net/jiangzhixiong/blog/615848
 
 
+大型分布式网站架构设计与实践
+https://book.douban.com/subject/25972633/
+作者 blog  http://chenkangxian.iteye.com/
+
+浅析http平台的安全稳定性架构
+http://chenkangxian.iteye.com/blog/1819885
+
+
+
+
+
 大型网站架构技术一览
 http://www.hollischuang.com/archives/1132
 
