@@ -1,7 +1,71 @@
 
+各大互联网公司架构演进之路汇总
+http://my.oschina.net/jiangzhixiong/blog/615848
+
+
+大型网站架构技术一览
+http://www.hollischuang.com/archives/1132
+
+
+大型网站技术架构(核心原理与案例分析)
+https://book.douban.com/subject/25723064/
+
+
+
+
+反向代理    负载均衡   CDN  缓存
+
+
+前端 应用层 服务层 存储 后台架构  数据中心机房架构
+安全架构 数据采集与监控 (业务 系统监控)
+
+LAMP LNMP 
+linux apache mysql  php
+nginx
+
+Nginx  高性能Web和反向代理服务器
+支持 50000 个并发连接
+
+f5/array (4层负载均衡) > nginx proxy 集群 > web服务集群 or squid集群
+vip
+LVS 三种方式 VS/NAT VS/TUN VS/DR
+
+OSI  5层网络模型   物理层 数据链路层 网络层 传输层 应用层
+
+
+
+session  DNS
+
+
+
 
 monolithic  整体的  VS  SOA
 最小化可行产品 Minimum Viable Product  MVP 
+
+db读写分离 读写延时如何解决
+cdn 智能DNS  就近访问
+动静分离、读写分离、主从同步、垂直拆分、CDN
+垂直拆分、服务化、反向代理、开发框架
+中间件 配置中心、柔性服务、消息总线、自动化（回归，测试，运维，监控）
+
+
+
+老杨聊架构：每个架构师都应该研究下康威定律
+http://www.iteye.com/news/31317
+
+58同城沈剑：好的架构源于不停地衍变，而非设计
+http://www.csdn.net/article/2015-10-24/2826028
+
+宜人贷系统架构– 高并发下的进化之路
+http://blog.dataman-inc.com/untitled-10/
+
+
+
+
+
+
+
+
 
 
 
