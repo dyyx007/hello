@@ -1,0 +1,223 @@
+////////////////
+merge
+
+d:/work/merge
+git clone git@gitlab.alibaba-inc.com:htao/htao-server.git
+
+git checkout -b dev origin/develop
+git checkout dev
+git checkout -b cc origin/feature/20151225_2.2_config_center_492000
+git checkout cc
+git merge dev
+
+
+
+
+
+
+
+git clone git@gitlab.alibaba-inc.com:htao/htao-server.git
+
+git clone git@gitlab.alibaba-inc.com:htao/htao-server.git -b feature/hulei_150373
+
+git pull
+git push
+
+
+创建分支： $ git branch mybranch
+切换分支： $ git checkout mybranch
+创建并切换分支： $ git checkout -b mybranch
+
+
+
+git branch 列出本地分支  当前分支前加*
+git branch -r  列出远程分支
+git branch -a 列出当前分支和远程分支 
+
+$ git branch -a
+  dev-2
+  dev-dugang
+* develop
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/app0509
+  remotes/origin/develop
+  remotes/origin/feature/app_245827
+  remotes/origin/feature/bogao_162188
+  remotes/origin/feature/bogao_351300
+  remotes/origin/feature/exrate0922_385449
+  remotes/origin/feature/htaohk_233232
+  remotes/origin/feature/seo_430406
+
+git checkout seo_430406
+
+
+git checkout branch-name
+
+chechout 时会切换工作目录内容
+
+git checkout develop
+
+git checkout -b dev-dugang
+
+$ git pull
+There is no tracking information for the current branch.
+
+
+从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。
+
+要查看远程库的信息，用git remote：
+
+$ git remote
+origin
+或者，用git remote -v显示更详细的信息：
+
+$ git remote -v
+origin  git@github.com:michaelliao/learngit.git (fetch)
+origin  git@github.com:michaelliao/learngit.git (push)
+
+推送分支
+$ git push origin master
+推送其他分支，比如dev 
+$ git push origin dev
+
+从远程库clone时，默认情况下，只能看到本地的master分支。
+
+$ git branch
+* master
+
+要在dev分支上开发，就必须创建远程origin的dev分支到本地
+$ git checkout -b dev origin/dev
+
+
+pull 或 push 时 
+There is no tracking information for the current branch.
+
+需要建立 本地dev分支与远程origin/dev分支的链接
+git branch --set-upstream dev origin/dev
+
+
+git pull  冲突需要手工解决冲突 
+解决冲突后 提交 再 push
+
+
+多人协作工作模式
+
+首先，用git push origin branch-name推送自己的修改；
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+如果合并有冲突，则解决冲突，并在本地提交；
+没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
+如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，
+用命令git branch --set-upstream branch-name origin/branch-name。
+
+
+
+
+
+git checkout master
+git merge origin/develop
+git merge dev-dugang
+git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 62 commits.
+#   (use "git push" to publish your local commits)
+#
+
+
+
+把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支 
+
+$ git push origin test:master         // 提交本地test分支作为远程的master分支
+$ git push origin test:test              // 提交本地test分支作为远程的test分支
+第一次push的写法
+
+$ git push origin dev-2:dev-2
+Total 0 (delta 0), reused 0 (delta 0)
+To git@gitlab.alibaba-inc.com:htao/htao-server.git
+ * [new branch]      dev-2 -> dev-2
+
+
+
+
+git status
+git log 
+git log -3
+git diff 
+git diff --stat
+
+
+
+working tree, index file, commit
+
+working tree：就是你所工作在的目录，每当你在代码中进行了修改，working tree的状态就改变了。
+index file：是索引文件，它是连接working tree和commit的桥梁，每当我们使用git add命令来登记后，index file的内容就改变了，此时index file就和working tree同步了。
+commit：是最后的阶段，只有commit了，我们的代码才真正进入了git仓库。我们使用git commit就是将index file里的内容提交到commit中。
+
+git diff：是查看working tree与index file的差别的。
+git diff --cached：是查看index file与commit的差别的。
+git diff HEAD：是查看working tree和commit的差别的。（HEAD代表的是最近的一次commit的信息）
+
+working tree > index file > commit
+
+
+修改某个文件 然后 git status
+
+$ git status
+# On branch feature/hulei_150373
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   antx.properties
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+$ git checkout antx.properties
+放弃对 antx.properties 的修改
+
+
+修改并add
+
+gang.dug@MININT-KKTMNQC /D/dugang/work/htao-server (feature/hulei_150373)
+$ git add antx.properties
+
+gang.dug@MININT-KKTMNQC /D/dugang/work/htao-server (feature/hulei_150373)
+$ git status
+# On branch feature/hulei_150373
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   antx.properties
+#
+
+ 使用 git reset 回到unstaged状态
+ git reset HEAD antx.properties
+
+git status
+
+注意以下几个命令的区别
+git diff
+git diff --cached
+git diff HEAD
+
+版本
+回退 合并
+
+reset
+revert
+rebase
+merge
+
+
+
+
+
+
+
+
+
+
+
+
+
