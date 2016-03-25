@@ -1,4 +1,18 @@
 
+CDN
+自建DNS server
+
+
+ nginx  memcache 
+ squid
+ mysql  
+ tomcat  jetty 
+ node
+
+
+
+
+
 各大互联网公司架构演进之路汇总
 http://my.oschina.net/jiangzhixiong/blog/615848
 

@@ -143,3 +143,48 @@ Storm 通过系统级组件Acker 实现对数据流的全局计算路径的跟�
 Storm 采用主从系统架构,在一个Storm 系统中有两类节点
 (即,一个主节点Nimbus、多个从节点Supervisor)及3 种运行环境(即,master,cluster 和slaves)构成,
 
+主节点Nimbus   master  无状态 负责全局的资源分配、任务调度、状态监控和故障检测
+接收客户端提交的任务 分配任务到从节点Supervisor 
+同时把该任务的元信息写入Zookeeper 目录中
+
+主节点Nimbus 通过Zookeeper 实时监控任务的执行情况,当出现故障时进行故障检测,
+并重启失败的从节点Supervisor 和工作进程Worker
+每个Worker 内部,会有多个Executor,每个Executor 对应一个线程.
+Task 负责具体数据的计算,即用户所实现的Spout/Blot 实例.每个Executor 会对应一个或多个Task,
+
+
+Zookeeper 是一个针对大型分布式系统的可靠协调服务和元数据存储系统
+
+Storm 系统的主要特征
+
+  简单编程模型.用户只需编写Spout 和Bolt 部分的实现,因此极大地降低了实时大数据流式计算的复杂性;
+  支持多种编程语言.默认支持Clojure,Java,Ruby 和Python
+  作业级容错性.可以保证每个数据流作业被完全执行
+  水平可扩展.计算可以在多个线程、进程和服务器之间并发执行
+  快速消息计算.通过ZeroMQ 作为其底层消息队列,保证了消息能够得到快速的计算.
+
+
+Storm 系统存在的不足主要包括:资源分配没有考虑任务拓扑的结构特征,无法适应数据负载的动态变化;
+采用集中式的作业级容错机制,在一定程度上限制了系统的可扩展性.
+
+
+Yahoo S4
+
+处理单元PE(processing element)
+
+函数 事件类型 主键 键值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

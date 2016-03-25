@@ -1,0 +1,43 @@
+
+
+
+CDN  Content Delivery Network 内容分发网络   Content Distribute Network
+    
+CDN供应商
+
+
+Akamai (全球最大)
+chinacache
+webluker
+cloudflare
+
+自建CDN3种主流方案
+
+
+squid
+varnish
+nginx+memcache
+
+
+软件	存储模式 	性能 	配置复杂度 	purge效率 	共享存储
+squid	硬盘	        较高 	简单	        低	        可以并联，但是配置复杂 
+varnish 硬盘/内存 	高	比较简单	低	        不能
+nginx	内存	        高	需要编程	高	        可以，支持一致性存储
+
+Squid http://www.squid-cache.org      大多数CDN供应商都用squid
+varnish http://www.varnish-cache.org   用户较少，sina微博在用
+nginx+memcache 搜狐CDN集群,淘宝的部分业务
+
+
+purge就是CDN删除缓存项的接口，国内的UGC网站，因为严厉的内容检查制度和泛滥的垃圾广告，
+删帖子删图片特别频繁，某些网站可能高达40%（发100个贴，有40个帖子可能被删除或者修改)，所以对purge的效率有要求。
+
+
+某门户网站曾经发生过，某个链接怎么也删不掉，一慌张把CDN所有缓存都删了重启，
+导致内网流量瞬间暴涨，各业务线的服务器全线报警，集体骂娘。
+
+推荐CDN方案
+中小型网站直接买服务就好，现在CDN已经进按需付费的云计算模式了，性价比是可以准确计算的
+外地部署单点，推荐用squid
+准备在公司内部实施私有云战略，推荐nginx+memcache
+

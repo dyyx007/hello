@@ -1,0 +1,24 @@
+
+
+
+http://nginx.org
+
+启动nginx服务
+
+cd 到 nginx目录  start nginx
+
+验证nginx服务，一般有3个方法
+
+1 在nginx.exe的目录下，执行DOS命令：nginx -V
+
+2 打开任务管理器，查看nginx进程
+
+3 直接访问http://127.0.0.1
+
+
+关闭nginx
+
+nginx -s stop
+
+
+
