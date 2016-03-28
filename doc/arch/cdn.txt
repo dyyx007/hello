@@ -4,6 +4,8 @@
 CDN  Content Delivery Network 内容分发网络   Content Distribute Network
     
 CDN供应商
+UPYUN的云CDN技术架构演进之路
+http://toutiao.com/i6238790516897481218/
 
 
 Akamai (全球最大)
