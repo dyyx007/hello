@@ -22,23 +22,86 @@ http://www.csdn.net/article/2014-11-04/2822459
   http://www.csdn.net/article/2014-11-03/2822449
 
 
+  长期静态页面 cdn缓存到 离用户最近的节点
+  有效期较短的静态页面 缓存在服务端 memcache  Squid反向代理 
+  动静分离 动态数据异步加载    商品详情    库存价格为动态数据
+
+  数据库慢查询优化  
+  读写分离  master/slave
+  分库分表
+
+  4层负载均衡  硬件 F5  软件 LVS
+
+  系统解耦 业务功能拆分 高内聚送耦合 SOA 服务化
+  模块划分 粒度控制 
+  水平扩展  scale out
+
+ACID 原子性 一致性 隔离性 持久性  Atomicity Consistency Isolation Durability
+
+  分布式事务 2PC(两阶段提交) Two phase Commit
+    第一阶段,事务协调器要求每个涉及到事务的数据库预提交(precommit)此操作,并反映是否可以提交.
+    第二阶段,事务协调器要求每个数据库提交数据.
+
+
+CAP（Consistency一致性，Availability可用性，Partition Tolerance分区容忍性）
+
+一致性(Consistency).客户端知道一系列的操作都会同时发生(生效).
+可用性(Availability).每个操作都必须以可预期的响应结束.
+分区容错性(Partition tolerance).即使出现单个组件无法可用,操作依然可以完成
+
+BASE(基本可用,软状态,最终一致) Basically Available ,Soft state , Eventually consistent 
+牺牲部分一致性
+ 
+
+
+保证主流程 
+
+
+关键资源保护  数据库访问层 服务层
+
+统一接入层  网络 缓存 存储  关系数据库  文件服务器 图片服务器 
+
+服务 API  监控（系统 业务监控） 运维  
+
+
+业务实时监控  
+   日志收集  实时计算 用户行为可视化   发现问题 洞察商机   个性化推荐 智能引导
+
+   云计算
+
+
+2 传统企业电商峰值系统应对实践
+  http://www.csdn.net/article/2014-11-11/2822574
 
 
 
+电商系统 核心对象主要有三个：会员、商品和订单
+流量 营销 
+限时抢购 秒杀
+
+缓存  Memcache Redis
+商品搜索 Sphinx Lucene
+
+分布式架构设计 
+前台 后台系统 分离 异步消息 订单同步
+
+主从读写分离  数据复制延迟监控
+
+水平拆分  热点个例如单独的秒杀库 日志等异步写入  报表等非实时应用
+服务降级 开关 限流 流控 
+系统降级 业务降级 
+
+监控与运维
+
+  系统 业务监控 
 
 
+服务器指标，如CPU、内存、磁盘等；数据库指标，如QPS、主从复制延时、进程、慢查询等
 
+消息队列堆积监控  数据同步延时监控 
+Nagios Cacti 等监控平台
 
-
-
-
-
-
-
-
-
-
-
+业务 PV、UV、转化率、下单量、支付量、发货量
 
 
 
