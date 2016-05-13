@@ -1,0 +1,70 @@
+tomcat 下jsp乱码的原因分析
+http://blog.csdn.net/jgwei/article/details/40819577
+
+JSP中文乱码问题终极解决方案
+http://blog.csdn.net/beijiguangyong/article/details/7414247
+
+
+表单提交时 指定字符集
+
+ <form action="form_action.asp" accept-charset="utf8">
+
+IE
+onsubmit=”document.charset=’utf-8′;”
+此属性的默认值是 "unknown"，表示表单的字符集与包含表单的文档的字符集相同。
+
+tomcat乱码解决方案  
+tomcat内部处理
+
+
+
+get post方式
+
+<%@page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%> 
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html;charset=UTF-8");
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+
+过滤器  
+request.setCharacterEncoding("GBK"); 
+
+处理post请求
+
+
+get请求处理
+
+server.xml
+
+
+<Connector port="8080" maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+enableLookups="false" redirectPort="8443" acceptCount="100" debug="0" connectionTimeout="20000" 
+disableUploadTimeout="true" URIEncoding="GBK"/> 
+
+URIEncoding="GBK"
+
+
+数据库
+
+<!-- Class name for mm.mysql JDBC driver --> 
+<parameter> 
+<name>driverClassName</name> 
+<value>com.mysql.jdbc.Driver</value> 
+</parameter> 
+<parameter> 
+<name>url</name> 
+<value><![CDATA[jdbc:mysql://localhost:3306/workshopdb?useUnicode=true&characterEncoding=GBK]]></value> 
+</parameter> 
+
+
+
+
+
+
+
+
+
+
+
+
