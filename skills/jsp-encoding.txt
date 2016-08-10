@@ -5,6 +5,10 @@ JSP中文乱码问题终极解决方案
 http://blog.csdn.net/beijiguangyong/article/details/7414247
 
 
+纯前端Js完美解决各种汉字urlencode,urldecode，编码解码问题，不借助任何字库，内码表，轻松一行，兼容IE，chrome，firefox，safari等主流浏览器
+http://www.chawenti.com/articles/14853.html
+
+
 表单提交时 指定字符集
 
  <form action="form_action.asp" accept-charset="utf8">
@@ -43,6 +47,8 @@ enableLookups="false" redirectPort="8443" acceptCount="100" debug="0" connection
 disableUploadTimeout="true" URIEncoding="GBK"/> 
 
 URIEncoding="GBK"
+useBodyEncodingForURI="true"
+
 
 
 数据库
@@ -59,12 +65,209 @@ URIEncoding="GBK"
 
 
 
+URLEncoder  URLDecoder
+
+
+gbk utf8 iso-8859-1
+
+String str = "你好";
+byte[] bytes = str.gertBytes("gbk");
+str = new String(bytes,"gbk");
+
+
+String str = "你好";
+String charset = "gbk";		
+String str2 = URLEncoder.encode(str, charset);
+System.out.println(str2);	
+charset = "utf8";		
+str2 = URLEncoder.encode(str, charset);
+System.out.println(str2);
+
+%C4%E3%BA%C3
+%E4%BD%A0%E5%A5%BD
+
+byte[] bytes = str.getBytes("gbk");
+System.out.println("gbk bytes len "+bytes.length);
+		
+bytes = str.getBytes("utf8");
+System.out.println("utf8 bytes len "+bytes.length);
+
+gbk bytes len 4
+utf8 bytes len 6
+
+utf8占用的存储空间比较大
+
+UTF-8  是在互联网上使用最广的一种unicode的实现方式
+其他实现方式还包括UTF-16和UTF-32，不过在互联网上基本不用
+UTF-8 是一种变长的编码方式。 使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。
+
+UTF-8的编码规则很简单，只有二条：
+1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。
+2）对于n字节的符号（n>1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。
+
+
+Unicode符号范围 | UTF-8编码方式
+(十六进制) | （二进制）
+--------------------+---------------------------------------------
+0000 0000-0000 007F | 0xxxxxxx
+0000 0080-0000 07FF | 110xxxxx 10xxxxxx
+0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
+0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+
+已知“严”的unicode是4E25（100111000100101），根据上表，可以发现4E25处在第三行的范围内（0000 0800-0000 FFFF），
+因此“严”的UTF-8编码需要三个字节，即格式是“1110xxxx 10xxxxxx 10xxxxxx”。然后，从“严”的最后一个二进制位开始，
+依次从后向前填入格式中的x，多出的位补0。这样就得到了，“严”的UTF-8编码是“11100100 10111000 10100101”，转换成十六进制就是E4B8A5。
+
+e.jsp
+
+<%
+    String s = request.getParameter("x");
+	String s1 = new String(s.getBytes("iso-8859-1"),"gbk");
+    String s2 = new String(s.getBytes("iso-8859-1"),"utf8");
+%>
+<pre>
+<%=s%>
+<%=s1%>
+<%=s2%>
+
+
+http://127.0.0.1:8080/e.jsp?x=你好
+
+
+http://127.0.0.1:8080/e.jsp?x=%C4%E3%BA%C3
+http://127.0.0.1:8080/e.jsp?x=%E4%BD%A0%E5%A5%BD
+
+
+地址栏输入 http://127.0.0.1:8080/e.jsp?x=你好
+firefox chrome     utf8编码
+ie  GBK编码
+
+
+httpclient 4.5.2 
+使用 post UrlEncodedFormEntity utf-8 时
+request.getCharacterEncoding() 为 utf-8
+
+
+get post 对参数的处理方式不一样
+
+post方式 采用缺省的iso-8859-1  如果设置了 characterEncoding 则使用 characterEncoding
+
+
+<filter>   
+                  <filter-name>SetCharacterEncoding</filter-name>   
+                  <filter-class>filters.SetCharacterEncodingFilter</filter-class>   
+                  <init-param>   
+                          <param-name>encoding</param-name>   
+                          <param-value>utf-8</param-value>   
+                  </init-param>   
+          </filter>   
+ 
+          <filter-mapping>   
+                  <filter-name>SetCharacterEncoding</filter-name>   
+                  <url-pattern>/*</url-pattern>   
+          </filter-mapping>  
+
+
+tomcat参数处理模块
+ApplicationHttpRequest 
+
+ public String getParameter(String name)
+
+void parseParameters()
+Map<String, String[]> parameters = null;
+
+
+        parameters = new ParameterMap<String, String[]>();
+        parameters.putAll(getRequest().getParameterMap());
+        mergeParameters();
+
+参数合并 
+
+servlet-api 源码
+
+
+ String encoding = getCharacterEncoding();
+ISO-8859-1 is the default encoding
 
 
 
 
+org.apache.catalina.connector.Request  implements HttpServletRequest  
+public interface HttpServletRequest extends ServletRequest  
+ protected void parseParameters() 
+
+
+org.apache.coyote.Request
+
+
+org.apache.tomcat.util.http.Parameters
+
+parameters.setLimit(getConnector().getMaxParameterCount());
+
+org.apache.catalina.connector.Connector
 
 
 
+ public String getCharacterEncoding() {
 
+        if (charEncoding != null)
+            return charEncoding;
+
+        charEncoding = ContentType.getCharsetFromContentType(getContentType());
+        return charEncoding;
+
+    }
+
+public MessageBytes contentType() {
+        if (contentTypeMB == null)
+            contentTypeMB = headers.getValue("content-type");
+        return contentTypeMB;
+    }
+
+
+ boolean useBodyEncodingForURI = connector.getUseBodyEncodingForURI();
+            if (enc != null) {
+                parameters.setEncoding(enc);
+                if (useBodyEncodingForURI) {
+                    parameters.setQueryStringEncoding(enc);
+                }
+            } else {
+                parameters.setEncoding
+                    (org.apache.coyote.Constants.DEFAULT_CHARACTER_ENCODING);
+                if (useBodyEncodingForURI) {
+                    parameters.setQueryStringEncoding
+                        (org.apache.coyote.Constants.DEFAULT_CHARACTER_ENCODING);
+                }
+            }
+
+ public static final String DEFAULT_CHARACTER_ENCODING="ISO-8859-1";
+
+
+Parameters
+
+   String encoding=null;
+    String queryStringEncoding=null;
+
+public String getContextPath() {
+
+ RequestUtil.URLDecode(candidate, connector.getURIEncoding());
+
+
+Tomcat连接器：Coyote框架
+
+coyote来处理底层的socket，并将http请求、响应等字节流层面的东西，包装成Request和Response两个类
+
+
+org.apache.tomcat.util.net   连接池 线程池 socket 处理
+
+
+Coyote 介绍 https://webweavertech.com/costin/archives/000421.html
+
+
+字节流操作 head  body
+org.apache.tomcat.util包定义了许多底层的工具类，用于操作和维护字节数组
+
+MessageBytes 
+
+org.apache.catalina.core.ApplicationHttpResponse
 

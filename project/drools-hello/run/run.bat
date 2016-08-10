@@ -1,0 +1,2 @@
+java -cp ../bin/;../lib/drools-compiler-6.4.0.Final.jar;../lib/drools-core-6.4.0.Final.jar;../lib/kie-api-6.4.0.Final.jar;../lib/kie-internal-6.4.0.Final.jar;../lib/slf4j-api-1.7.2.jar;../lib/xstream-1.4.7.jar  org.drools.examples.helloworld.HelloWorldExample
+pause 
